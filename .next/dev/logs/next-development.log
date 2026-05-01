@@ -1,0 +1,10 @@
+[00:00:02.691] Server  LOG     ✓ Ready in 2.4s
+[00:00:04.385] Server  WARN    ⚠ Lockfile was successfully patched, please run "npm install" to ensure @next/swc dependencies are downloaded
+[00:00:05.983] Server  LOG     ○ Compiling / ...
+[00:00:14.794] Browser LOG     Updating globe material with color: #9fddfc
+[00:00:22.105] Browser WARN    Image with src "/_next/static/media/essens_logo.5cfea5bc.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:22.105] Browser WARN    Image with src "/_next/static/media/spring_logo.d5084f30.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:22.105] Browser WARN    Image with src "/_next/static/media/renew_logo.e418458e.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:22.105] Browser WARN    Image with src "/_next/static/media/ampex_logo.346ba06b.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:22.106] Browser WARN    Image with src "/_next/static/media/o2_logo.2ba2561b.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:22.106] Browser WARN    Image with src "/_next/static/media/inox_logo.1bdafc48.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
