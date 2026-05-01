@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { SITE } from "../config/site.config";
-import { ThemeProvider } from "next-themes";
-import ThemeHeadIcons from "../components/ui/ThemeHeadIcon";
 import ClientWrapper from "../components/ui/ClientWrapper";
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-plex-sans",
@@ -63,18 +61,8 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
     >
-      <head>
-        <ThemeHeadIcons />
-      </head>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          value={{ light: "light", dark: "dark" }}
-        >
-          <ClientWrapper>{children}</ClientWrapper>
-        </ThemeProvider>
+        <ClientWrapper>{children}</ClientWrapper>
       </body>
     </html>
   );

@@ -98,7 +98,6 @@ export const ServicesBeams: React.FC<ServicesBeamsProps> = ({
                 strokeWidth={baseStrokeWidth}
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="dark:stroke-gray-600"
                 opacity={0.6}
                 fill="none"
                 style={{ pointerEvents: 'none' }}
@@ -132,7 +131,6 @@ export const ServicesBeams: React.FC<ServicesBeamsProps> = ({
                 strokeLinejoin="round"
                 fill="none"
                 filter="url(#servicesSoftGlow)"
-                className="dark:stroke-gray-500"
               />
 
               {/* Continuous animated beam - inner core (always fully lit) */}
@@ -147,7 +145,6 @@ export const ServicesBeams: React.FC<ServicesBeamsProps> = ({
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 fill="none"
-                className="dark:stroke-gray-400"
               />
 
               {/* Small pulse circle that travels along the path */}

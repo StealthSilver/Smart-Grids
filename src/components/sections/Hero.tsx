@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { ShimmerButton } from "../ui/ShimmerButton";
 import { LazyGlobe } from "../ui/LazyGlobe";
 import { NumberTicker } from "../ui/NumberTicker";
@@ -280,55 +279,30 @@ const sampleArcs = [
   },
 ];
 
-const getGlobeConfig = (isDark: boolean) => ({
+const globeConfig = {
   pointSize: 1,
-  globeColor: isDark ? "#0a1e3d" : "#9fddfc", // Beautiful bluish color for light mode
+  globeColor: "#9fddfc",
   showAtmosphere: true,
-  atmosphereColor: isDark ? "#e0f2fe" : "#b3d9f2",
+  atmosphereColor: "#b3d9f2",
   atmosphereAltitude: 0.15,
-  emissive: isDark ? "#001a3d" : "#ffffff", // Bluish emissive for light mode
-  emissiveIntensity: isDark ? 0.15 : 0.5,
+  emissive: "#ffffff",
+  emissiveIntensity: 0.5,
   shininess: 1.0,
-  polygonColor: isDark ? "rgba(148, 197, 255, 0.5)" : "rgba(0, 0, 0, 0.35)", // Dark grey polygons for light mode
+  polygonColor: "rgba(0, 0, 0, 0.35)",
   ambientLight: "#ffffff",
   directionalLeftLight: "#ffffff",
   directionalTopLight: "#ffffff",
-  pointLight: isDark ? "#87ceeb" : "#87ceeb",
-  pointColor: isDark ? "rgba(179, 219, 252, 0.4)" : "rgba(179, 219, 252, 0.4)", // Lower opacity for point color
+  pointLight: "#87ceeb",
+  pointColor: "rgba(179, 219, 252, 0.4)",
   arcTime: 2000,
   arcLength: 0.9,
   rings: 1,
   maxRings: 3,
   autoRotate: true,
   autoRotateSpeed: 0.5,
-});
+};
 
 export default function Hero() {
-  const [globeConfig, setGlobeConfig] = useState(getGlobeConfig(false));
-  const [globeKey, setGlobeKey] = useState(0);
-
-  // The `.dark` class on <html> is the single source of truth for the theme.
-  // Reading it directly (and watching for changes) avoids stale values from
-  // next-themes when the ThemeToggle runs on a different route and then the
-  // user navigates back to the home page.
-  useEffect(() => {
-    const applyThemeFromDom = () => {
-      const isDark = document.documentElement.classList.contains("dark");
-      setGlobeConfig(getGlobeConfig(isDark));
-      setGlobeKey((prev) => prev + 1);
-    };
-
-    applyThemeFromDom();
-
-    const observer = new MutationObserver(applyThemeFromDom);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   const dataPoints = [
     { value: 400, suffix: "+", label: "PROJECTS SUCCESSFULLY COMPLETED" },
     { value: 85, suffix: "GW", label: "POWER HANDLED (GIGAWATT)" },
@@ -344,8 +318,8 @@ export default function Hero() {
   return (
     <section
       className="
-        relative lg:min-h-screen h-full px-4 sm:px-6 pt-20 sm:pt-28 md:pt-36 lg:pt-48 
-        bg-white/70 dark:bg-black/70 backdrop-blur-md
+        relative z-[2] lg:min-h-screen h-full px-4 sm:px-6 pt-20 sm:pt-28 md:pt-36 lg:pt-48 
+        bg-white backdrop-blur-md
         overflow-hidden flex flex-col justify-start mx-auto pb-16 sm:pb-24 md:pb-32
       "
      
@@ -353,7 +327,7 @@ export default function Hero() {
       {/* Globe positioned on the right */}
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="absolute -right-[200px] sm:-right-[150px] md:-right-[100px] lg:-right-[800px] -top-12 sm:-top-16 md:-top-20 lg:-top-24 w-[600px] h-[600px] sm:w-[700px] sm:h-[700px] md:w-[850px] md:h-[850px] lg:w-[950px] lg:h-[950px] xl:w-[1100px] xl:h-[1100px] min-w-[600px] min-h-[600px] sm:min-w-[700px] sm:min-h-[700px] md:min-w-[850px] md:min-h-[850px] lg:min-w-[950px] lg:min-h-[950px] xl:min-w-[1100px] xl:min-h-[1100px] relative">
-          <LazyGlobe key={globeKey} globeConfig={globeConfig} data={sampleArcs} />
+          <LazyGlobe globeConfig={globeConfig} data={sampleArcs} />
         </div>
       </div>
 
@@ -364,7 +338,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="
             text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight sm:leading-snug md:leading-normal lg:leading-18
-            text-gray-900 dark:text-gray-100
+            text-gray-900
             max-w-full sm:max-w-3xl md:max-w-4xl
           "
         >
@@ -377,7 +351,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.4 }}
           className="
             max-w-full sm:max-w-xl md:max-w-2xl text-base sm:text-lg md:text-xl lg:text-2xl font-sans leading-relaxed
-            text-gray-600 dark:text-gray-400
+            text-gray-600
           "
         >
           Optimise renewable assets, ensure compliance, and streamline grid
@@ -418,14 +392,14 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.8 + index * 0.1 }}
               className="flex flex-col items-start text-left"
             >
-              <div className="font-mono text-gray-900 dark:text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2 md:mb-3 lg:mb-4 flex items-baseline gap-0.5 sm:gap-1">
+              <div className="font-mono text-gray-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2 md:mb-3 lg:mb-4 flex items-baseline gap-0.5 sm:gap-1">
                 <NumberTicker
                   value={point.value}
-                  className="text-gray-900 dark:text-white"
+                  className="text-gray-900"
                 />
                 <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl">{point.suffix}</span>
               </div>
-              <p className="font-mono text-left text-gray-600 dark:text-gray-400 text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs uppercase tracking-wide leading-tight">
+              <p className="font-mono text-left text-gray-600 text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs uppercase tracking-wide leading-tight">
                 {point.label}
               </p>
             </motion.div>

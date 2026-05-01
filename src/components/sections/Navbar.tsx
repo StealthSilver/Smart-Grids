@@ -1,85 +1,61 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Menu, X, Github } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, ChevronRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ThemeToggle } from "../ui/ThemeToggle";
-import { ShimmerButton } from "../ui/ShimmerButton";
+
+/** Chevron (>) → arrow (->) on parent `group` hover */
+function CtaHoverArrow() {
+  const icon =
+    "absolute size-4 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]";
+  return (
+    <span
+      className="relative ml-0 inline-flex h-4 w-4 shrink-0 items-center justify-center overflow-visible"
+      aria-hidden
+    >
+      <ChevronRight
+        className={`${icon} group-hover:pointer-events-none group-hover:opacity-0 group-hover:scale-75`}
+        strokeWidth={2.5}
+      />
+      <ArrowRight
+        className={`${icon} opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100`}
+        strokeWidth={2.5}
+      />
+    </span>
+  );
+}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
 
-  const [mounted, setMounted] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState<string | undefined>();
-
-  useEffect(() => {
-    setMounted(true);
-
-    // Set initial theme based on document element class
-    const isDark = document.documentElement.classList.contains("dark");
-    setCurrentTheme(isDark ? "dark" : "light");
-
-    // Listen to class changes on document element
-    const observer = new MutationObserver(() => {
-      const isDark = document.documentElement.classList.contains("dark");
-      setCurrentTheme(isDark ? "dark" : "light");
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   const toggleMenu = () => setIsOpen((v) => !v);
 
   const navItems = [
-    { name: "About-Us", href: "/#about", external: false },
-    { name: "Solvyn", href: "/#solvyn", external: false },
-    { name: "Services", href: "/#services", external: false },
-    { name: "Case-Studies", href: "/case-studies" },
-
-    {
-      name: "White-Papers",
-      href: "/white-papers",
-    },
-    {
-      name: "Blogs",
-      href: "/blogs",
-    },
+    { name: "Solvyn", href: "/#solvyn" },
+    { name: "Applications", href: "/#services" },
+    { name: "Proof", href: "/case-studies" },
+    { name: "Company", href: "/#about" },
   ];
 
   return (
     <nav
       className="
         relative w-full sticky top-0 z-50 px-4 sm:px-6 py-3
-        border-b border-gray-200 dark:border-gray-800
-        bg-white/50 dark:bg-black/50 backdrop-blur-sm
+        border-b border-[#e5edf5]
+        bg-white backdrop-blur-sm
         transition-colors duration-300
       "
     >
       <div className="flex items-center justify-between max-w-7xl mx-auto w-full">
         {/* Left: logo + nav items grouped */}
         <div className="flex items-center gap-3 sm:gap-4 md:gap-5">
-          <Link href="/" className="flex items-center cursor-pointer">
-            <motion.img
-              key={mounted ? currentTheme : "default"}
-              src={
-                !mounted
-                  ? "/logo_light.svg"
-                  : currentTheme === "dark"
-                  ? "/logo_dark.svg"
-                  : "/logo_light.svg"
-              }
-              alt="Silver logo"
+          <Link href="/" className="flex items-center cursor-pointer shrink-0">
+            <img
+              src="/logo_light.svg"
+              alt="Smart Grid Analytics"
               className="w-24 h-auto sm:w-28 md:w-32 lg:w-36"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
             />
           </Link>
 
@@ -98,7 +74,6 @@ export default function Navbar() {
                     className="
                       absolute inset-0 rounded-full backdrop-blur-sm
                       bg-gray-200/70 border border-gray-300
-                      dark:bg-gray-700/70 dark:border-gray-600
                     "
                     transition={{
                       type: "spring",
@@ -110,67 +85,71 @@ export default function Navbar() {
                   />
                 )}
 
-                {item.external ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onMouseEnter={() => setHovered(item.name)}
-                    onFocus={() => setHovered(item.name)}
-                    className="
-                      relative z-10 transition-colors text-sm
-                      text-gray-700 hover:text-black
-                      dark:text-gray-300 dark:hover:text-white
-                    "
-                  >
-                    {item.name}
-                  </a>
-                ) : (
-                  <Link
-                    href={item.href}
-                    onMouseEnter={() => setHovered(item.name)}
-                    onFocus={() => setHovered(item.name)}
-                    className="
-                      relative z-10 transition-colors text-sm
-                      text-gray-700 hover:text-black
-                      dark:text-gray-300 dark:hover:text-white
-                    "
-                  >
-                    {item.name}
-                  </Link>
-                )}
+                <Link
+                  href={item.href}
+                  onMouseEnter={() => setHovered(item.name)}
+                  onFocus={() => setHovered(item.name)}
+                  className="
+                    relative z-10 transition-colors text-sm
+                    text-gray-700 hover:text-black
+                  "
+                >
+                  {item.name}
+                </Link>
               </div>
             ))}
           </div>
         </div>
 
         {/* Desktop Right Section */}
-        <div className="hidden lg:flex items-center gap-4 xl:gap-6 font-mono">
-          <ThemeToggle />
-
-          <ShimmerButton
+        <div className="hidden lg:flex items-center gap-3 xl:gap-4 font-mono">
+          <button
+            type="button"
+            onClick={() => {
+              const about = document.getElementById("about");
+              if (about) {
+                about.scrollIntoView({ behavior: "smooth" });
+              } else {
+                window.location.href = "/#about";
+              }
+            }}
+            className="
+              font-sans font-bold text-xs xl:text-sm px-2.5 xl:px-4 py-1.5 sm:py-2
+              whitespace-nowrap rounded-[8px] bg-transparent
+              border border-[#FF7F00] text-[#FF7F00]
+              cursor-pointer transition-all duration-300 ease-in-out
+              hover:bg-[#FF7F00]/10 hover:shadow-sm active:translate-y-px
+            "
+          >
+            Learn More
+          </button>
+          <button
+            type="button"
             onClick={() => {
               const footer = document.getElementById("footer");
               footer?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="font-sans font-bold text-white text-xs xl:text-sm px-4 xl:px-6"
-            background="#ff7a18"
-            shimmerColor="#ffffff"
+            className="
+              group inline-flex items-center justify-center gap-0.5
+              font-sans font-bold text-white text-xs xl:text-sm
+              pl-3.5 xl:pl-5 pr-1.5 xl:pr-2 py-1.5 sm:py-2
+              whitespace-nowrap rounded-[8px] bg-[#FF7F00]
+              cursor-pointer border border-transparent
+              transition-all duration-300 ease-in-out
+              hover:brightness-95 hover:shadow-sm active:translate-y-px
+            "
           >
-            CONNECT NOW
-          </ShimmerButton>
+            Book Demo
+            <CtaHoverArrow />
+          </button>
         </div>
 
         {/* Tablet/Mobile Menu Button */}
-        <div className="lg:hidden flex items-center gap-2 sm:gap-3">
-          <div className="scale-90 cursor-pointer">
-            <ThemeToggle />
-          </div>
-
+        <div className="lg:hidden flex items-center justify-end">
           <button
             onClick={toggleMenu}
             aria-label={isOpen ? "Close menu" : "Open menu"}
-            className="p-1.5 rounded-md relative h-9 w-9 flex items-center justify-center text-gray-900 dark:text-gray-100"
+            className="p-1.5 rounded-md relative h-9 w-9 flex items-center justify-center text-gray-900"
           >
             <AnimatePresence mode="wait" initial={false}>
               {isOpen ? (
@@ -211,54 +190,35 @@ export default function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.32, ease: [0.4, 0, 0.2, 1] }}
           >
-            <div className="bg-white/95 dark:bg-black/95 backdrop-blur-md shadow-lg border-t border-gray-200 dark:border-gray-700 transition-colors duration-300">
+            <div className="bg-white backdrop-blur-md shadow-lg border-t border-[#e5edf5] transition-colors duration-300">
               <motion.div
                 className="flex flex-col items-center space-y-3 sm:space-y-4 py-6 sm:py-8"
                 initial={{ y: -8 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
               >
-                {navItems.map((item, index) =>
-                  item.external ? (
-                    <motion.a
-                      key={item.name}
+                {navItems.map((item, index) => (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      delay: 0.04 + index * 0.035,
+                      duration: 0.25,
+                      ease: [0.4, 0, 0.2, 1],
+                    }}
+                  >
+                    <Link
                       href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-colors text-sm font-sans font-semibold text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white"
+                      className="transition-colors text-sm font-sans font-semibold text-gray-700 hover:text-black"
                       onClick={() => setIsOpen(false)}
-                      initial={{ opacity: 0, y: 6 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{
-                        delay: 0.04 + index * 0.035,
-                        duration: 0.25,
-                        ease: [0.4, 0, 0.2, 1],
-                      }}
                     >
                       {item.name}
-                    </motion.a>
-                  ) : (
-                    <motion.div
-                      key={item.name}
-                      initial={{ opacity: 0, y: 6 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{
-                        delay: 0.04 + index * 0.035,
-                        duration: 0.25,
-                        ease: [0.4, 0, 0.2, 1],
-                      }}
-                    >
-                      <Link
-                        href={item.href}
-                        className="transition-colors text-sm font-sans font-semibold text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    </motion.div>
-                  )
-                )}
+                    </Link>
+                  </motion.div>
+                ))}
                 <motion.div
+                  className="mt-2 flex flex-row flex-wrap items-center justify-center gap-3"
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
@@ -267,18 +227,46 @@ export default function Navbar() {
                     ease: [0.4, 0, 0.2, 1],
                   }}
                 >
-                  <ShimmerButton
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsOpen(false);
+                      const about = document.getElementById("about");
+                      if (about) {
+                        about.scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        window.location.href = "/#about";
+                      }
+                    }}
+                    className="
+                      font-sans font-bold text-sm px-4 py-2.5
+                      whitespace-nowrap rounded-[8px] bg-transparent
+                      border border-[#FF7F00] text-[#FF7F00]
+                      cursor-pointer transition-all duration-300 ease-in-out
+                      hover:bg-[#FF7F00]/10 hover:shadow-sm active:translate-y-px
+                    "
+                  >
+                    Learn More
+                  </button>
+                  <button
+                    type="button"
                     onClick={() => {
                       setIsOpen(false);
                       const footer = document.getElementById("footer");
                       footer?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="font-sans font-bold text-white text-sm px-6 py-2.5 mt-2"
-                    background="#FF7217"
-                    shimmerColor="#ffffff"
+                    className="
+                      group inline-flex items-center justify-center gap-0.5
+                      font-sans font-bold text-white text-sm pl-4 pr-2 py-2.5
+                      whitespace-nowrap rounded-[8px] bg-[#FF7F00]
+                      cursor-pointer border border-transparent
+                      transition-all duration-300 ease-in-out
+                      hover:brightness-95 hover:shadow-sm active:translate-y-px
+                    "
                   >
-                    CONNECT NOW
-                  </ShimmerButton>
+                    Book Demo
+                    <CtaHoverArrow />
+                  </button>
                 </motion.div>
               </motion.div>
             </div>

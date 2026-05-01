@@ -33,12 +33,12 @@ const SolvynIconNodeInner: React.FC<SolvynIconNodeProps> = ({
   const isActive = icon.active;
   const activeBorderClass =
     borderColor === "orange"
-      ? "border-orange-500 bg-orange-50 dark:bg-orange-950/30 shadow-lg shadow-orange-500/50"
-      : "border-purple-600 bg-purple-50 dark:bg-purple-950/30 shadow-lg shadow-purple-600/50";
+      ? "border-orange-500 bg-orange-50 shadow-lg shadow-orange-500/50"
+      : "border-purple-600 bg-purple-50 shadow-lg shadow-purple-600/50";
   const hoverBorderClass =
     borderColor === "orange"
-      ? "group-hover:border-orange-400 dark:group-hover:border-orange-600"
-      : "group-hover:border-purple-500 dark:group-hover:border-purple-600";
+      ? "group-hover:border-orange-400"
+      : "group-hover:border-purple-500";
 
   // Responsive sizing
   const iconPadding = isMobile ? "p-1.5" : isTablet ? "p-2" : "p-2.5";
@@ -58,14 +58,14 @@ const SolvynIconNodeInner: React.FC<SolvynIconNodeProps> = ({
         className={`relative ${iconPadding} rounded-xl border-2 transition-all duration-500 flex items-center justify-center ${
           isActive
             ? activeBorderClass
-            : `border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 ${hoverBorderClass}`
+            : `border-gray-200 bg-white ${hoverBorderClass}`
         }`}
       >
         <div className={`${iconSize} flex items-center justify-center`}>
           <IconComponent active={isActive} size={svgIconSize} />
         </div>
       </div>
-      <span className={`${labelSize} font-semibold text-center text-gray-900 dark:text-gray-100 ${labelMaxWidth} leading-tight px-1.5 sm:px-2 py-0.5 whitespace-normal break-words bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-md shadow-sm`}>
+      <span className={`${labelSize} font-semibold text-center text-gray-900 ${labelMaxWidth} leading-tight px-1.5 sm:px-2 py-0.5 whitespace-normal break-words bg-white/80 backdrop-blur-sm rounded-md shadow-sm`}>
         {icon.label}
       </span>
     </div>

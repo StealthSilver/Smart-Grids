@@ -82,7 +82,7 @@ const SolvynBeamsInner: React.FC<SolvynBeamsProps> = ({
                 strokeWidth={baseStrokeWidth}
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-gray-300 dark:text-gray-700"
+                className="text-gray-300"
                 opacity={0.6}
                 fill="none"
               />

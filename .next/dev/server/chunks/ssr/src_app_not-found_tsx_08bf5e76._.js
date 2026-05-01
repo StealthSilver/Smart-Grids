@@ -15,7 +15,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 function NotFound() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "relative px-6 min-h-screen flex flex-col items-center justify-center  bg-white/70 dark:bg-black/70 backdrop-blur-md overflow-hidden",
+        className: "relative px-6 min-h-screen flex flex-col items-center justify-center  bg-white backdrop-blur-md overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h1, {
                 initial: {
@@ -29,7 +29,7 @@ function NotFound() {
                 transition: {
                     duration: 1
                 },
-                className: "text-6xl md:text-8xl font-bold text-gray-900 dark:text-gray-100",
+                className: "text-6xl md:text-8xl font-bold text-gray-900",
                 children: "404"
             }, void 0, false, {
                 fileName: "[project]/src/app/not-found.tsx",
@@ -49,7 +49,7 @@ function NotFound() {
                     duration: 1,
                     delay: 0.2
                 },
-                className: "mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300 text-center max-w-xl",
+                className: "mt-4 text-lg md:text-xl text-gray-700 text-center max-w-xl",
                 children: "Oops! The page you are looking for doesn’t exist or might have been moved."
             }, void 0, false, {
                 fileName: "[project]/src/app/not-found.tsx",
@@ -72,7 +72,7 @@ function NotFound() {
                 className: "mt-10",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                     href: "/",
-                    className: "px-6 py-3 border border-gray-700 dark:border-gray-300 rounded-full  text-gray-900 dark:text-gray-100 hover:bg-gray-900 hover:text-white  dark:hover:bg-white dark:hover:text-black transition-colors",
+                    className: "px-6 py-3 border border-gray-700 rounded-full  text-gray-900 hover:bg-gray-900 hover:text-white transition-colors",
                     children: "Go Back Home"
                 }, void 0, false, {
                     fileName: "[project]/src/app/not-found.tsx",

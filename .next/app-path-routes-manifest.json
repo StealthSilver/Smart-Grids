@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/send-email/route": "/api/send-email",
+  "/blogs/page": "/blogs",
+  "/case-studies/[slug]/page": "/case-studies/[slug]",
+  "/case-studies/page": "/case-studies",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/privacy-policy/page": "/privacy-policy",
+  "/robots.txt/route": "/robots.txt",
+  "/white-papers/page": "/white-papers"
+}
