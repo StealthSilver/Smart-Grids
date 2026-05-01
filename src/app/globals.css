@@ -90,7 +90,7 @@
   html {
     @apply motion-safe:scroll-smooth;
     scroll-padding-top: var(--navbar-height);
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: none;
   }
 
   body {
@@ -131,8 +131,8 @@
 
   [data-snap-section] {
     scroll-margin-top: var(--navbar-height);
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
   }
 }
 
