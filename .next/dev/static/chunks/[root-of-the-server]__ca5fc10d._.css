@@ -558,6 +558,7 @@
     --radius-xl: .75rem;
     --radius-2xl: 1rem;
     --drop-shadow-2xl: 0 25px 25px #00000026;
+    --ease-out: cubic-bezier(0, 0, .2, 1);
     --ease-in-out: cubic-bezier(.4, 0, .2, 1);
     --animate-spin: spin 1s linear infinite;
     --blur-sm: 8px;
@@ -875,6 +876,11 @@
     }
   }
 
+  html {
+    scroll-padding-top: var(--navbar-height);
+    scroll-snap-type: y mandatory;
+  }
+
   body {
     overscroll-behavior-y: none;
     background-color: var(--background);
@@ -916,8 +922,10 @@
     scrollbar-color: var(--border) transparent;
   }
 
-  [id] {
-    scroll-margin-top: calc(var(--spacing) * 22);
+  [data-snap-section] {
+    scroll-margin-top: var(--navbar-height);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 }
 
@@ -1429,8 +1437,8 @@
     height: 100vh;
   }
 
-  .max-h-\[280px\] {
-    max-height: 280px;
+  .max-h-\[340px\] {
+    max-height: 340px;
   }
 
   .min-h-0 {
@@ -2604,6 +2612,11 @@
     filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
   }
 
+  .invert {
+    --tw-invert: invert(100%);
+    filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
+  }
+
   .filter {
     filter: var(--tw-blur, ) var(--tw-brightness, ) var(--tw-contrast, ) var(--tw-grayscale, ) var(--tw-hue-rotate, ) var(--tw-invert, ) var(--tw-saturate, ) var(--tw-sepia, ) var(--tw-drop-shadow, );
   }
@@ -2650,11 +2663,6 @@
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
 
-  .duration-200 {
-    --tw-duration: .2s;
-    transition-duration: .2s;
-  }
-
   .duration-300 {
     --tw-duration: .3s;
     transition-duration: .3s;
@@ -2678,6 +2686,11 @@
   .ease-in-out {
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
+  }
+
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
   }
 
   .select-none {
@@ -4158,6 +4171,7 @@
 :root {
   --background: #fff;
   --foreground: #201910;
+  --navbar-height: 88px;
 }
 
 @supports (color: lab(0% 0 0)) {

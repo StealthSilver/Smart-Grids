@@ -1,160 +1,148 @@
-[00:00:01.088] Server  LOG     ✓ Ready in 881ms
-[00:00:03.852] Browser LOG     Updating globe material with color: #9fddfc
-[00:01:49.095] Server  LOG     ✓ Compiled in 309ms
-[00:12:24.607] Server  LOG     ✓ Compiled in 883ms
-[00:12:25.261] Server  LOG     ✓ Compiled in 423ms
-[00:12:27.297] Server  LOG     ✓ Compiled in 920ms
-[00:12:28.333] Browser LOG     Updating globe material with color: #9fddfc
-[00:12:28.483] Browser LOG     THREE.WebGLRenderer: Context Lost.
-[00:15:55.220] Server  LOG     ✓ Compiled in 347ms
-[00:18:30.518] Server  LOG     ✓ Compiled in 288ms
-[00:18:31.595] Browser LOG     Updating globe material with color: #9fddfc
-[00:18:31.750] Browser LOG     THREE.WebGLRenderer: Context Lost.
-[00:18:39.913] Browser LOG     Updating globe material with color: #9fddfc
-[00:18:51.085] Server  LOG     ✓ Compiled in 397ms
-[00:19:05.581] Browser LOG     Updating globe material with color: #9fddfc
-[00:21:14.317] Server  LOG     ○ Compiling / ...
-[00:22:20.166] Server  LOG     ✓ Compiled in 48.3s
-[00:22:21.013] Server  LOG     ✓ Compiled in 7ms
-[00:22:21.833] Server  LOG     ✓ Finished writing to filesystem cache in 72s
-[00:22:25.336] Server  LOG     ✓ Compiled in 186ms
-[00:22:28.542] Server  LOG     ✓ Compiled in 43ms
-[00:22:29.493] Server  LOG     ✓ Compiled in 40ms
-[00:22:29.942] Server  LOG     ✓ Compiled in 28ms
-[00:22:30.922] Server  LOG     ✓ Compiled in 74ms
-[00:22:37.132] Server  LOG     ✓ Compiled in 45ms
-[00:22:48.803] Server  LOG     ✓ Compiled in 44ms
-[00:23:05.112] Server  LOG     ✓ Compiled in 96ms
-[00:23:06.113] Server  LOG     ✓ Compiled in 66ms
-[00:24:21.190] Browser LOG     Updating globe material with color: #9fddfc
-[00:25:57.980] Server  LOG     ✓ Compiled in 280ms
-[00:26:11.199] Server  LOG     ✓ Compiled in 153ms
-[00:26:16.732] Server  LOG     ✓ Compiled in 151ms
-[00:26:21.022] Server  LOG     ✓ Compiled in 290ms
-[00:26:24.629] Server  LOG     ✓ Compiled in 145ms
-[00:27:24.240] Browser LOG     Updating globe material with color: #9fddfc
-[00:27:33.102] Server  LOG     ✓ Compiled in 172ms
-[00:27:38.065] Server  LOG     ✓ Compiled in 144ms
-[00:28:18.283] Server  LOG     ✓ Compiled in 166ms
-[00:29:00.059] Server  LOG     ✓ Compiled in 1192ms
-[00:29:09.944] Server  LOG     ✓ Compiled in 1071ms
-[00:29:18.091] Server  LOG     ✓ Compiled in 403ms
-[00:32:40.072] Server  LOG     ✓ Compiled in 325ms
-[00:34:08.890] Server  LOG     ✓ Compiled in 563ms
-[00:34:09.428] Server  ERROR   ⨯ ReferenceError: ShimmerButton is not defined
-[00:34:09.455] Browser ERROR   uncaughtError: ReferenceError: ShimmerButton is not defined
-[00:34:10.375] Browser ERROR   uncaughtError: ReferenceError: ShimmerButton is not defined
-[00:34:11.154] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:34:11.169] Server  LOG     ✓ Compiled in 61ms
-[00:34:37.926] Browser LOG     Updating globe material with color: #9fddfc
-[00:35:16.853] Server  LOG     ✓ Compiled in 148ms
-[00:35:18.541] Server  LOG     ✓ Compiled in 52ms
-[00:37:37.768] Server  LOG     ✓ Compiled in 209ms
-[00:38:11.618] Server  LOG     ✓ Compiled in 225ms
-[00:38:18.606] Server  LOG     ✓ Compiled in 498ms
-[00:38:26.935] Server  LOG     ✓ Compiled in 99ms
-[00:38:32.726] Server  LOG     ✓ Compiled in 84ms
-[00:40:33.628] Server  LOG     ✓ Compiled in 310ms
-[00:40:48.974] Server  LOG     ✓ Compiled in 119ms
-[00:42:27.349] Server  LOG     ✓ Compiled in 2.6s
-[00:42:33.863] Browser LOG     Updating globe material with color: #9fddfc
-[00:42:56.334] Server  LOG     ✓ Compiled in 12.4s
-[00:43:31.405] Server  LOG     ✓ Compiled in 1862ms
-[00:44:25.216] Server  LOG     ✓ Compiled in 7.2s
-[00:49:24.491] Server  LOG     ✓ Compiled in 245ms
-[00:49:33.995] Server  LOG     ✓ Compiled in 61ms
-[00:49:39.026] Browser LOG     Updating globe material with color: #9fddfc
-[00:50:39.161] Server  LOG     ✓ Compiled in 149ms
-[00:50:47.875] Server  LOG     ✓ Compiled in 214ms
-[00:54:02.905] Server  LOG     ✓ Compiled in 398ms
-[00:54:04.527] Browser LOG     THREE.WebGLRenderer: Context Lost.
-[00:54:05.618] Browser LOG     Updating globe material with color: #9fddfc
-[00:57:37.031] Browser LOG     Updating globe material with color: #9fddfc
-[00:57:53.800] Browser LOG     Updating globe material with color: #9fddfc
-[00:58:51.662] Server  LOG     ✓ Compiled in 5.3s
-[00:58:51.781] Browser LOG     Updating globe material with color: #d4eefd
-[00:59:08.492] Browser LOG     Updating globe material with color: #d4eefd
-[01:01:43.524] Server  LOG     ✓ Compiled in 183ms
-[01:01:50.445] Server  LOG     ✓ Compiled in 52ms
-[01:01:51.392] Browser LOG     Updating globe material with color: #eef0f4
-[01:01:53.069] Server  LOG     ✓ Compiled in 50ms
-[01:02:00.732] Browser LOG     Updating globe material with color: #eef0f4
-[01:03:29.101] Server  LOG     ✓ Compiled in 21.7s
-[01:03:29.574] Browser LOG     Updating globe material with color: #e4e5ec
-[01:03:48.936] Browser LOG     Updating globe material with color: #e4e5ec
-[01:10:55.606] Server  LOG     ✓ Compiled in 17.5s
-[01:11:13.166] Server  LOG     ✓ Compiled in 5.4s
-[01:11:16.738] Server  LOG     ✓ Compiled in 261ms
-[01:11:16.754] Browser LOG     THREE.WebGLRenderer: Context Lost.
-[01:11:18.624] Server  LOG     ✓ Compiled in 73ms
-[01:11:21.040] Server  LOG     ✓ Compiled in 492ms
-[01:11:21.339] Browser LOG     Updating globe material with color: #e4e5ec
-[01:11:27.494] Server  LOG     ✓ Compiled in 1805ms
-[01:11:37.654] Server  LOG     ✓ Compiled in 6s
-[01:11:41.195] Server  LOG     ✓ Compiled in 1812ms
-[01:15:45.152] Server  LOG     ✓ Compiled in 319ms
-[01:27:31.055] Server  LOG     ✓ Compiled in 1587ms
-[01:28:08.306] Browser LOG     Updating globe material with color: #e4e5ec
-[01:28:14.196] Browser LOG     Updating globe material with color: #e4e5ec
-[01:30:33.040] Browser LOG     Updating globe material with color: #e4e5ec
-[01:31:20.640] Browser LOG     Updating globe material with color: #e4e5ec
-[01:37:15.890] Server  LOG     ✓ Compiled in 0ms
-[01:37:26.783] Browser LOG     Updating globe material with color: #e4e5ec
-[01:37:37.541] Server  LOG     ✓ Compiled in 9.2s
-[01:38:04.454] Server  LOG     ✓ Compiled in 4.8s
-[01:38:04.484] Server  LOG     ✓ Finished writing to filesystem cache in 13.2s
-[01:38:15.412] Browser LOG     Updating globe material with color: #e4e5ec
-[01:38:26.824] Browser LOG     Updating globe material with color: #e4e5ec
-[01:38:51.194] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[01:38:52.270] Browser LOG     Updating globe material with color: #e4e5ec
-[01:40:12.959] Server  LOG     ✓ Compiled in 9.4s
-[01:48:42.819] Server  LOG     ✓ Compiled in 218ms
-[01:50:07.859] Server  LOG     ✓ Compiled in 181ms
-[01:51:09.776] Server  LOG     ✓ Compiled in 175ms
-[01:51:59.810] Server  LOG     ✓ Compiled in 149ms
-[01:52:45.052] Server  LOG     ✓ Compiled in 165ms
-[01:54:00.379] Server  LOG     ✓ Compiled in 246ms
-[01:56:05.901] Server  LOG     ✓ Compiled in 139ms
-[01:56:10.696] Server  LOG     ✓ Compiled in 103ms
-[01:58:07.914] Server  LOG     ✓ Compiled in 735ms
-[01:59:32.295] Server  LOG     ✓ Compiled in 239ms
-[02:00:26.870] Server  LOG     ✓ Compiled in 172ms
-[02:02:03.859] Browser LOG     Updating globe material with color: #e4e5ec
-[02:03:02.322] Server  LOG     ✓ Compiled in 39ms
-[02:03:03.537] Browser LOG     Updating globe material with color: #e4e5ec
-[02:04:23.591] Server  LOG     ✓ Compiled in 265ms
-[02:12:34.757] Server  LOG     ✓ Compiled in 305ms
-[02:13:13.295] Browser LOG     Updating globe material with color: #e4e5ec
-[02:14:48.726] Browser LOG     Updating globe material with color: #e4e5ec
-[02:15:38.530] Server  LOG     ✓ Compiled in 267ms
-[02:17:24.454] Server  LOG     ✓ Compiled in 134ms
-[02:18:44.336] Server  LOG     ✓ Compiled in 111ms
-[02:19:22.236] Browser LOG     Updating globe material with color: #e4e5ec
-[02:19:29.309] Server  LOG     ✓ Compiled in 122ms
-[02:20:42.495] Server  LOG     ✓ Compiled in 306ms
-[02:21:50.486] Server  LOG     ✓ Compiled in 242ms
-[02:22:14.542] Server  LOG     ✓ Compiled in 174ms
-[02:22:47.007] Server  LOG     ✓ Compiled in 190ms
-[02:23:02.328] Server  LOG     ✓ Compiled in 73ms
-[02:23:50.331] Server  LOG     ✓ Compiled in 88ms
-[02:25:40.443] Browser LOG     Updating globe material with color: #e4e5ec
-[02:25:54.764] Server  LOG     ✓ Compiled in 336ms
-[02:25:55.607] Browser LOG     Updating globe material with color: #e4e5ec
-[02:25:56.759] Browser LOG     Updating globe material with color: #e4e5ec
-[02:26:02.337] Server  LOG     ✓ Compiled in 75ms
-[02:26:06.893] Server  LOG     ✓ Compiled in 103ms
-[02:26:09.376] Server  LOG     ✓ Compiled in 51ms
-[02:26:12.202] Server  LOG     ✓ Compiled in 51ms
-[02:26:14.350] Server  LOG     ✓ Compiled in 71ms
-[02:26:16.680] Server  LOG     ✓ Compiled in 56ms
-[02:26:24.609] Server  LOG     ✓ Compiled in 43ms
-[02:26:26.819] Server  LOG     ✓ Compiled in 34ms
-[02:26:32.455] Server  LOG     ✓ Compiled in 153ms
-[02:26:52.591] Server  LOG     ✓ Compiled in 61ms
-[02:30:21.318] Server  LOG     ✓ Compiled in 475ms
-[02:32:05.611] Server  LOG     ✓ Compiled in 136ms
-[02:42:25.610] Browser LOG     Updating globe material with color: #e4e5ec
-[02:43:12.015] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:43:13.944] Browser LOG     Updating globe material with color: #e4e5ec
-[02:43:29.005] Browser LOG     Updating globe material with color: #e4e5ec
-[02:45:51.102] Server  LOG     ✓ Compiled in 249ms
+[00:00:02.971] Server  LOG     ✓ Ready in 2.3s
+[00:00:06.966] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:15.434] Browser LOG     Updating globe material with color: #e4e5ec
+[00:00:15.794] Browser LOG     Updating globe material with color: #e4e5ec
+[00:07:25.068] Server  LOG     ✓ Compiled in 1001ms
+[00:11:44.204] Server  LOG     ✓ Compiled in 733ms
+[00:12:12.688] Server  LOG     ✓ Compiled in 171ms
+[00:12:25.082] Server  LOG     ✓ Compiled in 61ms
+[00:12:33.662] Browser ERROR   uncaughtError: ReferenceError: SEE_EDGES is not defined
+[00:12:34.237] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[00:12:52.066] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:12:52.077] Server  LOG     ✓ Compiled in 77ms
+[00:13:14.838] Server  LOG     ✓ Compiled in 112ms
+[00:13:15.894] Browser WARN    You are trying to animate opacity from "undefined" to "0". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:13:17.427] Browser LOG     Updating globe material with color: #e4e5ec
+[00:13:22.143] Server  LOG     ✓ Compiled in 209ms
+[00:19:56.192] Server  LOG     ✓ Compiled in 335ms
+[00:20:12.925] Server  LOG     ✓ Compiled in 205ms
+[00:20:22.164] Browser LOG     Updating globe material with color: #e4e5ec
+[00:21:09.946] Server  LOG     ✓ Compiled in 2.5s
+[00:21:16.622] Server  LOG     ✓ Compiled in 198ms
+[00:21:22.496] Server  LOG     ✓ Compiled in 1602ms
+[00:21:31.686] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:31.687] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:31.687] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:31.687] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:38.970] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:38.970] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:38.972] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:38.972] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:39.375] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:39.375] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:39.375] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:39.375] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:48.813] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:48.981] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:48.982] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:48.982] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:56.570] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:56.615] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:56.615] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:21:56.615] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:22:25.537] Browser LOG     Updating globe material with color: #e4e5ec
+[00:22:41.836] Server  LOG     ✓ Compiled in 537ms
+[00:22:55.195] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:22:55.268] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:22:55.276] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:22:55.276] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:22:56.342] Server  LOG     ✓ Compiled in 4.5s
+[00:22:58.660] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:22:58.678] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:22:58.778] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:22:58.778] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:03.505] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:03.506] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:03.506] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:03.506] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:08.763] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:09.002] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:09.029] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:09.098] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:21.446] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:23.914] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:23.978] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:23.978] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:25.922] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:25.922] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:25.922] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:25.922] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:25.954] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:25.954] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:25.954] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:25.954] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:25.955] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:25.955] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:25.955] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:25.955] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:30.197] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:30.326] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:30.466] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:30.467] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:52.417] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:55.282] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:55.485] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:23:55.485] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:04.555] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:06.312] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:06.312] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:06.312] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:07.477] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:07.517] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:07.517] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:07.517] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:13.665] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:13.878] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:13.911] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:13.911] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:13.991] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:13.998] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:13.998] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:13.998] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:14.331] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:14.394] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:14.394] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:14.394] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:14.492] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:14.499] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:14.499] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:14.499] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:14.551] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:14.551] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:14.551] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:14.551] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:23.083] Server  LOG     ✓ Compiled in 79.4s
+[00:24:27.989] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:28.129] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:28.131] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:28.131] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:31.374] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:31.376] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:31.376] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:31.376] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:41.228] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:41.229] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:41.229] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:41.229] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:44.765] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:44.766] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:44.766] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:44.766] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:49.648] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:49.667] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:49.667] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:49.667] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:53.216] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:53.216] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:53.233] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:53.233] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:57.931] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:57.931] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:57.931] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:24:57.931] Browser WARN    You are trying to animate stroke from "url(#decide-radial-fade)" to "#FF7F00". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:25:01.668] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:25:01.673] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:25:01.673] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:25:01.673] Browser WARN    You are trying to animate stroke from "#FF7F00" to "url(#decide-radial-fade)". "url(#decide-radial-fade)" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[00:25:32.079] Server  LOG     ✓ Compiled in 3.2s
+[00:25:40.313] Server  LOG     ✓ Compiled in 5.4s

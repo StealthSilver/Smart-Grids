@@ -56,7 +56,7 @@ export const About = () => {
         </div>
 
         <div className="w-full flex-1 min-h-0 flex items-center justify-center">
-          <div className="w-full max-w-3xl h-full max-h-[280px] flex items-center justify-center">
+          <div className="w-full max-w-4xl h-full max-h-[340px] flex items-center justify-center">
             <AboutAnimation
               activeId={activeOptionId as AboutAnimationActiveId}
             />

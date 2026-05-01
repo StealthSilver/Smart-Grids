@@ -1845,12 +1845,14 @@ __turbopack_context__.s([
     ()=>__TURBOPACK__default__export__
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$reduced$2d$motion$2f$use$2d$reduced$2d$motion$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/utils/reduced-motion/use-reduced-motion.mjs [app-client] (ecmascript)");
 ;
-var _s = __turbopack_context__.k.signature();
+var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature(), _s2 = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 const ACCENT = "#FF7F00";
 const NEUTRAL_NODE = "#374151"; // gray-700
@@ -1905,8 +1907,6 @@ const POS = {
 };
 const NODE_IDS = Object.keys(POS);
 _c = NODE_IDS;
-const seg = (a, b)=>`M${POS[a].x},${POS[a].y} L${POS[b].x},${POS[b].y}`;
-const polyline = (ids)=>ids.map((id, i)=>`${i === 0 ? "M" : "L"}${POS[id].x},${POS[id].y}`).join(" ");
 // Easings reminiscent of Stripe's gentle, premium feel.
 const EASE_OUT = [
     0.22,
@@ -1920,290 +1920,226 @@ const EASE_IN_OUT = [
     0.35,
     1
 ];
-// ---------- Edge sets per scene ----------
-const SEE_EDGES = [
-    [
-        "tl",
-        "tm"
-    ],
-    [
-        "tm",
-        "tmr"
-    ],
-    [
-        "tmr",
-        "tr"
-    ],
-    [
-        "bl",
-        "bm"
-    ],
-    [
-        "bm",
-        "bmr"
-    ],
-    [
-        "bmr",
-        "br"
-    ],
-    [
-        "ml",
-        "tl"
-    ],
-    [
-        "ml",
-        "bl"
-    ],
-    [
-        "mr",
-        "tr"
-    ],
-    [
-        "mr",
-        "br"
-    ],
-    [
-        "tm",
-        "c"
-    ],
-    [
-        "tmr",
-        "c"
-    ],
-    [
-        "bm",
-        "c"
-    ],
-    [
-        "bmr",
-        "c"
-    ],
-    [
-        "ml",
-        "c"
-    ],
-    [
-        "mr",
-        "c"
-    ],
-    [
-        "tl",
-        "bl"
-    ],
-    [
-        "tr",
-        "br"
-    ]
-];
-const EXECUTE_EDGES = [
-    [
-        "c",
-        "tl"
-    ],
-    [
-        "c",
-        "tm"
-    ],
-    [
-        "c",
-        "tmr"
-    ],
-    [
-        "c",
-        "tr"
-    ],
-    [
-        "c",
-        "ml"
-    ],
-    [
-        "c",
-        "mr"
-    ],
-    [
-        "c",
-        "bl"
-    ],
-    [
-        "c",
-        "bm"
-    ],
-    [
-        "c",
-        "bmr"
-    ],
-    [
-        "c",
-        "br"
-    ]
-];
-const DECIDE_ROUTES = [
-    {
-        d: polyline([
-            "ml",
-            "tl",
-            "tm",
-            "c",
-            "tmr",
-            "tr",
-            "mr"
-        ])
-    },
-    {
-        d: polyline([
-            "ml",
-            "bl",
-            "bm",
-            "c",
-            "bmr",
-            "br",
-            "mr"
-        ])
-    },
-    {
-        d: polyline([
-            "ml",
-            "tl",
-            "c",
-            "bmr",
-            "mr"
-        ])
-    },
-    {
-        d: polyline([
-            "ml",
-            "bl",
-            "c",
-            "tmr",
-            "mr"
-        ]),
-        optimal: true
+// ---------- DECIDE: dense intertwined-network data ----------
+// Tunable knobs. Keep node count even, in the 40–60 range, so both sides match.
+const DECIDE_NODES = 48;
+const DECIDE_LEFT_X = 48;
+const DECIDE_RIGHT_X = VB_W - 48; // 752
+const DECIDE_TOP_Y = 14;
+const DECIDE_BOT_Y = VB_H - 14; // 246
+const DECIDE_CENTER_Y = VB_H / 2; // 130
+// Three "decision" lines spread across the vertical extent (top / mid / bottom),
+// plus a small set of "secondary" lines that linger at reduced opacity — the
+// rest are background flow.
+const DECIDE_DECISION_INDICES = new Set([
+    13,
+    24,
+    35
+]);
+const DECIDE_SECONDARY_INDICES = new Set([
+    3,
+    8,
+    18,
+    21,
+    28,
+    31,
+    41,
+    44
+]);
+const lerp = (a, b, t)=>a + (b - a) * t;
+// Build all paths once at module load. Cubic Béziers converge strongly toward
+// a center "waist", with per-line variance so neighbouring lines weave instead
+// of staying parallel.
+const DECIDE_PATHS = (()=>{
+    const list = [];
+    for(let i = 0; i < DECIDE_NODES; i++){
+        const t = i / (DECIDE_NODES - 1);
+        const y = lerp(DECIDE_TOP_Y, DECIDE_BOT_Y, t);
+        const variance = i - (DECIDE_NODES - 1) / 2;
+        // Slight per-line curve-strength variation gives the bundle organic depth.
+        const curveStrength = 270 + Math.sin(i * 0.62) * 20 + i % 3 * 4;
+        const cx1 = DECIDE_LEFT_X + curveStrength;
+        const cx2 = DECIDE_RIGHT_X - curveStrength;
+        // Pull both control points toward the centre to create the waist — but
+        // only ~50% of the way, so each line stays visibly continuous from the
+        // left node to the right node instead of vanishing into a tight pinch.
+        const baseCy = lerp(y, DECIDE_CENTER_Y, 0.5);
+        // Push control points in opposite directions so curves cross / weave.
+        const cy1 = baseCy + variance * 0.4;
+        const cy2 = baseCy - variance * 0.4;
+        const d = `M${DECIDE_LEFT_X.toFixed(2)},${y.toFixed(2)} ` + `C${cx1.toFixed(2)},${cy1.toFixed(2)} ` + `${cx2.toFixed(2)},${cy2.toFixed(2)} ` + `${DECIDE_RIGHT_X.toFixed(2)},${y.toFixed(2)}`;
+        const kind = DECIDE_DECISION_INDICES.has(i) ? "decision" : DECIDE_SECONDARY_INDICES.has(i) ? "secondary" : "background";
+        list.push({
+            index: i,
+            d,
+            kind,
+            y
+        });
     }
-];
-const Line = ({ d, stroke = LINE, opacity = 0.45, strokeWidth = 1, delay = 0, duration = 0.85 })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].path, {
-        d: d,
-        fill: "none",
-        stroke: stroke,
-        strokeWidth: strokeWidth,
-        strokeLinecap: "round",
-        strokeLinejoin: "round",
-        initial: {
-            pathLength: 0,
-            opacity: 0
-        },
+    return list;
+})();
+const DECIDE_DECISION_PATHS = DECIDE_PATHS.filter(_c1 = (p)=>p.kind === "decision");
+_c2 = DECIDE_DECISION_PATHS;
+const DECIDE_SECONDARY_PATHS = DECIDE_PATHS.filter(_c3 = (p)=>p.kind === "secondary");
+_c4 = DECIDE_SECONDARY_PATHS;
+const DECIDE_BACKGROUND_PATHS = DECIDE_PATHS.filter(_c5 = (p)=>p.kind === "background");
+_c6 = DECIDE_BACKGROUND_PATHS;
+// ---------- SEE: half-globe (hemisphere) of curved latitude arcs ----------
+//
+// Dense bundle of cubic Béziers stacked from `SEE_BASE_Y` up to `SEE_MID_Y`,
+// each curving toward `SEE_TOP_Y`. Lines lower in the stack are nearly flat;
+// lines higher in the stack curve more aggressively, so the silhouette reads
+// as a hemisphere even though every line spans roughly the full width.
+//
+// Shares the same horizontal footprint as the 02 (DECIDE) animation so the
+// scenes feel like siblings.
+const SEE_LINE_COUNT = 56;
+const SEE_LEFT_X = DECIDE_LEFT_X; // 48
+const SEE_RIGHT_X = DECIDE_RIGHT_X; // 752
+const SEE_CX = VB_W / 2; // 400
+const SEE_BASE_Y = VB_H * 0.86; // 223.6  bottom of the dome
+const SEE_MID_Y = VB_H * 0.55; // 143    top of the line-baseline stack
+const SEE_TOP_Y = VB_H * 0.15; // 39     apex of the highest arc
+const SEE_PATHS = (()=>{
+    const list = [];
+    for(let i = 0; i < SEE_LINE_COUNT; i++){
+        const t = i / (SEE_LINE_COUNT - 1);
+        // Deterministic pseudo-random offsets, so neighbouring lines feel
+        // organic rather than mechanically parallel.
+        const a = Math.sin(i * 0.73);
+        const b = Math.cos(i * 0.41 + 1.2);
+        const c = Math.sin(i * 1.17 + 0.3);
+        // Baseline Y for this latitude — drifts upward as t → 1.
+        const baseY = lerp(SEE_BASE_Y, SEE_MID_Y, t) + a * 1.4;
+        // Slight per-line trim so a few lines are visibly shorter than others.
+        const trim = (b * 0.5 + 0.5) * 12;
+        const x1 = SEE_LEFT_X + trim;
+        const x2 = SEE_RIGHT_X - trim;
+        // Apex (peak) for this line. For a symmetric cubic Bézier with
+        // y1 = y2 = baseY and cy1 = cy2 = cy, the peak at t=0.5 sits at
+        //   peakY = baseY - 0.75 * (baseY - cy)
+        // so we invert that to place the peak exactly where we want it.
+        const peakY = lerp(SEE_BASE_Y - 6, SEE_TOP_Y, t) + c * 1.8;
+        const lift = baseY - peakY;
+        const cyBase = baseY - lift / 0.75;
+        // Tiny asymmetry so curves don't all bend in lock-step.
+        const cy1 = cyBase + a * 1.1;
+        const cy2 = cyBase - b * 1.1;
+        const cx1 = lerp(x1, SEE_CX, 0.42 + a * 0.04);
+        const cx2 = lerp(x2, SEE_CX, 0.42 + b * 0.04);
+        const d = `M${x1.toFixed(2)},${baseY.toFixed(2)} ` + `C${cx1.toFixed(2)},${cy1.toFixed(2)} ` + `${cx2.toFixed(2)},${cy2.toFixed(2)} ` + `${x2.toFixed(2)},${baseY.toFixed(2)}`;
+        list.push({
+            index: i,
+            d,
+            baseY,
+            t
+        });
+    }
+    return list;
+})();
+// Vertical opacity gradient: middle of the stack is densest, top fades
+// toward the sky and bottom fades into the section background.
+const seeLineOpacity = (t)=>{
+    const mid = 0.46;
+    const distFromMid = Math.abs(t - 0.42);
+    return Math.max(0.22, mid - distFromMid * 0.34);
+};
+// ---------- DECIDE (3rd animation): radial intelligence burst ----------
+//
+// A dense fan of radial lines emerging from a single origin near the bottom
+// centre, opening upward across roughly ±75°. Particles travel outward along
+// each line, and 4 highlighted "decision" lines pulse in accent orange during
+// the resolution phase. All geometry is precomputed once — the scene only
+// animates opacity / stroke / particle group visibility per phase, so the
+// 80+ lines stay 60fps cheap.
+const RADIAL_LINE_COUNT = 84;
+const RADIAL_ORIGIN_X = VB_W / 2; // 400
+const RADIAL_ORIGIN_Y = VB_H * 0.85; // 221 — origin sits below visual centre
+const RADIAL_ARC_DEG = 75; // ±75° measured from straight up
+const RADIAL_BASE_LENGTH = 205;
+const RADIAL_LENGTH_VARIANCE = 22;
+const RADIAL_ANGLE_JITTER_DEG = 1.1;
+// Deterministic pseudo-random so the burst layout is stable across renders /
+// hot reloads. Same seed → same value, no React state needed.
+const seededRand = (seed)=>{
+    const s = Math.sin(seed * 12.9898 + 7.1) * 43758.5453;
+    return s - Math.floor(s);
+};
+// Four "decision" lines spread across the arc — slightly off-symmetric so the
+// emphasis doesn't read as a perfect cross.
+const RADIAL_DECISION_INDICES = new Set([
+    16,
+    36,
+    50,
+    68
+]);
+const RADIAL_LINES = (()=>{
+    const list = [];
+    for(let i = 0; i < RADIAL_LINE_COUNT; i++){
+        const t = i / (RADIAL_LINE_COUNT - 1);
+        const baseAngleDeg = lerp(-RADIAL_ARC_DEG, RADIAL_ARC_DEG, t);
+        const angleJitter = (seededRand(i + 7) - 0.5) * 2 * RADIAL_ANGLE_JITTER_DEG;
+        const angleDeg = baseAngleDeg + angleJitter;
+        const angleRad = angleDeg * Math.PI / 180;
+        // Length variance — keeps lines from feeling mechanically uniform. A few
+        // are visibly shorter than their neighbours.
+        const lenNoise = (seededRand(i * 3 + 11) - 0.5) * 2 * RADIAL_LENGTH_VARIANCE;
+        // Subtle taper at the wings so the fan feels widest in the middle and
+        // gracefully recedes at the shoulders, instead of a flat half-disc.
+        const edgeFalloff = 1 - Math.pow(Math.abs(t - 0.5) * 2, 2.4) * 0.16;
+        const length = (RADIAL_BASE_LENGTH + lenNoise) * edgeFalloff;
+        // Origin is below the action — convert "angle from straight up" to xy.
+        const x2 = RADIAL_ORIGIN_X + Math.sin(angleRad) * length;
+        const y2 = RADIAL_ORIGIN_Y - Math.cos(angleRad) * length;
+        const kind = RADIAL_DECISION_INDICES.has(i) ? "decision" : "background";
+        const baseOpacity = 0.6 + seededRand(i + 23) * 0.32;
+        const drawDelay = seededRand(i * 5 + 13) * 0.55;
+        const drawDuration = 0.7 + seededRand(i * 7 + 3) * 0.25;
+        const particleDuration = 3.4 + seededRand(i * 11 + 17) * 2.3;
+        const particleDelay = seededRand(i * 13 + 29) * 4;
+        const d = `M${RADIAL_ORIGIN_X.toFixed(2)},${RADIAL_ORIGIN_Y.toFixed(2)} ` + `L${x2.toFixed(2)},${y2.toFixed(2)}`;
+        list.push({
+            index: i,
+            d,
+            x2,
+            y2,
+            length,
+            kind,
+            baseOpacity,
+            drawDelay,
+            drawDuration,
+            particleDuration,
+            particleDelay
+        });
+    }
+    return list;
+})();
+const RADIAL_BACKGROUND_LINES = RADIAL_LINES.filter(_c7 = (l)=>l.kind === "background");
+_c8 = RADIAL_BACKGROUND_LINES;
+const RADIAL_DECISION_LINES = RADIAL_LINES.filter(_c9 = (l)=>l.kind === "decision");
+_c10 = RADIAL_DECISION_LINES;
+// ---------- Persistent base nodes ----------
+const BaseNodes = ({ activeId, reducedMotion })=>{
+    // Every scene now introduces its own self-contained geometry — SEE
+    // (hemisphere), EXECUTE (waist bundle), and DECIDE (radial intelligence
+    // burst) all manage their own anchor nodes — so the 11 shared perimeter
+    // dots are always hidden while a scene is active.
+    const hideBaseNodes = activeId === "see" || activeId === "execute" || activeId === "decide";
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
         animate: {
-            pathLength: 1,
-            opacity
-        },
-        exit: {
-            opacity: 0,
-            transition: {
-                duration: 0.3,
-                ease: EASE_OUT
-            }
+            opacity: hideBaseNodes ? 0 : 1
         },
         transition: {
-            pathLength: {
-                duration,
-                delay,
-                ease: EASE_OUT
-            },
-            opacity: {
-                duration: duration * 0.65,
-                delay,
-                ease: EASE_OUT
-            }
-        }
-    }, void 0, false, {
-        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-        lineNumber: 125,
-        columnNumber: 3
-    }, ("TURBOPACK compile-time value", void 0));
-_c1 = Line;
-/**
- * A small "comet" that travels along an SVG path. Uses SMIL `<animateMotion>`
- * for native, render-cheap motion that doesn't trigger React work each frame.
- */ const PulseAlong = ({ path, duration = 2.2, delay = 0, color = ACCENT, size = 2.6, glow = true })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
-        children: [
-            glow && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                r: size * 2.6,
-                fill: color,
-                opacity: 0,
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("animate", {
-                        attributeName: "opacity",
-                        values: "0;0.18;0.18;0",
-                        keyTimes: "0;0.15;0.85;1",
-                        dur: `${duration}s`,
-                        begin: `${delay}s`,
-                        repeatCount: "indefinite"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 166,
-                        columnNumber: 9
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("animateMotion", {
-                        dur: `${duration}s`,
-                        begin: `${delay}s`,
-                        repeatCount: "indefinite",
-                        path: path
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 174,
-                        columnNumber: 9
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                lineNumber: 165,
-                columnNumber: 7
-            }, ("TURBOPACK compile-time value", void 0)),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                r: size,
-                fill: color,
-                opacity: 0,
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("animate", {
-                        attributeName: "opacity",
-                        values: "0;1;1;0",
-                        keyTimes: "0;0.12;0.88;1",
-                        dur: `${duration}s`,
-                        begin: `${delay}s`,
-                        repeatCount: "indefinite"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 183,
-                        columnNumber: 7
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("animateMotion", {
-                        dur: `${duration}s`,
-                        begin: `${delay}s`,
-                        repeatCount: "indefinite",
-                        path: path
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 191,
-                        columnNumber: 7
-                    }, ("TURBOPACK compile-time value", void 0))
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                lineNumber: 182,
-                columnNumber: 5
-            }, ("TURBOPACK compile-time value", void 0))
-        ]
-    }, void 0, true, {
-        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-        lineNumber: 163,
-        columnNumber: 3
-    }, ("TURBOPACK compile-time value", void 0));
-_c2 = PulseAlong;
-// ---------- Persistent base nodes ----------
-const BaseNodes = ({ activeId, reducedMotion })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+            duration: 0.5,
+            ease: EASE_OUT
+        },
+        style: {
+            pointerEvents: "none"
+        },
         children: NODE_IDS.map((id, i)=>{
             const p = POS[id];
             const isCenter = id === "c";
-            const accentCenter = activeId === "execute" && isCenter;
+            const accentCenter = activeId === "decide" && isCenter;
             const r = accentCenter ? 5 : 2.5;
             return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
                 children: [
@@ -2239,8 +2175,8 @@ const BaseNodes = ({ activeId, reducedMotion })=>/*#__PURE__*/ (0, __TURBOPACK__
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 216,
-                        columnNumber: 11
+                        lineNumber: 341,
+                        columnNumber: 13
                     }, ("TURBOPACK compile-time value", void 0)),
                     accentCenter && !reducedMotion && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].circle, {
                         cx: p.x,
@@ -2272,22 +2208,23 @@ const BaseNodes = ({ activeId, reducedMotion })=>/*#__PURE__*/ (0, __TURBOPACK__
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 238,
-                        columnNumber: 13
+                        lineNumber: 363,
+                        columnNumber: 15
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, id, true, {
                 fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                lineNumber: 215,
-                columnNumber: 9
+                lineNumber: 340,
+                columnNumber: 11
             }, ("TURBOPACK compile-time value", void 0));
         })
     }, void 0, false, {
         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-        lineNumber: 207,
-        columnNumber: 3
+        lineNumber: 328,
+        columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
-_c3 = BaseNodes;
+};
+_c11 = BaseNodes;
 // ---------- Scenes ----------
 const sceneVariants = {
     initial: {
@@ -2308,243 +2245,1018 @@ const sceneVariants = {
         }
     }
 };
-const ScanLine = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
+const SeeLine = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].memo(({ path, opacity })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].path, {
+        d: path.d,
+        fill: "none",
+        stroke: LINE,
+        strokeWidth: 1.1,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        vectorEffect: "non-scaling-stroke",
         initial: {
             opacity: 0
         },
         animate: {
-            opacity: 1
+            opacity
         },
         exit: {
-            opacity: 0
+            opacity: 0,
+            transition: {
+                duration: 0.3,
+                ease: EASE_OUT
+            }
         },
         transition: {
-            duration: 0.6,
-            ease: EASE_OUT
-        },
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].line, {
-            x1: 0,
-            x2: 0,
-            y1: 20,
-            y2: VB_H - 20,
-            stroke: ACCENT,
-            strokeWidth: 1,
-            strokeLinecap: "round",
-            initial: {
-                x: -40,
-                opacity: 0
-            },
-            animate: {
-                x: VB_W + 40,
-                opacity: [
-                    0,
-                    0.18,
-                    0.18,
-                    0
-                ]
-            },
-            transition: {
-                x: {
-                    duration: 7.5,
-                    repeat: Infinity,
-                    ease: EASE_IN_OUT
-                },
-                opacity: {
-                    duration: 7.5,
-                    repeat: Infinity,
-                    ease: "linear",
-                    times: [
-                        0,
-                        0.12,
-                        0.88,
-                        1
-                    ]
-                }
+            opacity: {
+                duration: 0.95,
+                // Stagger from the bottom of the dome upward so the hemisphere
+                // appears to "rise" into view rather than blink in.
+                delay: 0.012 * path.index,
+                ease: EASE_IN_OUT
             }
-        }, void 0, false, {
-            fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-            lineNumber: 271,
-            columnNumber: 5
-        }, ("TURBOPACK compile-time value", void 0))
+        }
     }, void 0, false, {
         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-        lineNumber: 265,
+        lineNumber: 399,
         columnNumber: 3
-    }, ("TURBOPACK compile-time value", void 0));
-_c4 = ScanLine;
+    }, ("TURBOPACK compile-time value", void 0)));
+_c12 = SeeLine;
+SeeLine.displayName = "SeeLine";
 const SeeScene = ({ reducedMotion })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
         variants: sceneVariants,
         initial: "initial",
         animate: "enter",
         exit: "exit",
         children: [
-            SEE_EDGES.map(([a, b], i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Line, {
-                    d: seg(a, b),
-                    opacity: 0.42,
-                    delay: 0.035 * i,
-                    duration: 0.85
-                }, `see-${a}-${b}`, false, {
-                    fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                    lineNumber: 302,
-                    columnNumber: 7
-                }, ("TURBOPACK compile-time value", void 0))),
-            !reducedMotion && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                style: {
+                    pointerEvents: "none"
+                },
+                children: SEE_PATHS.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                                cx: SEE_LEFT_X,
+                                cy: p.baseY,
+                                r: 1,
+                                fill: NEUTRAL_NODE,
+                                opacity: 0.4
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 434,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                                cx: SEE_RIGHT_X,
+                                cy: p.baseY,
+                                r: 1,
+                                fill: NEUTRAL_NODE,
+                                opacity: 0.4
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 441,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, `see-node-${p.index}`, true, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 433,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)))
+            }, void 0, false, {
+                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                lineNumber: 431,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
+                animate: reducedMotion ? {
+                    opacity: 1
+                } : {
+                    opacity: [
+                        0.94,
+                        1,
+                        0.94
+                    ]
+                },
+                transition: {
+                    duration: 6.8,
+                    repeat: Infinity,
+                    ease: EASE_IN_OUT
+                },
+                children: SEE_PATHS.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SeeLine, {
+                        path: p,
+                        opacity: seeLineOpacity(p.t)
+                    }, `see-line-${p.index}`, false, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 464,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)))
+            }, void 0, false, {
+                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                lineNumber: 453,
+                columnNumber: 5
+            }, ("TURBOPACK compile-time value", void 0)),
+            !reducedMotion && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                children: SEE_PATHS.map((p)=>{
+                    // Duration 4.4–7.0s, delay 0–5s, both derived from prime-ish
+                    // offsets so no two particles share a phase.
+                    const duration = 4.4 + p.index * 0.137 % 2.6;
+                    const delay = (p.index * 0.21 + p.t * 1.3) % 5;
+                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FlowParticle, {
+                        d: p.d,
+                        duration: duration,
+                        delay: delay,
+                        size: 1.6,
+                        color: NEUTRAL_NODE,
+                        opacity: 0.85,
+                        glow: true
+                    }, `see-particle-${p.index}`, false, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 483,
+                        columnNumber: 13
+                    }, ("TURBOPACK compile-time value", void 0));
+                })
+            }, void 0, false, {
+                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                lineNumber: 476,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0))
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+        lineNumber: 424,
+        columnNumber: 3
+    }, ("TURBOPACK compile-time value", void 0));
+_c13 = SeeScene;
+const FlowParticle = ({ d, duration, delay, size, color, opacity = 1, glow = false, keySplines = "0.4 0 0.2 1" })=>{
+    const haloOpacity = (0.18 * opacity).toFixed(3);
+    const dur = `${duration}s`;
+    const begin = `${delay}s`;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+        children: [
+            glow && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                r: size * 2.4,
+                fill: color,
+                opacity: 0,
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PulseAlong, {
-                        path: seg("ml", "c"),
-                        duration: 2.8,
-                        delay: 0.2,
-                        size: 2.4
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("animate", {
+                        attributeName: "opacity",
+                        values: `0;${haloOpacity};${haloOpacity};0`,
+                        keyTimes: "0;0.15;0.85;1",
+                        dur: dur,
+                        begin: begin,
+                        repeatCount: "indefinite"
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 313,
-                        columnNumber: 9
+                        lineNumber: 536,
+                        columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PulseAlong, {
-                        path: seg("c", "mr"),
-                        duration: 2.8,
-                        delay: 1.6,
-                        size: 2.4
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("animateMotion", {
+                        dur: dur,
+                        begin: begin,
+                        repeatCount: "indefinite",
+                        path: d,
+                        calcMode: "spline",
+                        keyTimes: "0;1",
+                        keySplines: keySplines
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 314,
-                        columnNumber: 9
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PulseAlong, {
-                        path: seg("tm", "c"),
-                        duration: 3.2,
-                        delay: 0.9,
-                        size: 2.2
+                        lineNumber: 544,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                lineNumber: 535,
+                columnNumber: 9
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                r: size,
+                fill: color,
+                opacity: 0,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("animate", {
+                        attributeName: "opacity",
+                        values: `0;${opacity};${opacity};0`,
+                        keyTimes: "0;0.12;0.88;1",
+                        dur: dur,
+                        begin: begin,
+                        repeatCount: "indefinite"
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 315,
+                        lineNumber: 556,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PulseAlong, {
-                        path: seg("c", "bmr"),
-                        duration: 3.2,
-                        delay: 2.1,
-                        size: 2.2
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("animateMotion", {
+                        dur: dur,
+                        begin: begin,
+                        repeatCount: "indefinite",
+                        path: d,
+                        calcMode: "spline",
+                        keyTimes: "0;1",
+                        keySplines: keySplines
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 316,
-                        columnNumber: 9
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ScanLine, {}, void 0, false, {
-                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 322,
+                        lineNumber: 564,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
-            }, void 0, true)
+            }, void 0, true, {
+                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                lineNumber: 555,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-        lineNumber: 295,
-        columnNumber: 3
+        lineNumber: 533,
+        columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
-_c5 = SeeScene;
-const ExecuteScene = ({ reducedMotion })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
-        variants: sceneVariants,
-        initial: "initial",
-        animate: "enter",
-        exit: "exit",
-        children: [
-            EXECUTE_EDGES.map(([a, b], i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Line, {
-                    d: seg(a, b),
-                    opacity: 0.5,
-                    delay: 0.04 * i,
-                    duration: 0.7
-                }, `exec-${a}-${b}`, false, {
-                    fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                    lineNumber: 338,
-                    columnNumber: 7
-                }, ("TURBOPACK compile-time value", void 0))),
-            !reducedMotion && EXECUTE_EDGES.map(([a, b], i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PulseAlong, {
-                    path: seg(a, b),
-                    duration: 2.4,
-                    // Slight randomness via prime-ish offsets so it never feels robotic.
-                    delay: 0.18 + i * 0.21 % 1.6,
-                    size: 2.6
-                }, `exec-pulse-${a}-${b}`, false, {
-                    fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                    lineNumber: 349,
-                    columnNumber: 9
-                }, ("TURBOPACK compile-time value", void 0)))
-        ]
-    }, void 0, true, {
+};
+_c14 = FlowParticle;
+const DecideLine = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].memo(({ path, opacity, stroke, strokeWidth })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].path, {
+        d: path.d,
+        fill: "none",
+        stroke: stroke,
+        strokeWidth: strokeWidth,
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        vectorEffect: "non-scaling-stroke",
+        // Plain opacity bloom on entry. We deliberately avoid Framer Motion's
+        // `pathLength` mechanic here — it sets stroke-dasharray/dashoffset under
+        // the hood, which can leave dense bundles looking visibly dashed when
+        // combined with non-scaling-stroke and re-renders on phase change.
+        initial: {
+            opacity: 0
+        },
+        animate: {
+            opacity,
+            stroke,
+            strokeWidth
+        },
+        exit: {
+            opacity: 0,
+            transition: {
+                duration: 0.3,
+                ease: EASE_OUT
+            }
+        },
+        transition: {
+            opacity: {
+                duration: 1.0,
+                delay: 0.014 * path.index,
+                ease: EASE_IN_OUT
+            },
+            stroke: {
+                duration: 1.0,
+                ease: EASE_IN_OUT
+            },
+            strokeWidth: {
+                duration: 1.0,
+                ease: EASE_IN_OUT
+            }
+        }
+    }, void 0, false, {
         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-        lineNumber: 331,
-        columnNumber: 3
-    }, ("TURBOPACK compile-time value", void 0));
-_c6 = ExecuteScene;
+        lineNumber: 590,
+        columnNumber: 5
+    }, ("TURBOPACK compile-time value", void 0)));
+_c15 = DecideLine;
+DecideLine.displayName = "DecideLine";
+const decideLineOpacity = (kind, phase)=>{
+    if (phase === 1) {
+        return kind === "decision" ? 0.55 : kind === "secondary" ? 0.42 : 0.3;
+    }
+    if (phase === 2) {
+        return kind === "decision" ? 0.65 : kind === "secondary" ? 0.32 : 0.1;
+    }
+    return kind === "decision" ? 0.95 : kind === "secondary" ? 0.18 : 0.05;
+};
+const decideStroke = (kind, phase)=>kind === "decision" && phase === 3 ? ACCENT : LINE;
+const decideStrokeWidth = (kind, phase)=>kind === "decision" && phase === 3 ? 1.4 : 1;
+// Particle group opacity per kind/phase. Particles always run on their SMIL
+// cycle; only their wrapping `motion.g` opacity is driven by phase, so we
+// never restart the underlying motion (which would visibly snap).
+const decideParticleGroupOpacity = (kind, phase)=>{
+    if (kind === "background") {
+        return phase === 1 ? 0.55 : phase === 2 ? 0.18 : 0.05;
+    }
+    if (kind === "secondary") {
+        return phase === 1 ? 0.7 : phase === 2 ? 0.45 : 0.22;
+    }
+    // For decision lines, the neutral pulse hands off to the orange pulse in
+    // phase 3 — so we hide the neutral group then.
+    return phase === 1 ? 0.85 : phase === 2 ? 0.9 : 0;
+};
 const DecideScene = ({ reducedMotion })=>{
-    const optimal = DECIDE_ROUTES.find((r)=>r.optimal);
+    _s();
+    // Phase machine: 1 (full network) → 2 (filtering) → 3 (decision) → 1 …
+    // Reduced-motion mode skips straight to the resolved decision view.
+    const [phase, setPhase] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(reducedMotion ? 3 : 1);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "DecideScene.useEffect": ()=>{
+            if (reducedMotion) {
+                setPhase(3);
+                return;
+            }
+            let cancelled = false;
+            let timeoutId = null;
+            let current = 1;
+            setPhase(1);
+            // Phase 1 lingers a bit so the user sees the full bundle hum after the
+            // initial draw-in completes (~1.8s with stagger).
+            const PHASE_DURATIONS = {
+                1: 5500,
+                2: 1900,
+                3: 3800
+            };
+            const tick = {
+                "DecideScene.useEffect.tick": ()=>{
+                    const dwell = PHASE_DURATIONS[current];
+                    timeoutId = setTimeout({
+                        "DecideScene.useEffect.tick": ()=>{
+                            if (cancelled) return;
+                            current = current === 1 ? 2 : current === 2 ? 3 : 1;
+                            setPhase(current);
+                            tick();
+                        }
+                    }["DecideScene.useEffect.tick"], dwell);
+                }
+            }["DecideScene.useEffect.tick"];
+            tick();
+            return ({
+                "DecideScene.useEffect": ()=>{
+                    cancelled = true;
+                    if (timeoutId) clearTimeout(timeoutId);
+                }
+            })["DecideScene.useEffect"];
+        }
+    }["DecideScene.useEffect"], [
+        reducedMotion
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
         variants: sceneVariants,
         initial: "initial",
         animate: "enter",
         exit: "exit",
         children: [
-            DECIDE_ROUTES.map((route, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].path, {
-                    d: route.d,
-                    fill: "none",
-                    stroke: route.optimal ? ACCENT : LINE,
-                    strokeWidth: route.optimal ? 1.4 : 1,
-                    strokeLinecap: "round",
-                    strokeLinejoin: "round",
-                    initial: {
-                        pathLength: 0,
-                        opacity: 0
-                    },
-                    animate: {
-                        pathLength: 1,
-                        opacity: route.optimal ? 0.95 : 0.16
-                    },
-                    exit: {
-                        opacity: 0,
-                        transition: {
-                            duration: 0.3,
-                            ease: EASE_OUT
-                        }
-                    },
-                    transition: {
-                        pathLength: {
-                            duration: route.optimal ? 1.1 : 0.95,
-                            delay: 0.06 * i,
-                            ease: EASE_OUT
-                        },
-                        opacity: {
-                            duration: 1.1,
-                            delay: 0.06 * i + (route.optimal ? 0.55 : 0),
-                            ease: EASE_OUT
-                        }
-                    }
-                }, `dec-${i}`, false, {
-                    fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                    lineNumber: 374,
-                    columnNumber: 9
-                }, ("TURBOPACK compile-time value", void 0))),
-            !reducedMotion && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(PulseAlong, {
-                path: optimal.d,
-                duration: 2.8,
-                delay: 0.5,
-                size: 3
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                style: {
+                    pointerEvents: "none"
+                },
+                children: DECIDE_PATHS.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                                cx: DECIDE_LEFT_X,
+                                cy: p.y,
+                                r: 1.1,
+                                fill: NEUTRAL_NODE,
+                                opacity: 0.55
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 706,
+                                columnNumber: 13
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
+                                cx: DECIDE_RIGHT_X,
+                                cy: p.y,
+                                r: 1.1,
+                                fill: NEUTRAL_NODE,
+                                opacity: 0.55
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 713,
+                                columnNumber: 13
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, `dec-node-${p.index}`, true, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 705,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0)))
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                lineNumber: 404,
-                columnNumber: 9
-            }, ("TURBOPACK compile-time value", void 0))
+                lineNumber: 703,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                children: [
+                    DECIDE_BACKGROUND_PATHS.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(DecideLine, {
+                            path: p,
+                            opacity: decideLineOpacity(p.kind, phase),
+                            stroke: decideStroke(p.kind, phase),
+                            strokeWidth: decideStrokeWidth(p.kind, phase)
+                        }, `dec-line-${p.index}`, false, {
+                            fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                            lineNumber: 728,
+                            columnNumber: 11
+                        }, ("TURBOPACK compile-time value", void 0))),
+                    DECIDE_SECONDARY_PATHS.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(DecideLine, {
+                            path: p,
+                            opacity: decideLineOpacity(p.kind, phase),
+                            stroke: decideStroke(p.kind, phase),
+                            strokeWidth: decideStrokeWidth(p.kind, phase)
+                        }, `dec-line-${p.index}`, false, {
+                            fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                            lineNumber: 737,
+                            columnNumber: 11
+                        }, ("TURBOPACK compile-time value", void 0))),
+                    DECIDE_DECISION_PATHS.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(DecideLine, {
+                            path: p,
+                            opacity: decideLineOpacity(p.kind, phase),
+                            stroke: decideStroke(p.kind, phase),
+                            strokeWidth: decideStrokeWidth(p.kind, phase)
+                        }, `dec-line-${p.index}`, false, {
+                            fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                            lineNumber: 746,
+                            columnNumber: 11
+                        }, ("TURBOPACK compile-time value", void 0)))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                lineNumber: 726,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0)),
+            !reducedMotion && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
+                        initial: false,
+                        animate: {
+                            opacity: decideParticleGroupOpacity("background", phase)
+                        },
+                        transition: {
+                            duration: 1.4,
+                            ease: EASE_IN_OUT
+                        },
+                        children: DECIDE_BACKGROUND_PATHS.map((p)=>{
+                            const duration = 3.6 + p.index * 0.137 % 2.3;
+                            const delay = p.index * 0.19 % 4;
+                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FlowParticle, {
+                                d: p.d,
+                                duration: duration,
+                                delay: delay,
+                                size: 1.3,
+                                color: LINE,
+                                opacity: 0.85
+                            }, `dec-bg-${p.index}`, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 770,
+                                columnNumber: 17
+                            }, ("TURBOPACK compile-time value", void 0));
+                        })
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 759,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
+                        initial: false,
+                        animate: {
+                            opacity: decideParticleGroupOpacity("secondary", phase)
+                        },
+                        transition: {
+                            duration: 1.4,
+                            ease: EASE_IN_OUT
+                        },
+                        children: DECIDE_SECONDARY_PATHS.map((p)=>{
+                            const duration = 4.0 + p.index * 0.17 % 1.8;
+                            const delay = (p.index + 5) * 0.21 % 3.5;
+                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FlowParticle, {
+                                d: p.d,
+                                duration: duration,
+                                delay: delay,
+                                size: 1.5,
+                                color: LINE,
+                                opacity: 0.95
+                            }, `dec-sec-${p.index}`, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 795,
+                                columnNumber: 17
+                            }, ("TURBOPACK compile-time value", void 0));
+                        })
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 784,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
+                        initial: false,
+                        animate: {
+                            opacity: decideParticleGroupOpacity("decision", phase)
+                        },
+                        transition: {
+                            duration: 1.0,
+                            ease: EASE_IN_OUT
+                        },
+                        children: DECIDE_DECISION_PATHS.map((p, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FlowParticle, {
+                                d: p.d,
+                                duration: 4.2,
+                                delay: i * 0.55,
+                                size: 1.7,
+                                color: LINE,
+                                opacity: 1
+                            }, `dec-neutral-${p.index}`, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 817,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0)))
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 809,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
+                        initial: false,
+                        animate: {
+                            opacity: phase === 3 ? 1 : 0
+                        },
+                        transition: {
+                            duration: 1.0,
+                            ease: EASE_IN_OUT
+                        },
+                        children: DECIDE_DECISION_PATHS.map((p, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FlowParticle, {
+                                d: p.d,
+                                duration: 2.8,
+                                delay: i * 0.45,
+                                size: 2.6,
+                                color: ACCENT,
+                                opacity: 1,
+                                glow: true
+                            }, `dec-accent-${p.index}`, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 836,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0)))
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 830,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-        lineNumber: 367,
+        lineNumber: 696,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_c7 = DecideScene;
+_s(DecideScene, "tA8ck4uggPUEsHs/I2u6SS43clw=");
+_c16 = DecideScene;
+const radialLineOpacity = (kind, base, phase)=>{
+    if (phase === 1) return base * 0.85;
+    if (phase === 2) return base;
+    // Phase 3: decision lines pop, background recedes so the accent reads.
+    if (kind === "decision") return Math.min(1, base + 0.3);
+    return base * 0.55;
+};
+// Base radial line. Always strokes via the radial-fade gradient — we never
+// animate stroke (gradient URLs aren't an animatable value in Framer Motion).
+// Decision emphasis is rendered as a separate accent overlay path on top,
+// whose opacity animates instead. Memoised so re-renders on phase change
+// don't re-mount 80+ paths.
+const RadialLineEl = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].memo(({ path, phase })=>{
+    const opacity = radialLineOpacity(path.kind, path.baseOpacity, phase);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].path, {
+        d: path.d,
+        fill: "none",
+        stroke: "url(#decide-radial-fade)",
+        strokeWidth: 1.05,
+        strokeLinecap: "round",
+        vectorEffect: "non-scaling-stroke",
+        initial: {
+            pathLength: 0,
+            opacity: 0
+        },
+        animate: {
+            pathLength: 1,
+            opacity
+        },
+        exit: {
+            opacity: 0,
+            transition: {
+                duration: 0.35,
+                ease: EASE_OUT
+            }
+        },
+        transition: {
+            // Lines extend outward from the origin — each one paints over its
+            // own duration with a small per-line random offset so the bundle
+            // never reads as a synchronous sweep.
+            pathLength: {
+                duration: path.drawDuration,
+                delay: path.drawDelay,
+                ease: EASE_OUT
+            },
+            opacity: {
+                duration: 0.7,
+                delay: path.drawDelay,
+                ease: EASE_OUT
+            }
+        }
+    }, void 0, false, {
+        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+        lineNumber: 884,
+        columnNumber: 7
+    }, ("TURBOPACK compile-time value", void 0));
+});
+_c17 = RadialLineEl;
+RadialLineEl.displayName = "RadialLineEl";
+// Accent overlay for decision lines — fades in/out per phase. Sits on top of
+// the gradient base, so when fully opaque it visually replaces the base line
+// (matching strokeWidth ≥ base width). No pathLength animation: the base
+// line below is already handling the build-in.
+const DecisionAccentLine = /*#__PURE__*/ __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].memo(({ path, phase })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].path, {
+        d: path.d,
+        fill: "none",
+        stroke: ACCENT,
+        strokeWidth: 1.4,
+        strokeLinecap: "round",
+        vectorEffect: "non-scaling-stroke",
+        initial: {
+            opacity: 0
+        },
+        animate: {
+            opacity: phase === 3 ? 1 : 0
+        },
+        transition: {
+            duration: 0.9,
+            ease: EASE_IN_OUT
+        }
+    }, void 0, false, {
+        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+        lineNumber: 921,
+        columnNumber: 5
+    }, ("TURBOPACK compile-time value", void 0)));
+_c18 = DecisionAccentLine;
+DecisionAccentLine.displayName = "DecisionAccentLine";
+const RadialBurstScene = ({ reducedMotion })=>{
+    _s1();
+    // Phase 1 = BUILD (lines paint outward). Phase 2 = FLOW (particles travel
+    // outward along every line). Phase 3 = DECIDE (4 lines pop in accent
+    // orange with stronger pulses). After the first build we loop 2 ↔ 3 so
+    // the network stays continuously alive instead of redrawing.
+    const [phase, setPhase] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(reducedMotion ? 3 : 1);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "RadialBurstScene.useEffect": ()=>{
+            if (reducedMotion) {
+                setPhase(3);
+                return;
+            }
+            let cancelled = false;
+            let timeoutId = null;
+            let current = 1;
+            setPhase(1);
+            const PHASE_DURATIONS = {
+                1: 2200,
+                2: 4800,
+                3: 3600
+            };
+            const next = {
+                "RadialBurstScene.useEffect.next": (p)=>{
+                    if (p === 1) return 2;
+                    if (p === 2) return 3;
+                    return 2;
+                }
+            }["RadialBurstScene.useEffect.next"];
+            const tick = {
+                "RadialBurstScene.useEffect.tick": ()=>{
+                    const dwell = PHASE_DURATIONS[current];
+                    timeoutId = setTimeout({
+                        "RadialBurstScene.useEffect.tick": ()=>{
+                            if (cancelled) return;
+                            current = next(current);
+                            setPhase(current);
+                            tick();
+                        }
+                    }["RadialBurstScene.useEffect.tick"], dwell);
+                }
+            }["RadialBurstScene.useEffect.tick"];
+            tick();
+            return ({
+                "RadialBurstScene.useEffect": ()=>{
+                    cancelled = true;
+                    if (timeoutId) clearTimeout(timeoutId);
+                }
+            })["RadialBurstScene.useEffect"];
+        }
+    }["RadialBurstScene.useEffect"], [
+        reducedMotion
+    ]);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
+        variants: sceneVariants,
+        initial: "initial",
+        animate: "enter",
+        exit: "exit",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("defs", {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("radialGradient", {
+                        id: "decide-radial-fade",
+                        cx: RADIAL_ORIGIN_X,
+                        cy: RADIAL_ORIGIN_Y,
+                        r: 250,
+                        gradientUnits: "userSpaceOnUse",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
+                                offset: "0%",
+                                stopColor: LINE,
+                                stopOpacity: "0.95"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 1003,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
+                                offset: "55%",
+                                stopColor: LINE,
+                                stopOpacity: "0.55"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 1004,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
+                                offset: "100%",
+                                stopColor: LINE,
+                                stopOpacity: "0.18"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 1005,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 996,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("radialGradient", {
+                        id: "decide-core-glow",
+                        cx: RADIAL_ORIGIN_X,
+                        cy: RADIAL_ORIGIN_Y,
+                        r: 44,
+                        gradientUnits: "userSpaceOnUse",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
+                                offset: "0%",
+                                stopColor: ACCENT,
+                                stopOpacity: "0.34"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 1014,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
+                                offset: "55%",
+                                stopColor: ACCENT,
+                                stopOpacity: "0.07"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 1015,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
+                                offset: "100%",
+                                stopColor: ACCENT,
+                                stopOpacity: "0"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 1016,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 1007,
+                        columnNumber: 9
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                lineNumber: 995,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].circle, {
+                cx: RADIAL_ORIGIN_X,
+                cy: RADIAL_ORIGIN_Y,
+                r: 44,
+                fill: "url(#decide-core-glow)",
+                initial: {
+                    opacity: 0
+                },
+                animate: {
+                    opacity: phase === 3 ? 1 : 0.65
+                },
+                transition: {
+                    duration: 1.0,
+                    ease: EASE_IN_OUT
+                }
+            }, void 0, false, {
+                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                lineNumber: 1021,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                children: RADIAL_BACKGROUND_LINES.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RadialLineEl, {
+                        path: p,
+                        phase: phase
+                    }, `r-bg-${p.index}`, false, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 1034,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0)))
+            }, void 0, false, {
+                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                lineNumber: 1032,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                children: RADIAL_DECISION_LINES.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RadialLineEl, {
+                        path: p,
+                        phase: phase
+                    }, `r-dec-${p.index}`, false, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 1041,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0)))
+            }, void 0, false, {
+                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                lineNumber: 1039,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("g", {
+                children: RADIAL_DECISION_LINES.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(DecisionAccentLine, {
+                        path: p,
+                        phase: phase
+                    }, `r-dec-acc-${p.index}`, false, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 1048,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0)))
+            }, void 0, false, {
+                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                lineNumber: 1046,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0)),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].circle, {
+                cx: RADIAL_ORIGIN_X,
+                cy: RADIAL_ORIGIN_Y,
+                r: 3.4,
+                fill: ACCENT,
+                initial: {
+                    opacity: 0,
+                    scale: 0.4
+                },
+                animate: {
+                    opacity: 1,
+                    scale: 1
+                },
+                transition: {
+                    duration: 0.6,
+                    delay: 0.2,
+                    ease: EASE_OUT
+                }
+            }, void 0, false, {
+                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                lineNumber: 1057,
+                columnNumber: 7
+            }, ("TURBOPACK compile-time value", void 0)),
+            !reducedMotion && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].circle, {
+                cx: RADIAL_ORIGIN_X,
+                cy: RADIAL_ORIGIN_Y,
+                r: 3.4,
+                fill: "none",
+                stroke: ACCENT,
+                strokeWidth: 1,
+                initial: {
+                    opacity: 0
+                },
+                animate: {
+                    r: [
+                        3.4,
+                        14,
+                        3.4
+                    ],
+                    opacity: [
+                        0.5,
+                        0,
+                        0.5
+                    ]
+                },
+                transition: {
+                    duration: 3.2,
+                    repeat: Infinity,
+                    ease: EASE_OUT,
+                    delay: 0.4
+                }
+            }, void 0, false, {
+                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                lineNumber: 1067,
+                columnNumber: 9
+            }, ("TURBOPACK compile-time value", void 0)),
+            !reducedMotion && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
+                        initial: {
+                            opacity: 0
+                        },
+                        animate: {
+                            opacity: phase === 1 ? 0 : phase === 3 ? 0.45 : 1
+                        },
+                        transition: {
+                            duration: 1.0,
+                            ease: EASE_IN_OUT
+                        },
+                        children: RADIAL_BACKGROUND_LINES.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FlowParticle, {
+                                d: p.d,
+                                duration: p.particleDuration,
+                                delay: p.particleDelay,
+                                size: 1.4,
+                                color: LINE,
+                                opacity: 0.85,
+                                keySplines: "0 0 0.25 1"
+                            }, `r-bg-p-${p.index}`, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 1103,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0)))
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 1095,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
+                        initial: {
+                            opacity: 0
+                        },
+                        animate: {
+                            opacity: phase === 2 ? 1 : 0
+                        },
+                        transition: {
+                            duration: 1.0,
+                            ease: EASE_IN_OUT
+                        },
+                        children: RADIAL_DECISION_LINES.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FlowParticle, {
+                                d: p.d,
+                                duration: p.particleDuration * 0.85,
+                                delay: p.particleDelay,
+                                size: 1.7,
+                                color: LINE,
+                                opacity: 0.95,
+                                keySplines: "0 0 0.25 1"
+                            }, `r-dec-np-${p.index}`, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 1124,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0)))
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 1118,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0)),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].g, {
+                        initial: {
+                            opacity: 0
+                        },
+                        animate: {
+                            opacity: phase === 3 ? 1 : 0
+                        },
+                        transition: {
+                            duration: 0.9,
+                            ease: EASE_IN_OUT
+                        },
+                        children: RADIAL_DECISION_LINES.map((p, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(FlowParticle, {
+                                d: p.d,
+                                duration: 2.6,
+                                delay: i * 0.32,
+                                size: 2.6,
+                                color: ACCENT,
+                                opacity: 1,
+                                glow: true,
+                                keySplines: "0 0 0.25 1"
+                            }, `r-dec-ap-${p.index}`, false, {
+                                fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                                lineNumber: 1145,
+                                columnNumber: 15
+                            }, ("TURBOPACK compile-time value", void 0)))
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+                        lineNumber: 1139,
+                        columnNumber: 11
+                    }, ("TURBOPACK compile-time value", void 0))
+                ]
+            }, void 0, true)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/src/components/sections/AboutAnimation.tsx",
+        lineNumber: 986,
+        columnNumber: 5
+    }, ("TURBOPACK compile-time value", void 0));
+};
+_s1(RadialBurstScene, "tA8ck4uggPUEsHs/I2u6SS43clw=");
+_c19 = RadialBurstScene;
 const AboutAnimation = ({ activeId, className = "" })=>{
-    _s();
+    _s2();
     const reducedMotion = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$reduced$2d$motion$2f$use$2d$reduced$2d$motion$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useReducedMotion"])() ?? false;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
         viewBox: `0 0 ${VB_W} ${VB_H}`,
@@ -2558,7 +3270,7 @@ const AboutAnimation = ({ activeId, className = "" })=>{
                 reducedMotion: reducedMotion
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                lineNumber: 431,
+                lineNumber: 1185,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -2569,53 +3281,65 @@ const AboutAnimation = ({ activeId, className = "" })=>{
                         reducedMotion: reducedMotion
                     }, "see", false, {
                         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 434,
+                        lineNumber: 1188,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
-                    activeId === "execute" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ExecuteScene, {
+                    activeId === "execute" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(DecideScene, {
                         reducedMotion: reducedMotion
                     }, "execute", false, {
                         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 437,
+                        lineNumber: 1191,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
-                    activeId === "decide" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(DecideScene, {
+                    activeId === "decide" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(RadialBurstScene, {
                         reducedMotion: reducedMotion
                     }, "decide", false, {
                         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                        lineNumber: 440,
+                        lineNumber: 1194,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-                lineNumber: 432,
+                lineNumber: 1186,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sections/AboutAnimation.tsx",
-        lineNumber: 424,
+        lineNumber: 1178,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(AboutAnimation, "sF4KtIiIlOcKcWMXs33EtX/h6fI=", false, function() {
+_s2(AboutAnimation, "sF4KtIiIlOcKcWMXs33EtX/h6fI=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$reduced$2d$motion$2f$use$2d$reduced$2d$motion$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useReducedMotion"]
     ];
 });
-_c8 = AboutAnimation;
+_c20 = AboutAnimation;
 const __TURBOPACK__default__export__ = AboutAnimation;
-var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7, _c8;
+var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7, _c8, _c9, _c10, _c11, _c12, _c13, _c14, _c15, _c16, _c17, _c18, _c19, _c20;
 __turbopack_context__.k.register(_c, "NODE_IDS");
-__turbopack_context__.k.register(_c1, "Line");
-__turbopack_context__.k.register(_c2, "PulseAlong");
-__turbopack_context__.k.register(_c3, "BaseNodes");
-__turbopack_context__.k.register(_c4, "ScanLine");
-__turbopack_context__.k.register(_c5, "SeeScene");
-__turbopack_context__.k.register(_c6, "ExecuteScene");
-__turbopack_context__.k.register(_c7, "DecideScene");
-__turbopack_context__.k.register(_c8, "AboutAnimation");
+__turbopack_context__.k.register(_c1, "DECIDE_DECISION_PATHS$DECIDE_PATHS.filter");
+__turbopack_context__.k.register(_c2, "DECIDE_DECISION_PATHS");
+__turbopack_context__.k.register(_c3, "DECIDE_SECONDARY_PATHS$DECIDE_PATHS.filter");
+__turbopack_context__.k.register(_c4, "DECIDE_SECONDARY_PATHS");
+__turbopack_context__.k.register(_c5, "DECIDE_BACKGROUND_PATHS$DECIDE_PATHS.filter");
+__turbopack_context__.k.register(_c6, "DECIDE_BACKGROUND_PATHS");
+__turbopack_context__.k.register(_c7, "RADIAL_BACKGROUND_LINES$RADIAL_LINES.filter");
+__turbopack_context__.k.register(_c8, "RADIAL_BACKGROUND_LINES");
+__turbopack_context__.k.register(_c9, "RADIAL_DECISION_LINES$RADIAL_LINES.filter");
+__turbopack_context__.k.register(_c10, "RADIAL_DECISION_LINES");
+__turbopack_context__.k.register(_c11, "BaseNodes");
+__turbopack_context__.k.register(_c12, "SeeLine");
+__turbopack_context__.k.register(_c13, "SeeScene");
+__turbopack_context__.k.register(_c14, "FlowParticle");
+__turbopack_context__.k.register(_c15, "DecideLine");
+__turbopack_context__.k.register(_c16, "DecideScene");
+__turbopack_context__.k.register(_c17, "RadialLineEl");
+__turbopack_context__.k.register(_c18, "DecisionAccentLine");
+__turbopack_context__.k.register(_c19, "RadialBurstScene");
+__turbopack_context__.k.register(_c20, "AboutAnimation");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -2704,7 +3428,7 @@ const About = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "w-full flex-1 min-h-0 flex items-center justify-center",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-full max-w-3xl h-full max-h-[280px] flex items-center justify-center",
+                            className: "w-full max-w-4xl h-full max-h-[340px] flex items-center justify-center",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$sections$2f$AboutAnimation$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AboutAnimation"], {
                                 activeId: activeOptionId
                             }, void 0, false, {
