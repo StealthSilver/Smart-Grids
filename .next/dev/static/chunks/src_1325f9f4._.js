@@ -3662,7 +3662,7 @@ const Services = ()=>{
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                         className: "font-sans font-semibold text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight max-w-4xl",
-                        children: "Solar. Wind. Hybrid. Green Hydrogen"
+                        children: "Solar. Wind. BESS. Hybrid. Green Hydrogen."
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/Services.tsx",
                         lineNumber: 19,
@@ -3716,7 +3716,7 @@ const Cta = ()=>{
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "font-mono text-xs sm:text-sm uppercase tracking-[0.16em] text-gray-600",
-                        children: "PROOF ."
+                        children: "PROOF"
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/Cta.tsx",
                         lineNumber: 16,
@@ -3778,7 +3778,7 @@ const Team = ()=>{
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "font-mono text-xs sm:text-sm uppercase tracking-[0.16em] text-gray-600",
-                        children: "THE TEAM."
+                        children: "THE TEAM"
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/Team.tsx",
                         lineNumber: 15,
