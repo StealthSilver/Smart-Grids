@@ -1,8 +1,17 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { EdgeLines } from "../ui/EdgeLines";
+import { CtaHoverArrow } from "../ui/CtaHoverArrow";
 
+const proofCtaClassName =
+  "group inline-flex items-center justify-center gap-0.5 " +
+  "font-sans font-bold text-sm sm:text-base md:text-lg " +
+  "px-[20px] py-[10px] whitespace-nowrap rounded-[8px] bg-transparent " +
+  "border border-[#FF7F00] text-[#FF7F00] cursor-pointer " +
+  "transition-all duration-300 ease-in-out " +
+  "hover:bg-[#FF7F00]/10 hover:shadow-sm active:translate-y-px";
 
 export const Cta = () => {
   return (
@@ -19,6 +28,16 @@ export const Cta = () => {
         <h2 className="font-sans font-semibold text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight max-w-4xl">
           Real Plants. Real Operations. Real Results.
         </h2>
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+          <Link href="/case-studies" className={proofCtaClassName}>
+            View All Case Studies
+            <CtaHoverArrow />
+          </Link>
+          <Link href="/white-papers" className={proofCtaClassName}>
+            Read White Papers
+            <CtaHoverArrow />
+          </Link>
+        </div>
       </div>
     </section>
   );
