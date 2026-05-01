@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { EdgeLines } from "../ui/EdgeLines";
 
 
 export const Services = () => {
@@ -11,7 +12,8 @@ export const Services = () => {
       id="services"
       className="relative w-full px-4 sm:px-6 pt-6 sm:pt-10 bg-white backdrop-blur-md overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
+      <EdgeLines />
+      <div className="max-w-7xl mx-auto relative z-10">
        
 SERVICES
        

@@ -39,3 +39,72 @@
 [00:29:00.059] Server  LOG     ✓ Compiled in 1192ms
 [00:29:09.944] Server  LOG     ✓ Compiled in 1071ms
 [00:29:18.091] Server  LOG     ✓ Compiled in 403ms
+[00:32:40.072] Server  LOG     ✓ Compiled in 325ms
+[00:34:08.890] Server  LOG     ✓ Compiled in 563ms
+[00:34:09.428] Server  ERROR   ⨯ ReferenceError: ShimmerButton is not defined
+[00:34:09.455] Browser ERROR   uncaughtError: ReferenceError: ShimmerButton is not defined
+[00:34:10.375] Browser ERROR   uncaughtError: ReferenceError: ShimmerButton is not defined
+[00:34:11.154] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:34:11.169] Server  LOG     ✓ Compiled in 61ms
+[00:34:37.926] Browser LOG     Updating globe material with color: #9fddfc
+[00:35:16.853] Server  LOG     ✓ Compiled in 148ms
+[00:35:18.541] Server  LOG     ✓ Compiled in 52ms
+[00:37:37.768] Server  LOG     ✓ Compiled in 209ms
+[00:38:11.618] Server  LOG     ✓ Compiled in 225ms
+[00:38:18.606] Server  LOG     ✓ Compiled in 498ms
+[00:38:26.935] Server  LOG     ✓ Compiled in 99ms
+[00:38:32.726] Server  LOG     ✓ Compiled in 84ms
+[00:40:33.628] Server  LOG     ✓ Compiled in 310ms
+[00:40:48.974] Server  LOG     ✓ Compiled in 119ms
+[00:42:27.349] Server  LOG     ✓ Compiled in 2.6s
+[00:42:33.863] Browser LOG     Updating globe material with color: #9fddfc
+[00:42:56.334] Server  LOG     ✓ Compiled in 12.4s
+[00:43:31.405] Server  LOG     ✓ Compiled in 1862ms
+[00:44:25.216] Server  LOG     ✓ Compiled in 7.2s
+[00:49:24.491] Server  LOG     ✓ Compiled in 245ms
+[00:49:33.995] Server  LOG     ✓ Compiled in 61ms
+[00:49:39.026] Browser LOG     Updating globe material with color: #9fddfc
+[00:50:39.161] Server  LOG     ✓ Compiled in 149ms
+[00:50:47.875] Server  LOG     ✓ Compiled in 214ms
+[00:54:02.905] Server  LOG     ✓ Compiled in 398ms
+[00:54:04.527] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[00:54:05.618] Browser LOG     Updating globe material with color: #9fddfc
+[00:57:37.031] Browser LOG     Updating globe material with color: #9fddfc
+[00:57:53.800] Browser LOG     Updating globe material with color: #9fddfc
+[00:58:51.662] Server  LOG     ✓ Compiled in 5.3s
+[00:58:51.781] Browser LOG     Updating globe material with color: #d4eefd
+[00:59:08.492] Browser LOG     Updating globe material with color: #d4eefd
+[01:01:43.524] Server  LOG     ✓ Compiled in 183ms
+[01:01:50.445] Server  LOG     ✓ Compiled in 52ms
+[01:01:51.392] Browser LOG     Updating globe material with color: #eef0f4
+[01:01:53.069] Server  LOG     ✓ Compiled in 50ms
+[01:02:00.732] Browser LOG     Updating globe material with color: #eef0f4
+[01:03:29.101] Server  LOG     ✓ Compiled in 21.7s
+[01:03:29.574] Browser LOG     Updating globe material with color: #e4e5ec
+[01:03:48.936] Browser LOG     Updating globe material with color: #e4e5ec
+[01:10:55.606] Server  LOG     ✓ Compiled in 17.5s
+[01:11:13.166] Server  LOG     ✓ Compiled in 5.4s
+[01:11:16.738] Server  LOG     ✓ Compiled in 261ms
+[01:11:16.754] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[01:11:18.624] Server  LOG     ✓ Compiled in 73ms
+[01:11:21.040] Server  LOG     ✓ Compiled in 492ms
+[01:11:21.339] Browser LOG     Updating globe material with color: #e4e5ec
+[01:11:27.494] Server  LOG     ✓ Compiled in 1805ms
+[01:11:37.654] Server  LOG     ✓ Compiled in 6s
+[01:11:41.195] Server  LOG     ✓ Compiled in 1812ms
+[01:15:45.152] Server  LOG     ✓ Compiled in 319ms
+[01:27:31.055] Server  LOG     ✓ Compiled in 1587ms
+[01:28:08.306] Browser LOG     Updating globe material with color: #e4e5ec
+[01:28:14.196] Browser LOG     Updating globe material with color: #e4e5ec
+[01:30:33.040] Browser LOG     Updating globe material with color: #e4e5ec
+[01:31:20.640] Browser LOG     Updating globe material with color: #e4e5ec
+[01:37:15.890] Server  LOG     ✓ Compiled in 0ms
+[01:37:26.783] Browser LOG     Updating globe material with color: #e4e5ec
+[01:37:37.541] Server  LOG     ✓ Compiled in 9.2s
+[01:38:04.454] Server  LOG     ✓ Compiled in 4.8s
+[01:38:04.484] Server  LOG     ✓ Finished writing to filesystem cache in 13.2s
+[01:38:15.412] Browser LOG     Updating globe material with color: #e4e5ec
+[01:38:26.824] Browser LOG     Updating globe material with color: #e4e5ec
+[01:38:51.194] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[01:38:52.270] Browser LOG     Updating globe material with color: #e4e5ec
+[01:40:12.959] Server  LOG     ✓ Compiled in 9.4s

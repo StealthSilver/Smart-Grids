@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShimmerButton } from "../ui/ShimmerButton";
+import { CtaHoverArrow } from "../ui/CtaHoverArrow";
 import { LazyGlobe } from "../ui/LazyGlobe";
 import { NumberTicker } from "../ui/NumberTicker";
+import { EdgeLines } from "../ui/EdgeLines";
 
 const sampleArcs = [
   {
@@ -281,19 +282,19 @@ const sampleArcs = [
 
 const globeConfig = {
   pointSize: 1,
-  globeColor: "#9fddfc",
+  globeColor: "#e4e5ec",
   showAtmosphere: true,
-  atmosphereColor: "#b3d9f2",
-  atmosphereAltitude: 0.15,
-  emissive: "#ffffff",
-  emissiveIntensity: 0.5,
-  shininess: 1.0,
-  polygonColor: "rgba(0, 0, 0, 0.35)",
-  ambientLight: "#ffffff",
+  atmosphereColor: "#f5f6fa",
+  atmosphereAltitude: 0.18,
+  emissive: "#f8f9fc",
+  emissiveIntensity: 0.45,
+  shininess: 2.2,
+  polygonColor: "rgba(74, 78, 105, 0.55)",
+  ambientLight: "#dfe2ec",
   directionalLeftLight: "#ffffff",
-  directionalTopLight: "#ffffff",
-  pointLight: "#87ceeb",
-  pointColor: "rgba(179, 219, 252, 0.4)",
+  directionalTopLight: "#fefefe",
+  pointLight: "#c9cbda",
+  pointColor: "rgba(201, 203, 218, 0.55)",
   arcTime: 2000,
   arcLength: 0.9,
   rings: 1,
@@ -318,14 +319,38 @@ export default function Hero() {
   return (
     <section
       className="
-        relative z-[2] lg:min-h-screen h-full px-4 sm:px-6 pt-20 sm:pt-28 md:pt-36 lg:pt-48 
+        relative z-[2] lg:min-h-[95vh] h-full px-4 sm:px-6 pt-20 sm:pt-28 md:pt-36 lg:pt-48 
         bg-white backdrop-blur-md
-        overflow-hidden flex flex-col justify-start mx-auto pb-16 sm:pb-24 md:pb-32
+        overflow-hidden flex flex-col justify-start mx-auto pb-12 sm:pb-16 md:pb-20
       "
      
     >
+      {/* Sky-like radial gradient: light blue from bottom-right fading to white at top-left */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 130% 120% at 100% 100%, rgba(201, 203, 218, 0.85) 0%, rgba(201, 203, 218, 0.65) 22%, rgba(201, 203, 218, 0.45) 45%, rgba(201, 203, 218, 0.22) 68%, rgba(255, 255, 255, 0) 90%)",
+        }}
+      />
+
+      {/* Diffused noise overlay to soften the gradient */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none z-0 mix-blend-soft-light opacity-[0.35]"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0.4  0 0 0 0 0.55  0 0 0 0 0.75  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
+          backgroundSize: "240px 240px",
+        }}
+      />
+
+      {/* Vertical edge lines at max-w-7xl boundaries (sits above bg, below globe & text) */}
+      <EdgeLines className="z-0" />
+
       {/* Globe positioned on the right */}
-      <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden">
+      <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden z-[1]">
         <div className="absolute -right-[200px] sm:-right-[150px] md:-right-[100px] lg:-right-[800px] -top-12 sm:-top-16 md:-top-20 lg:-top-24 w-[600px] h-[600px] sm:w-[700px] sm:h-[700px] md:w-[850px] md:h-[850px] lg:w-[950px] lg:h-[950px] xl:w-[1100px] xl:h-[1100px] min-w-[600px] min-h-[600px] sm:min-w-[700px] sm:min-h-[700px] md:min-w-[850px] md:min-h-[850px] lg:min-w-[950px] lg:min-h-[950px] xl:min-w-[1100px] xl:min-h-[1100px] relative">
           <LazyGlobe globeConfig={globeConfig} data={sampleArcs} />
         </div>
@@ -342,7 +367,7 @@ export default function Hero() {
             max-w-full sm:max-w-3xl md:max-w-4xl
           "
         >
-          <span>The Only Platform You Need For Renewable Intelligence</span>
+          <span>Intelligent Control For The Renewable Century</span>
         </motion.h1>
 
         <motion.p
@@ -354,8 +379,7 @@ export default function Hero() {
             text-gray-600
           "
         >
-          Optimise renewable assets, ensure compliance, and streamline grid
-          access, all on one platform with - Solvyn
+          Smart Grid Analytics unifies renewable assets, automates compliance, and enables real-time decisions across solar, wind, BESS, and hybrid plants.
         </motion.p>
 
         <motion.div
@@ -367,22 +391,52 @@ export default function Hero() {
             w-auto
           "
         >
-          <ShimmerButton
+          <button
+            type="button"
+            onClick={() => {
+              const solvyn = document.getElementById("solvyn");
+              if (solvyn) {
+                solvyn.scrollIntoView({ behavior: "smooth" });
+              } else {
+                window.location.href = "/#solvyn";
+              }
+            }}
+            className="
+              inline-flex items-center justify-center
+              font-sans font-bold text-sm sm:text-base md:text-lg
+              px-[20px] py-[10px]
+              whitespace-nowrap rounded-[8px] bg-transparent
+              border border-[#FF7F00] text-[#FF7F00]
+              cursor-pointer transition-all duration-300 ease-in-out
+              hover:bg-[#FF7F00]/10 hover:shadow-sm active:translate-y-px
+            "
+          >
+            Explore Solvyn
+          </button>
+          <button
+            type="button"
             onClick={() => {
               const footer = document.getElementById("footer");
               footer?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="font-sans px-2.5 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-8 lg:py-3 font-bold text-white text-[10px] sm:text-xs md:text-sm lg:text-base w-auto"
-            background="#ff7a18"
-            shimmerColor="#ffffff"
+            className="
+              group inline-flex items-center justify-center gap-1
+              font-sans font-bold text-white text-sm sm:text-base md:text-lg
+              px-[20px] py-[10px]
+              whitespace-nowrap rounded-[8px] bg-[#FF7F00]
+              cursor-pointer border border-transparent
+              transition-all duration-300 ease-in-out
+              hover:brightness-95 hover:shadow-sm active:translate-y-px
+            "
           >
-            CONNECT NOW
-          </ShimmerButton>
+            Book Demo
+            <CtaHoverArrow large />
+          </button>
         </motion.div>
       </div>
 
       {/* Data Points Section */}
-      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 mt-24 sm:mt-32 md:mt-40 lg:mt-48 relative z-40">
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 mt-16 sm:mt-20 md:mt-24 lg:mt-28 relative z-40">
         <div className="grid grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 lg:gap-6 xl:gap-12">
           {dataPoints.map((point, index) => (
             <motion.div

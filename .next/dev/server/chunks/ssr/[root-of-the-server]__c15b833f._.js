@@ -1163,10 +1163,10 @@ function Hero() {
                                     behavior: "smooth"
                                 });
                             },
-                            className: "font-sans px-2.5 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-8 lg:py-3 font-bold text-white text-[10px] sm:text-xs md:text-sm lg:text-base w-auto",
+                            className: "font-sans px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-10 lg:py-4 font-bold text-white text-xs sm:text-sm md:text-base lg:text-lg w-auto",
                             background: "#ff7a18",
                             shimmerColor: "#ffffff",
-                            children: "CONNECT NOW"
+                            children: "Book Demo"
                         }, void 0, false, {
                             fileName: "[project]/src/components/sections/Hero.tsx",
                             lineNumber: 370,
