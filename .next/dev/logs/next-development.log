@@ -108,3 +108,53 @@
 [01:38:51.194] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
 [01:38:52.270] Browser LOG     Updating globe material with color: #e4e5ec
 [01:40:12.959] Server  LOG     ✓ Compiled in 9.4s
+[01:48:42.819] Server  LOG     ✓ Compiled in 218ms
+[01:50:07.859] Server  LOG     ✓ Compiled in 181ms
+[01:51:09.776] Server  LOG     ✓ Compiled in 175ms
+[01:51:59.810] Server  LOG     ✓ Compiled in 149ms
+[01:52:45.052] Server  LOG     ✓ Compiled in 165ms
+[01:54:00.379] Server  LOG     ✓ Compiled in 246ms
+[01:56:05.901] Server  LOG     ✓ Compiled in 139ms
+[01:56:10.696] Server  LOG     ✓ Compiled in 103ms
+[01:58:07.914] Server  LOG     ✓ Compiled in 735ms
+[01:59:32.295] Server  LOG     ✓ Compiled in 239ms
+[02:00:26.870] Server  LOG     ✓ Compiled in 172ms
+[02:02:03.859] Browser LOG     Updating globe material with color: #e4e5ec
+[02:03:02.322] Server  LOG     ✓ Compiled in 39ms
+[02:03:03.537] Browser LOG     Updating globe material with color: #e4e5ec
+[02:04:23.591] Server  LOG     ✓ Compiled in 265ms
+[02:12:34.757] Server  LOG     ✓ Compiled in 305ms
+[02:13:13.295] Browser LOG     Updating globe material with color: #e4e5ec
+[02:14:48.726] Browser LOG     Updating globe material with color: #e4e5ec
+[02:15:38.530] Server  LOG     ✓ Compiled in 267ms
+[02:17:24.454] Server  LOG     ✓ Compiled in 134ms
+[02:18:44.336] Server  LOG     ✓ Compiled in 111ms
+[02:19:22.236] Browser LOG     Updating globe material with color: #e4e5ec
+[02:19:29.309] Server  LOG     ✓ Compiled in 122ms
+[02:20:42.495] Server  LOG     ✓ Compiled in 306ms
+[02:21:50.486] Server  LOG     ✓ Compiled in 242ms
+[02:22:14.542] Server  LOG     ✓ Compiled in 174ms
+[02:22:47.007] Server  LOG     ✓ Compiled in 190ms
+[02:23:02.328] Server  LOG     ✓ Compiled in 73ms
+[02:23:50.331] Server  LOG     ✓ Compiled in 88ms
+[02:25:40.443] Browser LOG     Updating globe material with color: #e4e5ec
+[02:25:54.764] Server  LOG     ✓ Compiled in 336ms
+[02:25:55.607] Browser LOG     Updating globe material with color: #e4e5ec
+[02:25:56.759] Browser LOG     Updating globe material with color: #e4e5ec
+[02:26:02.337] Server  LOG     ✓ Compiled in 75ms
+[02:26:06.893] Server  LOG     ✓ Compiled in 103ms
+[02:26:09.376] Server  LOG     ✓ Compiled in 51ms
+[02:26:12.202] Server  LOG     ✓ Compiled in 51ms
+[02:26:14.350] Server  LOG     ✓ Compiled in 71ms
+[02:26:16.680] Server  LOG     ✓ Compiled in 56ms
+[02:26:24.609] Server  LOG     ✓ Compiled in 43ms
+[02:26:26.819] Server  LOG     ✓ Compiled in 34ms
+[02:26:32.455] Server  LOG     ✓ Compiled in 153ms
+[02:26:52.591] Server  LOG     ✓ Compiled in 61ms
+[02:30:21.318] Server  LOG     ✓ Compiled in 475ms
+[02:32:05.611] Server  LOG     ✓ Compiled in 136ms
+[02:42:25.610] Browser LOG     Updating globe material with color: #e4e5ec
+[02:43:12.015] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:43:13.944] Browser LOG     Updating globe material with color: #e4e5ec
+[02:43:29.005] Browser LOG     Updating globe material with color: #e4e5ec
+[02:45:51.102] Server  LOG     ✓ Compiled in 249ms

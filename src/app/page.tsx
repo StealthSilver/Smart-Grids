@@ -4,6 +4,7 @@ import { About } from "../components/sections/About";
 import { Solvyn } from "../components/sections/Solvyn";
 import { Services } from "../components/sections/Services";
 import { Cta } from "../components/sections/Cta";
+import { Team } from "../components/sections/Team";
 import { Footer } from "../components/sections/Footer";
 import type { Metadata } from "next";
 import { SITE } from "../config/site.config";
@@ -152,6 +153,7 @@ export default function Home() {
       <Solvyn />
       <Services />
       <Cta />
+      <Team />
       <Footer />
     </main>
     </>

@@ -71,6 +71,7 @@
   --background: #ffffff;
 
   --foreground: oklch(0.22 0.02 75);
+  --navbar-height: 88px;
 }
 
 @layer base {
@@ -88,6 +89,8 @@
 
   html {
     @apply motion-safe:scroll-smooth;
+    scroll-padding-top: var(--navbar-height);
+    scroll-snap-type: y mandatory;
   }
 
   body {
@@ -126,8 +129,10 @@
     scrollbar-color: var(--border) transparent;
   }
 
-  [id] {
-    @apply scroll-mt-22;
+  [data-snap-section] {
+    scroll-margin-top: var(--navbar-height);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 }
 

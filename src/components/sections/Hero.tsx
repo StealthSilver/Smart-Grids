@@ -5,6 +5,7 @@ import { CtaHoverArrow } from "../ui/CtaHoverArrow";
 import { LazyGlobe } from "../ui/LazyGlobe";
 import { NumberTicker } from "../ui/NumberTicker";
 import { EdgeLines } from "../ui/EdgeLines";
+import { scrollToSectionAligned } from "@/lib/scroll";
 
 const sampleArcs = [
   {
@@ -318,6 +319,8 @@ export default function Hero() {
 
   return (
     <section
+      id="hero"
+      data-snap-section
       className="
         relative z-[2] lg:min-h-[95vh] h-full px-4 sm:px-6 pt-20 sm:pt-28 md:pt-36 lg:pt-48 
         bg-white backdrop-blur-md
@@ -394,12 +397,7 @@ export default function Hero() {
           <button
             type="button"
             onClick={() => {
-              const solvyn = document.getElementById("solvyn");
-              if (solvyn) {
-                solvyn.scrollIntoView({ behavior: "smooth" });
-              } else {
-                window.location.href = "/#solvyn";
-              }
+              scrollToSectionAligned("solvyn");
             }}
             className="
               inline-flex items-center justify-center
@@ -416,8 +414,7 @@ export default function Hero() {
           <button
             type="button"
             onClick={() => {
-              const footer = document.getElementById("footer");
-              footer?.scrollIntoView({ behavior: "smooth" });
+              scrollToSectionAligned("footer", { updateHash: false });
             }}
             className="
               group inline-flex items-center justify-center gap-1

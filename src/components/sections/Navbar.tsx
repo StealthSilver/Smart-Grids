@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { CtaHoverArrow } from "../ui/CtaHoverArrow";
+import { scrollToSectionAligned } from "@/lib/scroll";
 
 type NavChild = { name: string; href: string };
 type NavItem = {
@@ -82,28 +83,6 @@ const navItems: NavSectionItem[] = [
   },
 ];
 
-function smoothScrollToSection(sectionId: string) {
-  if (typeof window === "undefined") return;
-  const el = document.getElementById(sectionId);
-  if (el) {
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-    if (window.history.replaceState) {
-      window.history.replaceState(null, "", `/#${sectionId}`);
-    }
-  } else {
-    window.location.href = `/#${sectionId}`;
-  }
-}
-
-function smoothScrollToBottom() {
-  if (typeof window === "undefined") return;
-  const target = Math.max(
-    document.body.scrollHeight,
-    document.documentElement.scrollHeight
-  );
-  window.scrollTo({ top: target, behavior: "smooth" });
-}
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [hovered, setHovered] = useState<string | null>(null);
@@ -111,6 +90,7 @@ export default function Navbar() {
   const [dropdownX, setDropdownX] = useState(0);
 
   const navWrapperRef = useRef<HTMLDivElement | null>(null);
+  const navRef = useRef<HTMLElement | null>(null);
   const itemRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   const toggleMenu = () => setIsOpen((v) => !v);
@@ -131,10 +111,32 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, [hovered]);
 
+  useEffect(() => {
+    const navEl = navRef.current;
+    if (!navEl) return;
+
+    const updateNavbarHeightVar = () => {
+      const navHeight = navEl.getBoundingClientRect().height;
+      document.documentElement.style.setProperty("--navbar-height", `${navHeight}px`);
+    };
+
+    updateNavbarHeightVar();
+    window.addEventListener("resize", updateNavbarHeightVar);
+
+    const resizeObserver = new ResizeObserver(updateNavbarHeightVar);
+    resizeObserver.observe(navEl);
+
+    return () => {
+      window.removeEventListener("resize", updateNavbarHeightVar);
+      resizeObserver.disconnect();
+    };
+  }, []);
+
   const hoveredItem = navItems.find((i) => i.name === hovered) ?? null;
 
   return (
     <nav
+      ref={navRef}
       className="
         relative w-full sticky top-0 z-50 px-4 sm:px-6 py-3
         border-b border-[#e5edf5]
@@ -197,7 +199,7 @@ export default function Navbar() {
                         window.location.pathname === "/"
                       ) {
                         e.preventDefault();
-                        smoothScrollToSection(item.sectionId);
+                        scrollToSectionAligned(item.sectionId);
                       }
                     }}
                     onFocus={() => {
@@ -298,7 +300,7 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-3 xl:gap-4 font-mono">
           <button
             type="button"
-            onClick={() => smoothScrollToSection("services")}
+            onClick={() => scrollToSectionAligned("services")}
             className="
               font-sans font-bold text-xs xl:text-sm px-2.5 xl:px-4 py-1.5 sm:py-2
               whitespace-nowrap rounded-[8px] bg-transparent
@@ -311,7 +313,7 @@ export default function Navbar() {
           </button>
           <button
             type="button"
-            onClick={() => smoothScrollToBottom()}
+            onClick={() => scrollToSectionAligned("footer", { updateHash: false })}
             className="
               group inline-flex items-center justify-center gap-0.5
               font-sans font-bold text-white text-xs xl:text-sm
@@ -405,7 +407,7 @@ export default function Navbar() {
                               e.preventDefault();
                               setIsOpen(false);
                               setMobileExpanded(null);
-                              smoothScrollToSection(item.sectionId);
+                              scrollToSectionAligned(item.sectionId);
                             } else {
                               setIsOpen(false);
                               setMobileExpanded(null);
@@ -501,7 +503,7 @@ export default function Navbar() {
                     onClick={() => {
                       setIsOpen(false);
                       setMobileExpanded(null);
-                      smoothScrollToSection("services");
+                      scrollToSectionAligned("services");
                     }}
                     className="
                       font-sans font-bold text-sm px-4 py-2.5
@@ -518,7 +520,7 @@ export default function Navbar() {
                     onClick={() => {
                       setIsOpen(false);
                       setMobileExpanded(null);
-                      smoothScrollToBottom();
+                      scrollToSectionAligned("footer", { updateHash: false });
                     }}
                     className="
                       group inline-flex items-center justify-center gap-0.5
