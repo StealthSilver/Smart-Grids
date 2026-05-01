@@ -1,13 +1,10 @@
-"use client";
-
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import { EdgeLines } from "../ui/EdgeLines";
+import { GlowingEffect } from "../ui/GlowingEffect";
 import {
   WhyIllustration,
   type WhyIllustrationId,
 } from "./WhyIllustrations";
-import { reveal } from "@/lib/scrollReveal";
 
 const reasons: {
   id: WhyIllustrationId;
@@ -58,42 +55,6 @@ const reasons: {
 ];
 
 export const Why = () => {
-  const reduce = useReducedMotion();
-
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: reduce
-        ? { staggerChildren: 0, delayChildren: 0 }
-        : { staggerChildren: 0.1, delayChildren: 0.08 },
-    },
-  };
-
-  const cardVariants = {
-    hidden: reduce
-      ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
-      : {
-          opacity: 0,
-          y: 52,
-          scale: 0.94,
-          filter: "blur(14px)",
-        },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      filter: "blur(0px)",
-      transition: reduce
-        ? { duration: 0 }
-        : ({
-            type: "spring",
-            stiffness: 320,
-            damping: 26,
-            mass: 0.82,
-          } as const),
-    },
-  };
-
   return (
     <section
       id="why"
@@ -102,49 +63,52 @@ export const Why = () => {
     >
       <EdgeLines />
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-start gap-10 sm:gap-12">
-        <motion.div
-          {...reveal({ direction: "up" })}
-          className="flex flex-col items-start gap-4 sm:gap-6 max-w-4xl"
-        >
+        <div className="flex flex-col items-start gap-4 sm:gap-6 max-w-4xl">
           <p className="font-mono text-xs sm:text-sm uppercase tracking-[0.16em] text-gray-600">
             WHY SMART GRID ANALYTICS
           </p>
           <h2 className="font-sans font-semibold text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight max-w-4xl">
             Not Vendors. Partners In The Energy Transition
           </h2>
-        </motion.div>
+        </div>
 
         <div className="w-full">
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 w-full"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.12, margin: "0px 0px -12% 0px" }}
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 w-full pb-2">
             {reasons.map((item) => (
-              <motion.article
+              <div
                 key={item.id}
-                variants={cardVariants}
-                className="relative flex h-full min-h-[320px] sm:min-h-[340px] lg:min-h-[360px] flex-col overflow-hidden rounded-[6px] border border-gray-200/80 bg-gray-50/50 shadow-[0_1px_0_rgba(15,23,42,0.04)]"
+                className="relative group block p-2.5 sm:p-3 h-full w-full"
               >
-                <div className="relative flex flex-1 min-h-[150px] sm:min-h-[160px] items-center justify-center border-b border-gray-200/80 bg-white/40 px-5 py-5 sm:px-6 sm:py-6">
-                  <div className="relative w-full max-w-[200px] sm:max-w-[210px]">
-                    <WhyIllustration variant={item.id} />
+                <article
+                  style={{ borderRadius: 6 }}
+                  className="relative z-20 flex h-full min-h-[320px] sm:min-h-[340px] lg:min-h-[360px] w-full flex-col overflow-hidden border border-gray-200/90 bg-white shadow-sm transition-[border-color,box-shadow] duration-300 ease-out group-hover:border-[#FF7F00]/40 group-hover:shadow-md group-hover:shadow-orange-500/5"
+                >
+                  <GlowingEffect
+                    variant="brand"
+                    blur={8}
+                    spread={64}
+                    proximity={160}
+                    borderWidth={2.5}
+                    disabled={false}
+                  />
+                  <div className="relative z-30 flex flex-1 min-h-[150px] sm:min-h-[160px] items-center justify-center border-b border-gray-200/90 bg-white px-5 py-5 sm:px-6 sm:py-6">
+                    <div className="relative w-full max-w-[200px] sm:max-w-[210px]">
+                      <WhyIllustration variant={item.id} />
+                    </div>
                   </div>
-                </div>
 
-                <div className="relative flex flex-1 flex-col justify-center gap-2 p-5 sm:p-6 lg:p-6">
-                  <h3 className="font-sans font-semibold text-gray-900 text-lg sm:text-xl leading-snug tracking-tight">
-                    {item.title}
-                  </h3>
-                  <div className="font-sans text-gray-600 text-sm sm:text-base leading-relaxed">
-                    {item.body}
+                  <div className="relative z-30 flex flex-1 flex-col justify-center gap-2 p-5 sm:p-6 lg:p-6">
+                    <h3 className="font-sans font-semibold text-gray-900 text-lg sm:text-xl leading-snug tracking-tight">
+                      {item.title}
+                    </h3>
+                    <div className="font-sans text-gray-600 text-sm sm:text-base leading-relaxed">
+                      {item.body}
+                    </div>
                   </div>
-                </div>
-              </motion.article>
+                </article>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

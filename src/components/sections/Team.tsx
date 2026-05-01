@@ -6,6 +6,7 @@ import Link from "next/link";
 import { proofOutlineCtaClassName } from "@/lib/proofOutlineCtaClassName";
 import { EdgeLines } from "../ui/EdgeLines";
 import { CtaHoverArrow } from "../ui/CtaHoverArrow";
+import { GlowingEffect } from "../ui/GlowingEffect";
 
 const teamMembers = [
   {
@@ -61,35 +62,48 @@ export const Team = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-6xl self-center grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-7 lg:gap-8">
+        <div className="w-full max-w-6xl self-center grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-0 pb-2">
           {teamMembers.map((member) => (
-            <article
+            <div
               key={member.name}
-              className="flex flex-col overflow-hidden rounded-[6px] border border-gray-300 bg-gray-50"
+              className="relative group block p-2.5 sm:p-3 h-full w-full"
             >
-              <div className="relative aspect-[5/6] w-full overflow-hidden border-b border-gray-300 bg-gray-100">
-                <Image
-                  src={member.image}
-                  alt={`${member.name}, ${member.role}`}
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 280px"
-                  unoptimized
-                  loading="eager"
+              <article
+                style={{ borderRadius: 6 }}
+                className="relative z-20 flex h-full flex-col overflow-hidden border border-gray-200/90 bg-white shadow-sm transition-[border-color,box-shadow] duration-300 ease-out group-hover:border-[#FF7F00]/40 group-hover:shadow-md group-hover:shadow-orange-500/5"
+              >
+                <GlowingEffect
+                  variant="brand"
+                  blur={8}
+                  spread={64}
+                  proximity={160}
+                  borderWidth={2.5}
+                  disabled={false}
                 />
-              </div>
-              <div className="flex flex-col gap-1.5 sm:gap-2 p-4 sm:p-5 flex-1">
-                <h3 className="font-sans font-semibold text-gray-900 text-base sm:text-lg leading-snug">
-                  {member.name}
-                </h3>
-                <p className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.12em] text-[#FF7F00]">
-                  {member.role}
-                </p>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {member.bio}
-                </p>
-              </div>
-            </article>
+                <div className="relative z-30 aspect-[5/6] w-full overflow-hidden border-b border-gray-200/90 bg-white">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name}, ${member.role}`}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 280px"
+                    unoptimized
+                    loading="eager"
+                  />
+                </div>
+                <div className="relative z-30 flex flex-col gap-1.5 sm:gap-2 p-4 sm:p-5 flex-1">
+                  <h3 className="font-sans font-semibold text-gray-900 text-base sm:text-lg leading-snug">
+                    {member.name}
+                  </h3>
+                  <p className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.12em] text-[#FF7F00]">
+                    {member.role}
+                  </p>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {member.bio}
+                  </p>
+                </div>
+              </article>
+            </div>
           ))}
         </div>
       </div>

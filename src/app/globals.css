@@ -72,6 +72,15 @@
 
   --foreground: oklch(0.22 0.02 75);
   --navbar-height: 88px;
+
+  --edge: #e5edf5;
+
+  /* Glowing card borders — aligned with Hero / Why illustrations + EdgeLines */
+  --glow-brand-primary: rgb(255, 122, 24);
+  --glow-brand-edge: rgb(229, 237, 245);
+  --glow-brand-muted: rgb(148, 163, 184);
+  /* Stronger stops for card border glow (Why section) */
+  --glow-brand-hot: rgb(255, 94, 0);
 }
 
 @layer base {
