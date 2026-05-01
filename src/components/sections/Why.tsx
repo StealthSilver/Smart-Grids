@@ -1,6 +1,5 @@
 import React from "react";
 import { EdgeLines } from "../ui/EdgeLines";
-import { GlowingEffect } from "../ui/GlowingEffect";
 import {
   WhyIllustration,
   type WhyIllustrationId,
@@ -83,14 +82,6 @@ export const Why = () => {
                   style={{ borderRadius: 6 }}
                   className="relative z-20 flex h-full min-h-[320px] sm:min-h-[340px] lg:min-h-[360px] w-full flex-col overflow-hidden border border-gray-200/90 bg-white shadow-sm transition-[border-color,box-shadow] duration-300 ease-out group-hover:border-[#FF7F00]/40 group-hover:shadow-md group-hover:shadow-orange-500/5"
                 >
-                  <GlowingEffect
-                    variant="brand"
-                    blur={8}
-                    spread={64}
-                    proximity={160}
-                    borderWidth={2.5}
-                    disabled={false}
-                  />
                   <div className="relative z-30 flex flex-1 min-h-[150px] sm:min-h-[160px] items-center justify-center border-b border-gray-200/90 bg-white px-5 py-5 sm:px-6 sm:py-6">
                     <div className="relative w-full max-w-[200px] sm:max-w-[210px]">
                       <WhyIllustration variant={item.id} />

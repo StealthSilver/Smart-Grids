@@ -6,7 +6,6 @@ import Link from "next/link";
 import { proofOutlineCtaClassName } from "@/lib/proofOutlineCtaClassName";
 import { EdgeLines } from "../ui/EdgeLines";
 import { CtaHoverArrow } from "../ui/CtaHoverArrow";
-import { GlowingEffect } from "../ui/GlowingEffect";
 
 const teamMembers = [
   {
@@ -72,14 +71,6 @@ export const Team = () => {
                 style={{ borderRadius: 6 }}
                 className="relative z-20 flex h-full flex-col overflow-hidden border border-gray-200/90 bg-white shadow-sm transition-[border-color,box-shadow] duration-300 ease-out group-hover:border-[#FF7F00]/40 group-hover:shadow-md group-hover:shadow-orange-500/5"
               >
-                <GlowingEffect
-                  variant="brand"
-                  blur={8}
-                  spread={64}
-                  proximity={160}
-                  borderWidth={2.5}
-                  disabled={false}
-                />
                 <div className="relative z-30 aspect-[5/6] w-full overflow-hidden border-b border-gray-200/90 bg-white">
                   <Image
                     src={member.image}
