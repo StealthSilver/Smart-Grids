@@ -108,29 +108,7 @@ export const useSolvynAnimation = ({
     // Reset start time when points change
     startTimeRef.current = Date.now();
 
-    // Apply the static stroke-dasharray / stroke-dashoffset for the "always
-    // fully lit" beams. These values only depend on the total path length and
-    // therefore never change between frames — writing them every frame was
-    // invalidating the SVG filter cache on the glow paths and forcing the
-    // browser to re-run the feGaussianBlur on every render tick.
-    const applyStaticBeamAttributes = () => {
-      for (let i = 0; i < pathLengthsRef.current.length; i++) {
-        const pathLength = pathLengthsRef.current[i];
-        if (!pathLength) continue;
-        const lenStr = String(pathLength);
-        const beamRef = beamRefs.current[i];
-        if (beamRef.circle) {
-          beamRef.circle.setAttributeNS(null, "stroke-dasharray", lenStr);
-          beamRef.circle.setAttributeNS(null, "stroke-dashoffset", "0");
-        }
-        if (beamRef.core) {
-          beamRef.core.setAttributeNS(null, "stroke-dasharray", lenStr);
-          beamRef.core.setAttributeNS(null, "stroke-dashoffset", "0");
-        }
-      }
-    };
-
-    // Measure path lengths when points change
+    // Measure path lengths when points change (used for pulse motion along each path).
     const measurePathLengths = () => {
       pathLengthsRef.current = pathRefs.current.map((path) => {
         if (!path) return 0;
@@ -140,7 +118,6 @@ export const useSolvynAnimation = ({
           return 0;
         }
       });
-      applyStaticBeamAttributes();
     };
 
     // Initial measurement + one short follow-up in case refs aren't ready

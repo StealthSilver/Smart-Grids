@@ -2,6 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Points } from "../../types/solvynTypes";
 import { createCurvedPath } from "../../lib/solvynUtils";
 
+/** Matches `ServicesAnimation` beam strokes (`LINE` + opacity). */
+const BEAM_LINE = "#9CA3AF";
+const BEAM_LINE_OPACITY = 0.45;
+/** Hub pulse — matches Services `ACCENT`. */
+const BEAM_ACCENT = "#FF7F00";
+
 type SolvynBeamsProps = {
   points: Points | null;
   containerRef: React.RefObject<HTMLDivElement | null>;
@@ -20,9 +26,6 @@ const SolvynBeamsInner: React.FC<SolvynBeamsProps> = ({
   isTablet = false,
 }) => {
   const [dimensions, setDimensions] = useState({ width: 700, height: 700 });
-  
-  // Responsive stroke widths for base lines
-  const baseStrokeWidth = isMobile ? 1 : isTablet ? 1.5 : 2;
 
   useEffect(() => {
     const updateDimensions = () => {
@@ -54,16 +57,6 @@ const SolvynBeamsInner: React.FC<SolvynBeamsProps> = ({
       viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
       preserveAspectRatio="none"
     >
-      <defs>
-        <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
-          <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-          <feMerge>
-            <feMergeNode in="coloredBlur" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-
       {/* Connection lines */}
       {points &&
         points.targets.map((target, i) => {
@@ -75,15 +68,13 @@ const SolvynBeamsInner: React.FC<SolvynBeamsProps> = ({
           const pathD = createCurvedPath(originPoint.x, originPoint.y, target.x, target.y);
           return (
             <g key={`line-${i}`}>
-              {/* Base line - gray */}
+              {/* Static beam — same grey treatment as ServicesAnimation */}
               <path
                 d={pathD}
-                stroke="currentColor"
-                strokeWidth={baseStrokeWidth}
+                stroke={BEAM_LINE}
+                strokeOpacity={BEAM_LINE_OPACITY}
+                strokeWidth={1}
                 strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-gray-300"
-                opacity={0.6}
                 fill="none"
               />
 
@@ -95,53 +86,24 @@ const SolvynBeamsInner: React.FC<SolvynBeamsProps> = ({
                 }}
                 d={pathD}
                 stroke="transparent"
-                strokeWidth={baseStrokeWidth}
+                strokeWidth={isMobile ? 1 : isTablet ? 1.25 : 1.5}
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 fill="none"
                 opacity={0}
               />
 
-              {/* Continuous animated beam - outer glow (always fully lit) */}
-              <path
-                ref={(el) => {
-                  if (!el) return;
-                  beamRefs.current[i].circle = el;
-                }}
-                d={pathD}
-                stroke="rgba(156, 163, 175, 0.35)"
-                strokeWidth={isMobile ? "1.5" : isTablet ? "2" : "2.5"}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-                filter="url(#softGlow)"
-              />
-
-              {/* Continuous animated beam - inner core (always fully lit) */}
-              <path
-                ref={(el) => {
-                  if (!el) return;
-                  beamRefs.current[i].core = el;
-                }}
-                d={pathD}
-                stroke="rgba(156, 163, 175, 0.65)"
-                strokeWidth={isMobile ? "0.75" : isTablet ? "1" : "1.5"}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                fill="none"
-              />
-
-              {/* Gray pulse circle that travels along the path */}
+              {/* Traveling pulse — orange accent like Services FlowParticle */}
               <circle
                 ref={(el) => {
                   if (!el) return;
                   beamRefs.current[i].pulse = el;
                 }}
-                r={isMobile ? 4 : isTablet ? 5 : 6}
-                fill="rgb(251, 146, 60)"
+                r={isMobile ? 3 : isTablet ? 3.5 : 4}
+                fill={BEAM_ACCENT}
                 opacity={0}
                 style={{
-                  filter: "drop-shadow(0 0 8px rgba(251, 146, 60, 0.8))",
+                  filter: "drop-shadow(0 0 6px rgba(255, 127, 0, 0.45))",
                 }}
               />
             </g>
