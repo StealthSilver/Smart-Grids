@@ -151,7 +151,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageStructuredData) }}
       />
-    <main>
+    <main className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Hero />
       <About />

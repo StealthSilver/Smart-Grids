@@ -1,11 +1,13 @@
 "use client";
 
+import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { CtaHoverArrow } from "../ui/CtaHoverArrow";
 import { LazyGlobe } from "../ui/LazyGlobe";
 import { NumberTicker } from "../ui/NumberTicker";
 import { EdgeLines } from "../ui/EdgeLines";
 import { scrollToSectionAligned } from "@/lib/scroll";
+import { useTheme } from "../theme/ThemeProvider";
 
 const sampleArcs = [
   {
@@ -304,7 +306,37 @@ const globeConfig = {
   autoRotateSpeed: 0.5,
 };
 
+/** Dark theme: same orange arcs; cooler globe and lighting for night “control room” feel. */
+const globeConfigDark = {
+  pointSize: 1,
+  globeColor: "#1e293b",
+  showAtmosphere: true,
+  atmosphereColor: "#334155",
+  atmosphereAltitude: 0.2,
+  emissive: "#0f172a",
+  emissiveIntensity: 0.55,
+  shininess: 2.2,
+  polygonColor: "rgba(148, 163, 184, 0.5)",
+  ambientLight: "#475569",
+  directionalLeftLight: "#94a3b8",
+  directionalTopLight: "#cbd5e1",
+  pointLight: "#64748b",
+  pointColor: "rgba(148, 163, 184, 0.5)",
+  arcTime: 2000,
+  arcLength: 0.9,
+  rings: 1,
+  maxRings: 3,
+  autoRotate: true,
+  autoRotateSpeed: 0.5,
+};
+
 export default function Hero() {
+  const { theme } = useTheme();
+  const activeGlobeConfig = useMemo(
+    () => (theme === "dark" ? globeConfigDark : globeConfig),
+    [theme]
+  );
+
   const dataPoints = [
     { value: 400, suffix: "+", label: "PROJECTS SUCCESSFULLY COMPLETED" },
     { value: 85, suffix: "GW", label: "POWER HANDLED (GIGAWATT)" },
@@ -323,7 +355,7 @@ export default function Hero() {
       data-snap-section
       className="
         relative z-[2] lg:min-h-[95vh] h-full px-4 sm:px-6 pt-20 sm:pt-28 md:pt-36 lg:pt-48 
-        bg-white backdrop-blur-md
+        bg-white dark:bg-slate-950 backdrop-blur-md
         overflow-hidden flex flex-col justify-start mx-auto pb-12 sm:pb-16 md:pb-20
       "
      
@@ -331,17 +363,25 @@ export default function Hero() {
       {/* Sky-like radial gradient: light blue from bottom-right fading to white at top-left */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none z-0"
+        className="absolute inset-0 pointer-events-none z-0 dark:hidden"
         style={{
           background:
             "radial-gradient(ellipse 130% 120% at 100% 100%, rgba(201, 203, 218, 0.85) 0%, rgba(201, 203, 218, 0.65) 22%, rgba(201, 203, 218, 0.45) 45%, rgba(201, 203, 218, 0.22) 68%, rgba(255, 255, 255, 0) 90%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none z-0 hidden dark:block"
+        style={{
+          background:
+            "radial-gradient(ellipse 130% 120% at 100% 100%, rgba(255, 127, 0, 0.12) 0%, rgba(30, 41, 59, 0.85) 28%, rgba(15, 23, 42, 0.75) 52%, rgba(15, 23, 42, 0.35) 72%, rgba(15, 23, 42, 0) 92%)",
         }}
       />
 
       {/* Diffused noise overlay to soften the gradient */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 pointer-events-none z-0 mix-blend-soft-light opacity-[0.35]"
+        className="absolute inset-0 pointer-events-none z-0 mix-blend-soft-light opacity-[0.35] dark:opacity-[0.18]"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0.4  0 0 0 0 0.55  0 0 0 0 0.75  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
@@ -355,7 +395,11 @@ export default function Hero() {
       {/* Globe positioned on the right */}
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden z-[1]">
         <div className="absolute -right-[200px] sm:-right-[150px] md:-right-[100px] lg:-right-[800px] -top-12 sm:-top-16 md:-top-20 lg:-top-24 w-[600px] h-[600px] sm:w-[700px] sm:h-[700px] md:w-[850px] md:h-[850px] lg:w-[950px] lg:h-[950px] xl:w-[1100px] xl:h-[1100px] min-w-[600px] min-h-[600px] sm:min-w-[700px] sm:min-h-[700px] md:min-w-[850px] md:min-h-[850px] lg:min-w-[950px] lg:min-h-[950px] xl:min-w-[1100px] xl:min-h-[1100px] relative">
-          <LazyGlobe globeConfig={globeConfig} data={sampleArcs} />
+          <LazyGlobe
+            key={theme}
+            globeConfig={activeGlobeConfig}
+            data={sampleArcs}
+          />
         </div>
       </div>
 
@@ -366,7 +410,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="
             text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight sm:leading-snug md:leading-normal lg:leading-18
-            text-gray-900
+            text-gray-900 dark:text-slate-100
             max-w-full sm:max-w-3xl md:max-w-4xl
           "
         >
@@ -379,7 +423,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.4 }}
           className="
             max-w-full sm:max-w-xl md:max-w-2xl text-base sm:text-lg md:text-xl lg:text-2xl font-sans leading-relaxed
-            text-gray-600
+            text-gray-600 dark:text-slate-400
           "
         >
           Smart Grid Analytics unifies renewable assets, automates compliance, and enables real-time decisions across solar, wind, BESS, and hybrid plants.
@@ -443,14 +487,14 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.8 + index * 0.1 }}
               className="flex flex-col items-start text-left"
             >
-              <div className="font-mono text-gray-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2 md:mb-3 lg:mb-4 flex items-baseline gap-0.5 sm:gap-1">
+              <div className="font-mono text-gray-900 dark:text-slate-100 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2 md:mb-3 lg:mb-4 flex items-baseline gap-0.5 sm:gap-1">
                 <NumberTicker
                   value={point.value}
-                  className="text-gray-900"
+                  className="text-gray-900 dark:text-slate-100"
                 />
                 <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl">{point.suffix}</span>
               </div>
-              <p className="font-mono text-left text-gray-600 text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs uppercase tracking-wide leading-tight">
+              <p className="font-mono text-left text-gray-600 dark:text-slate-500 text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs uppercase tracking-wide leading-tight">
                 {point.label}
               </p>
             </motion.div>

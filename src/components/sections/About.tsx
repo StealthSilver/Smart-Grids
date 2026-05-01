@@ -42,15 +42,15 @@ export const About = () => {
     <section
       id="about"
       data-snap-section
-      className="relative w-full h-screen px-4 sm:px-6 py-16 sm:py-20 md:py-24 overflow-hidden"
+      className="relative w-full h-screen px-4 sm:px-6 py-16 sm:py-20 md:py-24 overflow-hidden bg-background"
     >
       <EdgeLines />
       <div className="max-w-7xl h-full w-full mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-start gap-8">
         <div className="flex flex-col items-start gap-4 sm:gap-6">
-          <p className="font-mono text-xs sm:text-sm uppercase tracking-[0.16em] text-gray-600">
+          <p className="font-mono text-xs sm:text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-slate-400">
             WHO WE ARE
           </p>
-          <h2 className="font-sans font-semibold text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight max-w-4xl">
+          <h2 className="font-sans font-semibold text-gray-900 dark:text-slate-100 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight max-w-4xl">
             We Bridge The Gap Between Knowing And Doing In Renewables Energy
           </h2>
         </div>
@@ -63,7 +63,7 @@ export const About = () => {
           </div>
         </div>
 
-        <div className="w-full border-y border-gray-300 overflow-x-auto no-scrollbar">
+        <div className="w-full border-y border-gray-300 dark:border-slate-600 overflow-x-auto no-scrollbar">
           <div className="min-w-[960px] grid grid-cols-3">
             {aboutOptions.map((option) => {
               const isActive = option.id === activeOptionId;
@@ -73,10 +73,10 @@ export const About = () => {
                   key={option.id}
                   type="button"
                   onClick={() => setActiveOptionId(option.id)}
-                  className={`group relative text-left px-5 sm:px-6 md:px-8 py-6 md:py-7 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] border-r border-gray-300 last:border-r-0 ${
+                  className={`group relative text-left px-5 sm:px-6 md:px-8 py-6 md:py-7 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] border-r border-gray-300 dark:border-slate-600 last:border-r-0 ${
                     isActive
-                      ? "text-gray-900"
-                      : "text-gray-500 hover:text-gray-700"
+                      ? "text-gray-900 dark:text-slate-100"
+                      : "text-gray-500 hover:text-gray-700 dark:text-slate-500 dark:hover:text-slate-300"
                   }`}
                   aria-pressed={isActive}
                 >
@@ -113,7 +113,7 @@ export const About = () => {
                   >
                     {option.subtitle}
                   </p>
-                  <p className="mt-2 text-sm sm:text-base leading-relaxed">
+                  <p className="mt-2 text-sm sm:text-base leading-relaxed text-gray-600 dark:text-slate-400">
                     {option.description}
                   </p>
                 </button>

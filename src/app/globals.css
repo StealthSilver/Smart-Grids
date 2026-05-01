@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Class-based dark mode (document root gets class "dark" from script + toggle) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -68,19 +71,106 @@
 }
 
 :root {
-  --background: #ffffff;
-
-  --foreground: oklch(0.22 0.02 75);
   --navbar-height: 88px;
 
+  /* Surfaces */
+  --background: #ffffff;
+  --foreground: oklch(0.22 0.02 75);
+
+  /* Brand primary unchanged in both themes */
+  --primary: #ff7f00;
+  --primary-foreground: #ffffff;
+
+  --secondary: oklch(0.96 0.01 250);
+  --secondary-foreground: oklch(0.22 0.02 75);
+
+  --muted: oklch(0.96 0.01 250);
+  --muted-foreground: oklch(0.45 0.02 250);
+
+  --accent: oklch(0.96 0.02 75);
+  --accent-foreground: oklch(0.22 0.02 75);
+
+  --card: #ffffff;
+  --card-foreground: oklch(0.22 0.02 75);
+
+  --popover: #ffffff;
+  --popover-foreground: oklch(0.22 0.02 75);
+  --popover-border: oklch(0.90 0.02 250);
+
+  --border: oklch(0.90 0.02 250);
   --edge: #e5edf5;
+  --input: oklch(0.90 0.02 250);
+  --ring: oklch(0.55 0.15 55);
+
+  --destructive: oklch(0.55 0.22 25);
+  --success: oklch(0.55 0.15 145);
+  --info: oklch(0.55 0.15 250);
+  --link: oklch(0.45 0.15 55);
+
+  --code: oklch(0.96 0.01 250);
+  --code-foreground: oklch(0.22 0.02 75);
+  --code-number: oklch(0.55 0.02 250);
+  --code-highlight: oklch(0.93 0.03 75);
+
+  --selection: oklch(0.92 0.08 55);
+  --selection-foreground: oklch(0.22 0.02 75);
+
+  --shadow-popover: 0 12px 32px -12px rgb(0 0 0 / 0.18);
 
   /* Glowing card borders — aligned with Hero / Why illustrations + EdgeLines */
   --glow-brand-primary: rgb(255, 122, 24);
   --glow-brand-edge: rgb(229, 237, 245);
   --glow-brand-muted: rgb(148, 163, 184);
-  /* Stronger stops for card border glow (Why section) */
   --glow-brand-hot: rgb(255, 94, 0);
+}
+
+.dark {
+  --background: oklch(0.13 0.024 250);
+  --foreground: oklch(0.93 0.01 75);
+
+  --primary: #ff7f00;
+  --primary-foreground: #ffffff;
+
+  --secondary: oklch(0.22 0.03 250);
+  --secondary-foreground: oklch(0.93 0.01 75);
+
+  --muted: oklch(0.22 0.025 250);
+  --muted-foreground: oklch(0.72 0.02 250);
+
+  --accent: oklch(0.24 0.03 250);
+  --accent-foreground: oklch(0.93 0.01 75);
+
+  --card: oklch(0.17 0.024 250);
+  --card-foreground: oklch(0.93 0.01 75);
+
+  --popover: oklch(0.17 0.024 250);
+  --popover-foreground: oklch(0.93 0.01 75);
+  --popover-border: oklch(0.32 0.03 250);
+
+  --border: oklch(0.32 0.03 250);
+  --edge: oklch(0.30 0.035 250);
+  --input: oklch(0.32 0.03 250);
+  --ring: oklch(0.65 0.14 55);
+
+  --destructive: oklch(0.60 0.20 25);
+  --success: oklch(0.65 0.14 145);
+  --info: oklch(0.65 0.12 250);
+  --link: oklch(0.78 0.12 55);
+
+  --code: oklch(0.18 0.02 250);
+  --code-foreground: oklch(0.92 0.01 75);
+  --code-number: oklch(0.62 0.02 250);
+  --code-highlight: oklch(0.24 0.04 250);
+
+  --selection: oklch(0.35 0.08 55);
+  --selection-foreground: oklch(0.96 0.01 75);
+
+  --shadow-popover: 0 16px 40px -16px rgb(0 0 0 / 0.55);
+
+  --glow-brand-primary: rgb(255, 127, 0);
+  --glow-brand-edge: rgb(51, 65, 85);
+  --glow-brand-muted: rgb(100, 116, 139);
+  --glow-brand-hot: rgb(255, 140, 40);
 }
 
 @layer base {

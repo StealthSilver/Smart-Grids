@@ -91,10 +91,10 @@ export function ProofHoverGrid({
               <p className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.16em] text-[#FF7F00]">
                 {item.tag}
               </p>
-              <h3 className="mt-3 font-sans font-semibold text-gray-900 text-base sm:text-lg leading-snug tracking-tight">
+              <h3 className="mt-3 font-sans font-semibold text-gray-900 dark:text-slate-100 text-base sm:text-lg leading-snug tracking-tight">
                 {item.title}
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-gray-600">
+              <p className="mt-4 text-sm leading-relaxed text-gray-600 dark:text-slate-400">
                 {item.description}
               </p>
             </ProofCard>
@@ -118,6 +118,7 @@ export function ProofCard({
       className={cn(
         "h-full w-full overflow-hidden relative z-20",
         "border border-gray-200/90 bg-white shadow-sm",
+        "dark:border-slate-600/90 dark:bg-slate-900 dark:shadow-black/25",
         "transition-[border-color,box-shadow] duration-300 ease-out",
         "group-hover:border-[#FF7F00]/40 group-hover:shadow-md group-hover:shadow-orange-500/5",
         className

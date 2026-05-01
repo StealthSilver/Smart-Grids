@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { SITE } from "../config/site.config";
+import { THEME_STORAGE_KEY } from "../config/theme";
 import ClientWrapper from "../components/ui/ClientWrapper";
+import { ThemeProvider } from "../components/theme/ThemeProvider";
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-plex-sans",
   subsets: ["latin"],
@@ -62,7 +64,14 @@ export default function RootLayout({
       className={`${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
     >
       <body>
-        <ClientWrapper>{children}</ClientWrapper>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var k=${JSON.stringify(THEME_STORAGE_KEY)};var t=localStorage.getItem(k);if(t==="dark")document.documentElement.classList.add("dark");else document.documentElement.classList.remove("dark");}catch(e){}})();`,
+          }}
+        />
+        <ThemeProvider>
+          <ClientWrapper>{children}</ClientWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );

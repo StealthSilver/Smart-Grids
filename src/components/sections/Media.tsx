@@ -66,15 +66,15 @@ export const Media = () => {
     <section
       id="media"
       data-snap-section
-      className="relative flex min-h-screen w-full flex-col overflow-x-hidden px-4 py-16 sm:px-6 sm:py-20 md:py-24"
+      className="relative flex min-h-screen w-full flex-col overflow-x-hidden px-4 py-16 sm:px-6 sm:py-20 md:py-24 bg-background"
     >
       <EdgeLines />
       <div className="relative z-10 mx-auto flex w-full max-w-7xl min-h-0 flex-1 flex-col items-stretch gap-8 sm:gap-10 px-4 sm:px-6">
         <div className="flex w-full shrink-0 flex-col gap-4 sm:gap-6">
-          <p className="font-mono text-xs uppercase tracking-[0.16em] text-gray-600 sm:text-sm">
+          <p className="font-mono text-xs uppercase tracking-[0.16em] text-gray-600 dark:text-slate-400 sm:text-sm">
             IN THE NEWS
           </p>
-          <h2 className="max-w-4xl font-sans text-2xl font-semibold leading-tight text-gray-900 sm:text-3xl md:text-4xl lg:text-5xl">
+          <h2 className="max-w-4xl font-sans text-2xl font-semibold leading-tight text-gray-900 dark:text-slate-100 sm:text-3xl md:text-4xl lg:text-5xl">
             SGA In The Media
           </h2>
           <div className="flex w-full flex-wrap items-center gap-3 sm:gap-4">

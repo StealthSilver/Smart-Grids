@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { CtaHoverArrow } from "../ui/CtaHoverArrow";
+import { ThemeToggle } from "../theme/ThemeToggle";
 import { scrollToSectionAligned } from "@/lib/scroll";
 
 type NavChild = { name: string; href: string };
@@ -137,8 +138,9 @@ export default function Navbar() {
       ref={navRef}
       className="
         relative w-full sticky top-0 z-50 px-6 sm:px-12 py-3
-        border-b border-[#e5edf5]
-        bg-white backdrop-blur-sm
+        border-b border-edge
+        bg-white/95 backdrop-blur-sm
+        dark:bg-slate-950/90 dark:border-slate-700/80
         transition-colors duration-300
       "
     >
@@ -149,7 +151,13 @@ export default function Navbar() {
             <img
               src="/logo_light.svg"
               alt="Smart Grid Analytics"
-              className="w-24 h-auto sm:w-28 md:w-32 lg:w-36"
+              className="w-24 h-auto sm:w-28 md:w-32 lg:w-36 dark:hidden"
+            />
+            <img
+              src="/logo_dark.svg"
+              alt=""
+              aria-hidden
+              className="hidden w-24 h-auto sm:w-28 md:w-32 lg:w-36 dark:block"
             />
           </Link>
 
@@ -178,6 +186,7 @@ export default function Navbar() {
                       className="
                         absolute inset-0 rounded-[6px] backdrop-blur-sm
                         bg-[rgb(228,229,236)] border border-[rgb(228,229,236)]
+                        dark:bg-slate-800/90 dark:border-slate-600
                       "
                       transition={{
                         type: "spring",
@@ -208,6 +217,7 @@ export default function Navbar() {
                       relative z-10 inline-flex items-center gap-1
                       transition-colors text-sm
                       text-gray-700 hover:text-black
+                      dark:text-slate-300 dark:hover:text-white
                     "
                   >
                     <span>{item.name}</span>
@@ -247,8 +257,10 @@ export default function Navbar() {
               <div
                 className="
                   -translate-x-1/2
-                  bg-white border border-[#e5edf5]
+                  bg-white border border-edge
                   rounded-xl shadow-[0_12px_32px_-12px_rgba(0,0,0,0.18)]
+                  dark:bg-slate-900 dark:border-slate-600
+                  dark:shadow-[0_16px_40px_-12px_rgba(0,0,0,0.55)]
                   p-2 min-w-[240px]
                   overflow-hidden
                 "
@@ -265,7 +277,7 @@ export default function Navbar() {
                         ease: [0.4, 0, 0.2, 1],
                       }}
                     >
-                      <div className="px-3 pt-1.5 pb-1.5 text-[10px] uppercase tracking-[0.14em] font-mono text-gray-500">
+                      <div className="px-3 pt-1.5 pb-1.5 text-[10px] uppercase tracking-[0.14em] font-mono text-gray-500 dark:text-slate-400">
                         {hoveredItem.label}
                       </div>
                       <div className="flex flex-col">
@@ -278,6 +290,8 @@ export default function Navbar() {
                               text-sm font-sans font-medium
                               text-gray-700 hover:text-black
                               hover:bg-gray-100
+                              dark:text-slate-300 dark:hover:text-white
+                              dark:hover:bg-slate-800
                               transition-colors
                               whitespace-nowrap
                             "
@@ -295,7 +309,8 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Right Section */}
-        <div className="hidden lg:flex items-center gap-3 xl:gap-4 font-mono">
+        <div className="hidden lg:flex items-center gap-2 xl:gap-3 font-mono">
+          <ThemeToggle />
           <button
             type="button"
             onClick={() => scrollToSectionAligned("services")}
@@ -328,11 +343,12 @@ export default function Navbar() {
         </div>
 
         {/* Tablet/Mobile Menu Button */}
-        <div className="lg:hidden flex items-center justify-end">
+        <div className="lg:hidden flex items-center justify-end gap-2">
+          <ThemeToggle />
           <button
             onClick={toggleMenu}
             aria-label={isOpen ? "Close menu" : "Open menu"}
-            className="p-1.5 rounded-md relative h-9 w-9 flex items-center justify-center text-gray-900"
+            className="p-1.5 rounded-md relative h-9 w-9 flex items-center justify-center text-gray-900 dark:text-slate-100"
           >
             <AnimatePresence mode="wait" initial={false}>
               {isOpen ? (
@@ -373,7 +389,7 @@ export default function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.32, ease: [0.4, 0, 0.2, 1] }}
           >
-            <div className="bg-white backdrop-blur-md shadow-lg border-t border-[#e5edf5] transition-colors duration-300">
+            <div className="bg-white/98 backdrop-blur-md shadow-lg border-t border-edge dark:bg-slate-950/98 dark:border-slate-700/80 transition-colors duration-300">
               <motion.div
                 className="flex flex-col items-stretch py-4 sm:py-6 px-5 sm:px-6"
                 initial={{ y: -8 }}
@@ -392,7 +408,7 @@ export default function Navbar() {
                         duration: 0.25,
                         ease: [0.4, 0, 0.2, 1],
                       }}
-                      className="border-b border-[#e5edf5] last:border-b-0"
+                      className="border-b border-edge last:border-b-0 dark:border-slate-700/80"
                     >
                       <div className="flex items-center justify-between">
                         <Link
@@ -414,7 +430,7 @@ export default function Navbar() {
                           className="
                             flex-1 py-3 sm:py-3.5
                             font-sans font-semibold text-sm
-                            text-gray-800
+                            text-gray-800 dark:text-slate-100
                             transition-colors
                           "
                         >
@@ -430,6 +446,7 @@ export default function Navbar() {
                           className="
                             p-3 -mr-2
                             text-gray-500 hover:text-gray-800
+                            dark:text-slate-400 dark:hover:text-slate-100
                             transition-colors
                           "
                         >
@@ -460,7 +477,7 @@ export default function Navbar() {
                             className="overflow-hidden"
                           >
                             <div className="pb-3 pl-1 flex flex-col">
-                              <div className="px-2 pb-1.5 text-[10px] uppercase tracking-[0.14em] font-mono text-gray-500">
+                              <div className="px-2 pb-1.5 text-[10px] uppercase tracking-[0.14em] font-mono text-gray-500 dark:text-slate-400">
                                 {item.label}
                               </div>
                               {item.children.map((child) => (
@@ -473,6 +490,8 @@ export default function Navbar() {
                                     text-sm font-sans font-medium
                                     text-gray-700 hover:text-black
                                     hover:bg-gray-100 transition-colors
+                                    dark:text-slate-300 dark:hover:text-white
+                                    dark:hover:bg-slate-800
                                   "
                                 >
                                   {child.name}

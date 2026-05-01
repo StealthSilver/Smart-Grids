@@ -14,10 +14,10 @@ const mapsEmbedSrc = () => {
 };
 
 const inputClassName =
-  "w-full rounded-[6px] border border-gray-300 bg-white px-3 py-2 sm:px-4 sm:py-2.5 text-sm text-gray-900 placeholder:text-gray-500 transition-[border-color,box-shadow] duration-200 ease-out focus:border-[#FF7F00] focus:outline-none focus:ring-2 focus:ring-[#FF7F00]/20 font-sans";
+  "w-full rounded-[6px] border border-gray-300 bg-white px-3 py-2 sm:px-4 sm:py-2.5 text-sm text-gray-900 placeholder:text-gray-500 transition-[border-color,box-shadow] duration-200 ease-out focus:border-[#FF7F00] focus:outline-none focus:ring-2 focus:ring-[#FF7F00]/20 font-sans dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500";
 
 const labelClassName =
-  "mb-1.5 block text-sm font-medium text-gray-900 font-sans";
+  "mb-1.5 block text-sm font-medium text-gray-900 dark:text-slate-100 font-sans";
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -91,13 +91,13 @@ export const ContactSection = () => {
     <section
       id="contact"
       data-snap-section
-      className="relative w-full px-4 sm:px-6 py-16 sm:py-20 md:py-24 overflow-hidden"
+      className="relative w-full px-4 sm:px-6 py-16 sm:py-20 md:py-24 overflow-hidden bg-background"
     >
       <EdgeLines />
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-start">
           <div
-            className="relative z-10 w-full overflow-hidden border border-gray-200/90 bg-white shadow-sm order-1 lg:order-2"
+            className="relative z-10 w-full overflow-hidden border border-gray-200/90 bg-white shadow-sm order-1 lg:order-2 dark:border-slate-600/90 dark:bg-slate-900 dark:shadow-black/25"
             style={{ borderRadius: 6 }}
           >
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 p-5 sm:p-6 lg:p-7">
@@ -172,7 +172,7 @@ export const ContactSection = () => {
                       checked={privacyAccepted}
                       onChange={(e) => setPrivacyAccepted(e.target.checked)}
                       required
-                      className="size-4 cursor-pointer rounded border-gray-300 bg-white text-[#FF7F00] focus:ring-2 focus:ring-[#FF7F00]/30 focus:ring-offset-0"
+                      className="size-4 cursor-pointer rounded border-gray-300 bg-white text-[#FF7F00] focus:ring-2 focus:ring-[#FF7F00]/30 focus:ring-offset-0 dark:border-slate-600 dark:bg-slate-900"
                     />
                   </div>
                   <span className="text-sm leading-relaxed text-gray-600 font-sans">
@@ -258,7 +258,7 @@ export const ContactSection = () => {
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3 sm:gap-4">
                   <div
-                    className="flex h-9 w-9 shrink-0 items-center justify-center border border-gray-300 bg-gray-50 sm:h-10 sm:w-10"
+                    className="flex h-9 w-9 shrink-0 items-center justify-center border border-gray-300 bg-gray-50 sm:h-10 sm:w-10 dark:border-slate-600 dark:bg-slate-800/80"
                     style={{ borderRadius: 6 }}
                   >
                     <svg

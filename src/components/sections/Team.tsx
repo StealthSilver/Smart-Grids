@@ -39,15 +39,15 @@ export const Team = () => {
     <section
       id="team"
       data-snap-section
-      className="relative w-full min-h-screen px-4 sm:px-6 py-16 sm:py-20 md:py-24 overflow-hidden"
+      className="relative w-full min-h-screen px-4 sm:px-6 py-16 sm:py-20 md:py-24 overflow-hidden bg-background"
     >
       <EdgeLines />
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-start gap-8 sm:gap-10">
         <div className="flex flex-col items-start gap-4 sm:gap-6 max-w-4xl">
-          <p className="font-mono text-xs sm:text-sm uppercase tracking-[0.16em] text-gray-600">
+          <p className="font-mono text-xs sm:text-sm uppercase tracking-[0.16em] text-gray-600 dark:text-slate-400">
             THE TEAM
           </p>
-          <h2 className="font-sans font-semibold text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight max-w-4xl">
+          <h2 className="font-sans font-semibold text-gray-900 dark:text-slate-100 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight max-w-4xl">
             Built By Engineers. Guided By Decades Of Grid Experience.
           </h2>
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
@@ -69,9 +69,9 @@ export const Team = () => {
             >
               <article
                 style={{ borderRadius: 6 }}
-                className="relative z-20 flex h-full flex-col overflow-hidden border border-gray-200/90 bg-white shadow-sm transition-[border-color,box-shadow] duration-300 ease-out group-hover:border-[#FF7F00]/40 group-hover:shadow-md group-hover:shadow-orange-500/5"
+                className="relative z-20 flex h-full flex-col overflow-hidden border border-gray-200/90 bg-white shadow-sm transition-[border-color,box-shadow] duration-300 ease-out group-hover:border-[#FF7F00]/40 group-hover:shadow-md group-hover:shadow-orange-500/5 dark:border-slate-600/90 dark:bg-slate-900 dark:shadow-black/20 dark:group-hover:border-[#FF7F00]/45"
               >
-                <div className="relative z-30 aspect-[5/6] w-full overflow-hidden border-b border-gray-200/90 bg-white">
+                <div className="relative z-30 aspect-[5/6] w-full overflow-hidden border-b border-gray-200/90 bg-white dark:border-slate-600/90 dark:bg-slate-900">
                   <Image
                     src={member.image}
                     alt={`${member.name}, ${member.role}`}
@@ -83,13 +83,13 @@ export const Team = () => {
                   />
                 </div>
                 <div className="relative z-30 flex flex-col gap-1.5 sm:gap-2 p-4 sm:p-5 flex-1">
-                  <h3 className="font-sans font-semibold text-gray-900 text-base sm:text-lg leading-snug">
+                  <h3 className="font-sans font-semibold text-gray-900 dark:text-slate-100 text-base sm:text-lg leading-snug">
                     {member.name}
                   </h3>
                   <p className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.12em] text-[#FF7F00]">
                     {member.role}
                   </p>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-600 dark:text-slate-400 leading-relaxed">
                     {member.bio}
                   </p>
                 </div>
