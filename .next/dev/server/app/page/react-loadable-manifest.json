@@ -16,14 +16,7 @@
       "static/chunks/node_modules_react-reconciler_dd58c996._.js",
       "static/chunks/node_modules_@react-three_fiber_dist_fcbae3c5._.js",
       "static/chunks/node_modules_e8c97a6f._.js",
-      "static/chunks/src_components_ui_Globe_tsx_d3e72397._.js"
-    ]
-  },
-  "[project]/src/components/sections/LogoTicker.tsx [app-client] (ecmascript, next/dynamic entry)": {
-    "id": "[project]/src/components/sections/LogoTicker.tsx [app-client] (ecmascript, next/dynamic entry)",
-    "files": [
-      "static/chunks/src_494ed1aa._.js",
-      "static/chunks/src_components_sections_LogoTicker_tsx_d3e72397._.js"
+      "static/chunks/src_components_ui_Globe_tsx_c3d7eea5._.js"
     ]
   }
 }
