@@ -13,7 +13,6 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 export type AboutAnimationActiveId = "see" | "execute" | "decide";
 
 const ACCENT = "#FF7F00";
-const NEUTRAL_NODE = "#374151"; // gray-700
 const LINE = "#9CA3AF"; // gray-400
 
 const VB_W = 800;
@@ -342,7 +341,7 @@ const BaseNodes: React.FC<{
               cx={p.x}
               cy={p.y}
               r={r}
-              fill={accentCenter ? ACCENT : NEUTRAL_NODE}
+              fill={ACCENT}
               initial={false}
               animate={
                 reducedMotion
@@ -435,14 +434,14 @@ const SeeScene: React.FC<{ reducedMotion: boolean }> = ({ reducedMotion }) => (
             cx={SEE_LEFT_X}
             cy={p.baseY}
             r={1}
-            fill={NEUTRAL_NODE}
+            fill={ACCENT}
             opacity={0.4}
           />
           <circle
             cx={SEE_RIGHT_X}
             cy={p.baseY}
             r={1}
-            fill={NEUTRAL_NODE}
+            fill={ACCENT}
             opacity={0.4}
           />
         </g>
@@ -486,7 +485,7 @@ const SeeScene: React.FC<{ reducedMotion: boolean }> = ({ reducedMotion }) => (
               duration={duration}
               delay={delay}
               size={1.6}
-              color={NEUTRAL_NODE}
+              color={ACCENT}
               opacity={0.85}
               glow
             />
@@ -707,14 +706,14 @@ const DecideScene: React.FC<{ reducedMotion: boolean }> = ({
               cx={DECIDE_LEFT_X}
               cy={p.y}
               r={1.1}
-              fill={NEUTRAL_NODE}
+              fill={ACCENT}
               opacity={0.55}
             />
             <circle
               cx={DECIDE_RIGHT_X}
               cy={p.y}
               r={1.1}
-              fill={NEUTRAL_NODE}
+              fill={ACCENT}
               opacity={0.55}
             />
           </g>
@@ -773,7 +772,7 @@ const DecideScene: React.FC<{ reducedMotion: boolean }> = ({
                   duration={duration}
                   delay={delay}
                   size={1.3}
-                  color={LINE}
+                  color={ACCENT}
                   opacity={0.85}
                 />
               );
@@ -798,7 +797,7 @@ const DecideScene: React.FC<{ reducedMotion: boolean }> = ({
                   duration={duration}
                   delay={delay}
                   size={1.5}
-                  color={LINE}
+                  color={ACCENT}
                   opacity={0.95}
                 />
               );
@@ -820,7 +819,7 @@ const DecideScene: React.FC<{ reducedMotion: boolean }> = ({
                 duration={4.2}
                 delay={i * 0.55}
                 size={1.7}
-                color={LINE}
+                color={ACCENT}
                 opacity={1}
               />
             ))}
@@ -1106,7 +1105,7 @@ const RadialBurstScene: React.FC<{ reducedMotion: boolean }> = ({
                 duration={p.particleDuration}
                 delay={p.particleDelay}
                 size={1.4}
-                color={LINE}
+                color={ACCENT}
                 opacity={0.85}
                 keySplines="0 0 0.25 1"
               />
@@ -1127,7 +1126,7 @@ const RadialBurstScene: React.FC<{ reducedMotion: boolean }> = ({
                 duration={p.particleDuration * 0.85}
                 delay={p.particleDelay}
                 size={1.7}
-                color={LINE}
+                color={ACCENT}
                 opacity={0.95}
                 keySplines="0 0 0.25 1"
               />

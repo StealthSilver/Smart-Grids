@@ -23,3 +23,5 @@
 [00:30:30.699] Server  LOG     ✓ Compiled in 115ms
 [00:30:32.112] Server  LOG     ✓ Compiled in 125ms
 [00:30:33.620] Server  LOG     ✓ Compiled in 260ms
+[00:32:00.631] Browser LOG     Updating globe material with color: #e4e5ec
+[00:33:42.625] Server  LOG     ✓ Compiled in 6.8s
