@@ -257,15 +257,15 @@
     }
   }
 
-  /* Trusted-by logo strip: one loop = half the duplicated track width */
-  --animate-logo-ticker: logo-ticker-scroll 90s linear infinite;
+  /* Trusted-by strip: distance set via --logo-ticker-shift (first set width + gap). */
+  --animate-logo-ticker: logo-ticker-scroll 140s linear infinite;
 
   @keyframes logo-ticker-scroll {
     from {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
     to {
-      transform: translateX(-50%);
+      transform: translate3d(calc(-1 * var(--logo-ticker-shift, 50%)), 0, 0);
     }
   }
 }

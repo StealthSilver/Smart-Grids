@@ -32,3 +32,59 @@
 [00:26:11.923] Browser LOG     Updating globe material with color: #e4e5ec
 [00:26:14.076] Browser LOG     Updating globe material with color: #e4e5ec
 [00:26:33.597] Browser LOG     Updating globe material with color: #e4e5ec
+[02:05:42.749] Server  LOG     ✓ Compiled in 655ms
+[02:05:59.999] Server  LOG     ✓ Compiled in 150ms
+[02:06:00.839] Server  ERROR   ⨯ ReferenceError: reliance is not defined
+[02:06:00.865] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/components/sections/LogoTicker.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[02:06:00.933] Server  LOG     ✓ Compiled in 7ms
+[02:06:23.904] Browser WARN    Image with src "/_next/static/media/o2_logo.2ba2561b.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:06:23.907] Browser WARN    Image with src "/_next/static/media/inox_logo.1bdafc48.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:06:23.907] Browser WARN    Image with src "/_next/static/media/abb_logo.da5fd0fe.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:06:23.907] Browser WARN    Image with src "/_next/static/media/etap_logo.c0faf6ed.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:06:23.907] Browser WARN    Image with src "/_next/static/media/blupine_logo.72905066.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:06:24.696] Browser LOG     Updating globe material with color: #e4e5ec
+[02:06:24.811] Browser WARN    Image with src "/_next/static/media/fimer_logo.984e7900.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:06:37.907] Browser WARN    Image with src "/_next/static/media/alfanar_logo.6596f5fe.avif" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:06:41.279] Browser WARN    Image with src "/_next/static/media/avaada_logo.7c87310e.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:06:45.138] Browser WARN    Image with src "/_next/static/media/azure_logo.a484b31c.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:06:56.644] Server  LOG     ✓ Compiled in 992ms
+[02:06:56.901] Browser WARN    Image with src "/_next/static/media/refex_logo.eccf5eae.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:06:56.901] Browser WARN    Image with src "/_next/static/media/spring_logo.d5084f30.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:07:04.450] Server  LOG     ✓ Compiled in 174ms
+[02:07:09.444] Server  LOG     ✓ Compiled in 233ms
+[02:07:16.677] Server  LOG     ✓ Compiled in 137ms
+[02:07:21.846] Server  LOG     ✓ Compiled in 134ms
+[02:07:32.384] Server  LOG     ✓ Compiled in 158ms
+[02:07:36.643] Server  LOG     ✓ Compiled in 132ms
+[02:07:47.058] Server  LOG     ✓ Compiled in 92ms
+[02:07:56.292] Browser WARN    Image with src "/_next/static/media/vena_logo.27a4fa66.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:08:00.475] Browser WARN    Image with src "/_next/static/media/kec_logo.b645b9dd.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:09:24.071] Server  LOG     ✓ Compiled in 1108ms
+[02:09:26.200] Server  LOG     ✓ Compiled in 501ms
+[02:09:29.025] Server  LOG     ✓ Compiled in 199ms
+[02:10:53.178] Server  LOG     ✓ Compiled in 360ms
+[02:12:24.444] Server  LOG     ✓ Compiled in 1428ms
+[02:12:25.537] Browser ERROR   uncaughtError: ReferenceError: tickerTrack is not defined
+[02:12:26.524] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[02:12:27.898] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[02:12:27.911] Server  LOG     ✓ Compiled in 150ms
+[02:12:29.166] Browser WARN    Image with src "/_next/static/media/jsw_logo.54cdcb11.jpeg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:12:29.166] Browser WARN    Image with src "/_next/static/media/ayana_logo.2c89710d.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:12:32.299] Server  LOG     ✓ Compiled in 124ms
+[02:13:39.566] Browser WARN    You are trying to animate opacity from "undefined" to "0". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[02:13:39.575] Browser WARN    Image with src "/_next/static/media/spring_logo.d5084f30.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/o2_logo.2ba2561b.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/inox_logo.1bdafc48.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/abb_logo.da5fd0fe.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/etap_logo.c0faf6ed.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/blupine_logo.72905066.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/fimer_logo.984e7900.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/jsw_logo.54cdcb11.jpeg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/alfanar_logo.6596f5fe.avif" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/avaada_logo.7c87310e.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/azure_logo.a484b31c.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/ayana_logo.2c89710d.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/vena_logo.27a4fa66.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/kec_logo.b645b9dd.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:39.576] Browser WARN    Image with src "/_next/static/media/refex_logo.eccf5eae.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[02:13:40.396] Browser LOG     Updating globe material with color: #e4e5ec
