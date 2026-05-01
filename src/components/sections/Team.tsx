@@ -1,7 +1,10 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import { proofOutlineCtaClassName } from "@/lib/proofOutlineCtaClassName";
 import { EdgeLines } from "../ui/EdgeLines";
+import { CtaHoverArrow } from "../ui/CtaHoverArrow";
 
 export const Team = () => {
   return (
@@ -18,6 +21,15 @@ export const Team = () => {
         <h2 className="font-sans font-semibold text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight max-w-4xl">
           Built By Engineers. Guided By Decades Of Grid Experience.
         </h2>
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+          <Link
+            href="/company/leadership"
+            className={proofOutlineCtaClassName}
+          >
+            Meet The Full Team
+            <CtaHoverArrow />
+          </Link>
+        </div>
       </div>
     </section>
   );

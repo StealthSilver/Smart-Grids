@@ -2,17 +2,10 @@
 
 import React from "react";
 import Link from "next/link";
+import { proofOutlineCtaClassName } from "@/lib/proofOutlineCtaClassName";
 import { EdgeLines } from "../ui/EdgeLines";
 import { CtaHoverArrow } from "../ui/CtaHoverArrow";
 import { PROOF_GRID_ITEMS, ProofHoverGrid } from "../ui/ProofHoverGrid";
-
-const proofCtaClassName =
-  "group inline-flex items-center justify-center gap-0.5 " +
-  "font-sans font-bold text-sm sm:text-base md:text-lg " +
-  "px-[20px] py-[10px] whitespace-nowrap rounded-[8px] bg-transparent " +
-  "border border-[#FF7F00] text-[#FF7F00] cursor-pointer " +
-  "transition-all duration-300 ease-in-out " +
-  "hover:bg-[#FF7F00]/10 hover:shadow-sm active:translate-y-px";
 
 export const Cta = () => {
   return (
@@ -33,11 +26,11 @@ export const Cta = () => {
         </div>
 
         <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-          <Link href="/case-studies" className={proofCtaClassName}>
+          <Link href="/case-studies" className={proofOutlineCtaClassName}>
             View All Case Studies
             <CtaHoverArrow />
           </Link>
-          <Link href="/white-papers" className={proofCtaClassName}>
+          <Link href="/white-papers" className={proofOutlineCtaClassName}>
             Read White Papers
             <CtaHoverArrow />
           </Link>

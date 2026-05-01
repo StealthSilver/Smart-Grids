@@ -38,3 +38,11 @@
 [01:10:51.768] Server  LOG     ✓ Compiled in 2.2s
 [01:10:54.643] Browser LOG     Updating globe material with color: #e4e5ec
 [01:11:06.558] Server  LOG     ✓ Compiled in 304ms
+[01:35:07.030] Server  LOG     ✓ Compiled in 172ms
+[01:35:07.693] Browser ERROR   uncaughtError: ReferenceError: proofCtaClassName is not defined
+[01:35:07.784] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:35:07.832] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:35:07.845] Server  LOG     ✓ Compiled in 376ms
+[01:35:09.339] Server  LOG     ✓ Compiled in 198ms
+[01:35:22.607] Browser DEBUG   Provider initialization - wallet not connected
+[01:35:23.173] Browser LOG     Updating globe material with color: #e4e5ec
