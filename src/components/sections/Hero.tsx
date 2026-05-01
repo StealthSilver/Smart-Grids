@@ -350,7 +350,7 @@ export default function Hero() {
       />
 
       {/* Vertical edge lines at max-w-7xl boundaries (sits above bg, below globe & text) */}
-      <EdgeLines className="z-0" />
+      <EdgeLines className="z-0" horizontal={false} />
 
       {/* Globe positioned on the right */}
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden z-[1]">

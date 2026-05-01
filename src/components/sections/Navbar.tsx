@@ -138,7 +138,7 @@ export default function Navbar() {
     <nav
       ref={navRef}
       className="
-        relative w-full sticky top-0 z-50 px-4 sm:px-6 py-3
+        relative w-full sticky top-0 z-50 px-6 sm:px-12 py-3
         border-b border-[#e5edf5]
         bg-white backdrop-blur-sm
         transition-colors duration-300
