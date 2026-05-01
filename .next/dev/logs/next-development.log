@@ -348,3 +348,11 @@
 [03:14:22.942] Server  LOG     ✓ Compiled in 551ms
 [03:14:23.140] Browser WARN    You are trying to animate opacity from "undefined" to "0". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
 [03:14:24.173] Browser LOG     Updating globe material with color: #e4e5ec
+[03:18:13.807] Server  LOG     ✓ Compiled in 506ms
+[03:18:57.000] Server  LOG     ✓ Compiled in 201ms
+[03:21:09.309] Browser WARN    You are trying to animate opacity from "undefined" to "0". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[03:21:10.329] Browser LOG     Updating globe material with color: #e4e5ec
+[03:24:55.501] Browser WARN    You are trying to animate opacity from "undefined" to "0". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[03:24:56.311] Browser LOG     Updating globe material with color: #e4e5ec
+[03:27:12.675] Browser WARN    You are trying to animate opacity from "undefined" to "0". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[03:27:13.388] Browser LOG     Updating globe material with color: #e4e5ec

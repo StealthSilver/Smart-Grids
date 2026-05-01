@@ -7877,12 +7877,12 @@ const mediaSlides = [
     {
         title: "Smart grid leadership",
         headline: "National outlets on India’s first grid-scale EMS and battery storage deployment",
-        src: "/media1.jpeg"
+        src: "/media1.png"
     },
     {
         title: "Energy transition spotlight",
         headline: "Trade press on hybrid solar, wind, and BESS optimization at utility scale",
-        src: "/media2.jpeg"
+        src: "/media2.png"
     },
     {
         title: "Innovation in the news",
@@ -7892,17 +7892,17 @@ const mediaSlides = [
     {
         title: "Press highlights",
         headline: "Profiles of analytics-led control rooms and performance across large portfolios",
-        src: "/media4.jpeg"
+        src: "/media4.png"
     },
     {
         title: "Powering the future",
         headline: "Features on peak demand, ancillary services, and market participation strategy",
-        src: "/media5.jpeg"
+        src: "/media5.png"
     },
     {
         title: "SGA in the headlines",
         headline: "Interviews on the clean-energy roadmap and SGA’s role behind major programs",
-        src: "/media6.jpeg"
+        src: "/media6.png"
     }
 ];
 const Media = ()=>{
