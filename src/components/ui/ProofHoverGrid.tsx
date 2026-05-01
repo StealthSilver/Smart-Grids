@@ -105,7 +105,7 @@ export function ProofHoverGrid({
   );
 }
 
-function ProofCard({
+export function ProofCard({
   className,
   children,
 }: {

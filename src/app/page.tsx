@@ -4,7 +4,11 @@ import { About } from "../components/sections/About";
 import { Solvyn } from "../components/sections/Solvyn";
 import { Services } from "../components/sections/Services";
 import { Cta } from "../components/sections/Cta";
+import { Media } from "../components/sections/Media";
 import { Team } from "../components/sections/Team";
+import { Why } from "../components/sections/Why";
+import { LogoTicker } from "../components/sections/LogoTicker";
+import { Leadership } from "../components/sections/Leadership";
 import { Footer } from "../components/sections/Footer";
 import type { Metadata } from "next";
 import { SITE } from "../config/site.config";
@@ -153,7 +157,11 @@ export default function Home() {
       <Solvyn />
       <Services />
       <Cta />
+      <Media />
       <Team />
+      <Why />
+      <LogoTicker />
+      <Leadership />
       <Footer />
     </main>
     </>

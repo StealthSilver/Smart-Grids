@@ -1,13 +1,34 @@
-[00:00:04.612] Server  LOG     ✓ Ready in 3.5s
-[00:00:09.378] Server  LOG     ○ Compiling / ...
-[00:00:17.590] Browser LOG     Updating globe material with color: #e4e5ec
-[00:00:30.449] Server  LOG     ✓ Compiled in 4.3s
-[00:03:11.549] Server  LOG     ✓ Compiled in 1902ms
-[00:03:12.678] Server  LOG     ✓ Compiled in 993ms
-[00:04:09.732] Server  LOG     ✓ Compiled in 315ms
-[00:04:10.712] Server  LOG     ✓ Compiled in 274ms
-[00:04:51.312] Server  LOG     ✓ Compiled in 2.1s
-[00:05:19.040] Browser LOG     Updating globe material with color: #e4e5ec
-[02:45:56.005] Browser LOG     Updating globe material with color: #e4e5ec
-[03:21:05.156] Browser LOG     Updating globe material with color: #e4e5ec
-[03:24:30.904] Browser LOG     Updating globe material with color: #e4e5ec
+[00:00:01.040] Server  LOG     ✓ Ready in 844ms
+[00:00:05.573] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Pankaj.png" "received" null
+[00:00:05.576] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Venkata.png" "received" null
+[00:00:05.580] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Tirumaleshwar.png" "received" null
+[00:00:05.582] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Kumar.png" "received" null
+[00:00:06.560] Browser LOG     Updating globe material with color: #e4e5ec
+[00:09:58.810] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Kumar.png" "received" null
+[00:09:58.833] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Venkata.png" "received" null
+[00:09:58.838] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Tirumaleshwar.png" "received" null
+[00:09:58.843] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Pankaj.png" "received" null
+[00:09:59.986] Browser LOG     Updating globe material with color: #e4e5ec
+[00:15:17.597] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:18.001] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Kumar.png" "received" null
+[00:15:18.025] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Venkata.png" "received" null
+[00:15:18.057] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Tirumaleshwar.png" "received" null
+[00:15:18.063] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/Pankaj.png" "received" null
+[00:15:18.653] Browser LOG     Updating globe material with color: #e4e5ec
+[00:16:14.047] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/1.png" "received" null
+[00:17:00.863] Server  LOG     ✓ Compiled in 293ms
+[00:20:16.398] Server  LOG     ✓ Compiled in 3.7s
+[00:20:19.638] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:22.310] Browser LOG     Updating globe material with color: #e4e5ec
+[00:20:39.148] Server  LOG     ✓ Compiled in 374ms
+[00:20:41.630] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:43.088] Browser LOG     Updating globe material with color: #e4e5ec
+[00:21:54.532] Server  LOG     ✓ Compiled in 297ms
+[00:22:02.226] Server  LOG     ✓ Compiled in 1331ms
+[00:22:05.383] Server  LOG     ✓ Compiled in 132ms
+[00:22:05.781] Server  LOG     ✓ Compiled in 2ms
+[00:22:05.862] Server  LOG     ✓ Compiled in 307ms
+[00:22:06.990] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:11.923] Browser LOG     Updating globe material with color: #e4e5ec
+[00:26:14.076] Browser LOG     Updating globe material with color: #e4e5ec
+[00:26:33.597] Browser LOG     Updating globe material with color: #e4e5ec

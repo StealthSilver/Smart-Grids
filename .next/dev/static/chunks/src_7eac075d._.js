@@ -8089,25 +8089,25 @@ const teamMembers = [
         name: "Kumar M",
         role: "Founder & CEO",
         bio: "20+ years in renewable innovation and grid automation. Founded Armax in 2005, then SGA.",
-        image: "/Kumar.png"
+        image: "/1.png"
     },
     {
         name: "Venkata Krishnan",
         role: "Co-founder & CGO",
         bio: "Two decades in renewable energy and industrial automation. Leads global expansion and partnerships.",
-        image: "/Venkata.png"
+        image: "/2.png"
     },
     {
         name: "Tirumaleswara Reddy K",
         role: "CTO",
         bio: "20+ years architecting enterprise platforms. Leads technology vision across Solvyn's full stack.",
-        image: "/Tirumaleshwar.png"
+        image: "/3.png"
     },
     {
         name: "Pankaj Ghai",
         role: "Senior Advisor",
         bio: "Private equity and climate infrastructure leader. Guides North American growth and investor alliances.",
-        image: "/Pankaj.png"
+        image: "/4.png"
     }
 ];
 const Team = ()=>{
@@ -8184,7 +8184,9 @@ const Team = ()=>{
                                             alt: `${member.name}, ${member.role}`,
                                             fill: true,
                                             className: "object-cover object-top",
-                                            sizes: "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 280px"
+                                            sizes: "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 280px",
+                                            unoptimized: true,
+                                            loading: "eager"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/Team.tsx",
                                             lineNumber: 71,
@@ -8203,7 +8205,7 @@ const Team = ()=>{
                                                 children: member.name
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/sections/Team.tsx",
-                                                lineNumber: 80,
+                                                lineNumber: 82,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -8211,7 +8213,7 @@ const Team = ()=>{
                                                 children: member.role
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/sections/Team.tsx",
-                                                lineNumber: 83,
+                                                lineNumber: 85,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -8219,13 +8221,13 @@ const Team = ()=>{
                                                 children: member.bio
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/sections/Team.tsx",
-                                                lineNumber: 86,
+                                                lineNumber: 88,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/sections/Team.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 81,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]

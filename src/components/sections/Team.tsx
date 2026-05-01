@@ -12,25 +12,25 @@ const teamMembers = [
     name: "Kumar M",
     role: "Founder & CEO",
     bio: "20+ years in renewable innovation and grid automation. Founded Armax in 2005, then SGA.",
-    image: "/Kumar.png",
+    image: "/1.png",
   },
   {
     name: "Venkata Krishnan",
     role: "Co-founder & CGO",
     bio: "Two decades in renewable energy and industrial automation. Leads global expansion and partnerships.",
-    image: "/Venkata.png",
+    image: "/2.png",
   },
   {
     name: "Tirumaleswara Reddy K",
     role: "CTO",
     bio: "20+ years architecting enterprise platforms. Leads technology vision across Solvyn's full stack.",
-    image: "/Tirumaleshwar.png",
+    image: "/3.png",
   },
   {
     name: "Pankaj Ghai",
     role: "Senior Advisor",
     bio: "Private equity and climate infrastructure leader. Guides North American growth and investor alliances.",
-    image: "/Pankaj.png",
+    image: "/4.png",
   },
 ] as const;
 
@@ -74,6 +74,8 @@ export const Team = () => {
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 280px"
+                  unoptimized
+                  loading="eager"
                 />
               </div>
               <div className="flex flex-col gap-1.5 sm:gap-2 p-4 sm:p-5 flex-1">
