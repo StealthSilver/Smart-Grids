@@ -210,17 +210,18 @@ const seeLineOpacity = (t: number) => {
 //
 // A dense fan of radial lines emerging from a single origin near the bottom
 // centre, opening upward across roughly ±75°. Particles travel outward along
-// each line, and 4 highlighted "decision" lines pulse in accent orange during
-// the resolution phase. All geometry is precomputed once — the scene only
-// animates opacity / stroke / particle group visibility per phase, so the
-// 80+ lines stay 60fps cheap.
+// each line. All geometry is precomputed once — the scene only animates
+// opacity / stroke / particle group visibility per phase, so the 80+ lines
+// stay 60fps cheap.
 
 const RADIAL_LINE_COUNT = 84;
 const RADIAL_ORIGIN_X = VB_W / 2; // 400
-const RADIAL_ORIGIN_Y = VB_H * 0.85; // 221 — origin sits below visual centre
+/** Slightly lower than before so spokes can run longer before the viewBox top. */
+const RADIAL_ORIGIN_Y = VB_H * 0.91;
 const RADIAL_ARC_DEG = 75; // ±75° measured from straight up
-const RADIAL_BASE_LENGTH = 205;
-const RADIAL_LENGTH_VARIANCE = 22;
+/** Extended past particles/glow so grey spokes read at least as long as the dots. */
+const RADIAL_BASE_LENGTH = 228;
+const RADIAL_LENGTH_VARIANCE = 26;
 const RADIAL_ANGLE_JITTER_DEG = 1.1;
 
 // Deterministic pseudo-random so the burst layout is stable across renders /
@@ -230,25 +231,18 @@ const seededRand = (seed: number) => {
   return s - Math.floor(s);
 };
 
-type RadialKind = "decision" | "background";
-
 type RadialLine = {
   index: number;
   d: string;
   x2: number;
   y2: number;
   length: number;
-  kind: RadialKind;
   baseOpacity: number;
   drawDelay: number;
   drawDuration: number;
   particleDuration: number;
   particleDelay: number;
 };
-
-// Four "decision" lines spread across the arc — slightly off-symmetric so the
-// emphasis doesn't read as a perfect cross.
-const RADIAL_DECISION_INDICES = new Set<number>([16, 36, 50, 68]);
 
 const RADIAL_LINES: RadialLine[] = (() => {
   const list: RadialLine[] = [];
@@ -266,16 +260,13 @@ const RADIAL_LINES: RadialLine[] = (() => {
       (seededRand(i * 3 + 11) - 0.5) * 2 * RADIAL_LENGTH_VARIANCE;
     // Subtle taper at the wings so the fan feels widest in the middle and
     // gracefully recedes at the shoulders, instead of a flat half-disc.
-    const edgeFalloff = 1 - Math.pow(Math.abs(t - 0.5) * 2, 2.4) * 0.16;
+    const edgeFalloff = 1 - Math.pow(Math.abs(t - 0.5) * 2, 2.4) * 0.1;
     const length = (RADIAL_BASE_LENGTH + lenNoise) * edgeFalloff;
 
     // Origin is below the action — convert "angle from straight up" to xy.
     const x2 = RADIAL_ORIGIN_X + Math.sin(angleRad) * length;
     const y2 = RADIAL_ORIGIN_Y - Math.cos(angleRad) * length;
 
-    const kind: RadialKind = RADIAL_DECISION_INDICES.has(i)
-      ? "decision"
-      : "background";
     const baseOpacity = 0.6 + seededRand(i + 23) * 0.32;
     const drawDelay = seededRand(i * 5 + 13) * 0.55;
     const drawDuration = 0.7 + seededRand(i * 7 + 3) * 0.25;
@@ -292,7 +283,6 @@ const RADIAL_LINES: RadialLine[] = (() => {
       x2,
       y2,
       length,
-      kind,
       baseOpacity,
       drawDelay,
       drawDuration,
@@ -302,13 +292,6 @@ const RADIAL_LINES: RadialLine[] = (() => {
   }
   return list;
 })();
-
-const RADIAL_BACKGROUND_LINES = RADIAL_LINES.filter(
-  (l) => l.kind === "background"
-);
-const RADIAL_DECISION_LINES = RADIAL_LINES.filter(
-  (l) => l.kind === "decision"
-);
 
 // ---------- Persistent base nodes ----------
 
@@ -854,15 +837,9 @@ const DecideScene: React.FC<{ reducedMotion: boolean }> = ({
 
 type RadialPhase = 1 | 2 | 3;
 
-const radialLineOpacity = (
-  kind: RadialKind,
-  base: number,
-  phase: RadialPhase
-) => {
+const radialLineOpacity = (base: number, phase: RadialPhase) => {
   if (phase === 1) return base * 0.85;
   if (phase === 2) return base;
-  // Phase 3: decision lines pop, background recedes so the accent reads.
-  if (kind === "decision") return Math.min(1, base + 0.3);
   return base * 0.55;
 };
 
@@ -871,19 +848,17 @@ type RadialLineElProps = {
   phase: RadialPhase;
 };
 
-// Base radial line. Always strokes via the radial-fade gradient — we never
-// animate stroke (gradient URLs aren't an animatable value in Framer Motion).
-// Decision emphasis is rendered as a separate accent overlay path on top,
-// whose opacity animates instead. Memoised so re-renders on phase change
-// don't re-mount 80+ paths.
+// Solid gray stroke so the spoke reads for the full geometric length of `d`
+// (same path as FlowParticle). A radial stroke gradient made tips nearly
+// invisible while orange dots stayed bright, so lines looked shorter than motion.
 const RadialLineEl: React.FC<RadialLineElProps> = React.memo(
   ({ path, phase }) => {
-    const opacity = radialLineOpacity(path.kind, path.baseOpacity, phase);
+    const opacity = radialLineOpacity(path.baseOpacity, phase);
     return (
       <motion.path
         d={path.d}
         fill="none"
-        stroke="url(#decide-radial-fade)"
+        stroke={LINE}
         strokeWidth={1.05}
         strokeLinecap="round"
         vectorEffect="non-scaling-stroke"
@@ -911,34 +886,13 @@ const RadialLineEl: React.FC<RadialLineElProps> = React.memo(
 );
 RadialLineEl.displayName = "RadialLineEl";
 
-// Accent overlay for decision lines — fades in/out per phase. Sits on top of
-// the gradient base, so when fully opaque it visually replaces the base line
-// (matching strokeWidth ≥ base width). No pathLength animation: the base
-// line below is already handling the build-in.
-const DecisionAccentLine: React.FC<RadialLineElProps> = React.memo(
-  ({ path, phase }) => (
-    <motion.path
-      d={path.d}
-      fill="none"
-      stroke={ACCENT}
-      strokeWidth={1.4}
-      strokeLinecap="round"
-      vectorEffect="non-scaling-stroke"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: phase === 3 ? 1 : 0 }}
-      transition={{ duration: 0.9, ease: EASE_IN_OUT }}
-    />
-  )
-);
-DecisionAccentLine.displayName = "DecisionAccentLine";
-
 const RadialBurstScene: React.FC<{ reducedMotion: boolean }> = ({
   reducedMotion,
 }) => {
   // Phase 1 = BUILD (lines paint outward). Phase 2 = FLOW (particles travel
-  // outward along every line). Phase 3 = DECIDE (4 lines pop in accent
-  // orange with stronger pulses). After the first build we loop 2 ↔ 3 so
-  // the network stays continuously alive instead of redrawing.
+  // outward along every line). Phase 3 = lines recede slightly while flow
+  // continues. After the first build we loop 2 ↔ 3 so the network stays
+  // continuously alive instead of redrawing.
   const [phase, setPhase] = useState<RadialPhase>(reducedMotion ? 3 : 1);
 
   useEffect(() => {
@@ -988,21 +942,8 @@ const RadialBurstScene: React.FC<{ reducedMotion: boolean }> = ({
       animate="enter"
       exit="exit"
     >
-      {/* Defs: radial fade for stroke, soft core glow at origin. Both use
-          userSpaceOnUse so all 80+ lines reference the same gradient and we
-          get the "stronger at origin, lighter at the tips" falloff for free. */}
+      {/* Soft core glow at origin (accent). Spokes use solid LINE stroke. */}
       <defs>
-        <radialGradient
-          id="decide-radial-fade"
-          cx={RADIAL_ORIGIN_X}
-          cy={RADIAL_ORIGIN_Y}
-          r={250}
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0%" stopColor={LINE} stopOpacity="0.95" />
-          <stop offset="55%" stopColor={LINE} stopOpacity="0.55" />
-          <stop offset="100%" stopColor={LINE} stopOpacity="0.18" />
-        </radialGradient>
         <radialGradient
           id="decide-core-glow"
           cx={RADIAL_ORIGIN_X}
@@ -1027,28 +968,9 @@ const RadialBurstScene: React.FC<{ reducedMotion: boolean }> = ({
         transition={{ duration: 1.0, ease: EASE_IN_OUT }}
       />
 
-      {/* Background lines first (drawn under) */}
       <g>
-        {RADIAL_BACKGROUND_LINES.map((p) => (
-          <RadialLineEl key={`r-bg-${p.index}`} path={p} phase={phase} />
-        ))}
-      </g>
-
-      {/* Decision lines on top so the accent always reads cleanly */}
-      <g>
-        {RADIAL_DECISION_LINES.map((p) => (
-          <RadialLineEl key={`r-dec-${p.index}`} path={p} phase={phase} />
-        ))}
-      </g>
-
-      {/* Accent overlay for decision lines — opacity-only animation. */}
-      <g>
-        {RADIAL_DECISION_LINES.map((p) => (
-          <DecisionAccentLine
-            key={`r-dec-acc-${p.index}`}
-            path={p}
-            phase={phase}
-          />
+        {RADIAL_LINES.map((p) => (
+          <RadialLineEl key={`r-line-${p.index}`} path={p} phase={phase} />
         ))}
       </g>
 
@@ -1089,67 +1011,23 @@ const RadialBurstScene: React.FC<{ reducedMotion: boolean }> = ({
           80+ comets cost effectively nothing in React land. */}
       {!reducedMotion && (
         <>
-          {/* Background particle flow (always on after build, recedes during
-              the decision phase so the orange accents read first). */}
+          {/* Particle flow along every line after the build phase. */}
           <motion.g
             initial={{ opacity: 0 }}
             animate={{
-              opacity: phase === 1 ? 0 : phase === 3 ? 0.45 : 1,
+              opacity: phase === 1 ? 0 : phase === 3 ? 0.55 : 1,
             }}
             transition={{ duration: 1.0, ease: EASE_IN_OUT }}
           >
-            {RADIAL_BACKGROUND_LINES.map((p) => (
+            {RADIAL_LINES.map((p) => (
               <FlowParticle
-                key={`r-bg-p-${p.index}`}
+                key={`r-p-${p.index}`}
                 d={p.d}
                 duration={p.particleDuration}
                 delay={p.particleDelay}
                 size={1.4}
                 color={ACCENT}
                 opacity={0.85}
-                keySplines="0 0 0.25 1"
-              />
-            ))}
-          </motion.g>
-
-          {/* Neutral pulses on decision lines during flow (phase 2 only) —
-              they hand off to the bright accent pulses in phase 3. */}
-          <motion.g
-            initial={{ opacity: 0 }}
-            animate={{ opacity: phase === 2 ? 1 : 0 }}
-            transition={{ duration: 1.0, ease: EASE_IN_OUT }}
-          >
-            {RADIAL_DECISION_LINES.map((p) => (
-              <FlowParticle
-                key={`r-dec-np-${p.index}`}
-                d={p.d}
-                duration={p.particleDuration * 0.85}
-                delay={p.particleDelay}
-                size={1.7}
-                color={ACCENT}
-                opacity={0.95}
-                keySplines="0 0 0.25 1"
-              />
-            ))}
-          </motion.g>
-
-          {/* Bright orange decision pulses (phase 3 only) — staggered so the
-              4 conclusions arrive one after another, not as a single flash. */}
-          <motion.g
-            initial={{ opacity: 0 }}
-            animate={{ opacity: phase === 3 ? 1 : 0 }}
-            transition={{ duration: 0.9, ease: EASE_IN_OUT }}
-          >
-            {RADIAL_DECISION_LINES.map((p, i) => (
-              <FlowParticle
-                key={`r-dec-ap-${p.index}`}
-                d={p.d}
-                duration={2.6}
-                delay={i * 0.32}
-                size={2.6}
-                color={ACCENT}
-                opacity={1}
-                glow
                 keySplines="0 0 0.25 1"
               />
             ))}
