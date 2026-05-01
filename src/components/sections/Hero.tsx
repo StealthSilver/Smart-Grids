@@ -414,7 +414,7 @@ export default function Hero() {
           <button
             type="button"
             onClick={() => {
-              scrollToSectionAligned("footer", { updateHash: false });
+              scrollToSectionAligned("contact", { updateHash: false });
             }}
             className="
               group inline-flex items-center justify-center gap-1

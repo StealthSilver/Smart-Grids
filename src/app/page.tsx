@@ -9,6 +9,7 @@ import { Team } from "../components/sections/Team";
 import { Why } from "../components/sections/Why";
 import { LogoTicker } from "../components/sections/LogoTicker";
 import { Leadership } from "../components/sections/Leadership";
+import { ContactSection } from "../components/sections/ContactSection";
 import { Footer } from "../components/sections/Footer";
 import type { Metadata } from "next";
 import { SITE } from "../config/site.config";
@@ -162,6 +163,7 @@ export default function Home() {
       <Why />
       <LogoTicker />
       <Leadership />
+      <ContactSection />
       <Footer />
     </main>
     </>

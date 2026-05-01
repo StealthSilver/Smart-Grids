@@ -313,7 +313,7 @@ export default function Navbar() {
           </button>
           <button
             type="button"
-            onClick={() => scrollToSectionAligned("footer", { updateHash: false })}
+            onClick={() => scrollToSectionAligned("contact", { updateHash: false })}
             className="
               group inline-flex items-center justify-center gap-0.5
               font-sans font-bold text-white text-xs xl:text-sm
@@ -520,7 +520,7 @@ export default function Navbar() {
                     onClick={() => {
                       setIsOpen(false);
                       setMobileExpanded(null);
-                      scrollToSectionAligned("footer", { updateHash: false });
+                      scrollToSectionAligned("contact", { updateHash: false });
                     }}
                     className="
                       group inline-flex items-center justify-center gap-0.5
