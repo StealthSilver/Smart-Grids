@@ -62,9 +62,7 @@ const navItems: NavSectionItem[] = [
     sectionId: "cta",
     label: "Under Proof",
     children: [
-      { name: "Case Studies", href: "/case-studies" },
       { name: "Deployments", href: "/proof/deployments" },
-      { name: "White Papers", href: "/white-papers" },
       { name: "News", href: "/proof/news" },
     ],
   },

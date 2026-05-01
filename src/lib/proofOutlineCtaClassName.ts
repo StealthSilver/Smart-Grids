@@ -1,4 +1,4 @@
-/** Outline CTA used in the Proof section (case studies, white papers). */
+/** Outline CTA used in the Proof section (e.g. white papers). */
 export const proofOutlineCtaClassName =
   "group inline-flex items-center justify-center gap-0.5 " +
   "font-sans font-bold text-sm sm:text-base md:text-lg " +

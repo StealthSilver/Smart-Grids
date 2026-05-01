@@ -20,16 +20,7 @@
     "afterFiles": [],
     "fallback": []
   },
-  "dynamicRoutes": [
-    {
-      "page": "/case-studies/[slug]",
-      "regex": "^/case\\-studies/([^/]+?)(?:/)?$",
-      "routeKeys": {
-        "nxtPslug": "nxtPslug"
-      },
-      "namedRegex": "^/case\\-studies/(?<nxtPslug>[^/]+?)(?:/)?$"
-    }
-  ],
+  "dynamicRoutes": [],
   "staticRoutes": [
     {
       "page": "/",
@@ -56,18 +47,6 @@
       "namedRegex": "^/api/send\\-email(?:/)?$"
     },
     {
-      "page": "/blogs",
-      "regex": "^/blogs(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blogs(?:/)?$"
-    },
-    {
-      "page": "/case-studies",
-      "regex": "^/case\\-studies(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/case\\-studies(?:/)?$"
-    },
-    {
       "page": "/favicon.ico",
       "regex": "^/favicon\\.ico(?:/)?$",
       "routeKeys": {},
@@ -84,12 +63,6 @@
       "regex": "^/robots\\.txt(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/robots\\.txt(?:/)?$"
-    },
-    {
-      "page": "/white-papers",
-      "regex": "^/white\\-papers(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/white\\-papers(?:/)?$"
     }
   ],
   "dataRoutes": [],

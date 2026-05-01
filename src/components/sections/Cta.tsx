@@ -1,10 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { proofOutlineCtaClassName } from "@/lib/proofOutlineCtaClassName";
 import { EdgeLines } from "../ui/EdgeLines";
-import { CtaHoverArrow } from "../ui/CtaHoverArrow";
 import { PROOF_GRID_ITEMS, ProofHoverGrid } from "../ui/ProofHoverGrid";
 
 export const Cta = () => {
@@ -23,17 +20,6 @@ export const Cta = () => {
           <h2 className="font-sans font-semibold text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight max-w-4xl">
             Real Plants. Real Operations. Real Results.
           </h2>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-          <Link href="/case-studies" className={proofOutlineCtaClassName}>
-            View All Case Studies
-            <CtaHoverArrow />
-          </Link>
-          <Link href="/white-papers" className={proofOutlineCtaClassName}>
-            Read White Papers
-            <CtaHoverArrow />
-          </Link>
         </div>
 
         <ProofHoverGrid items={PROOF_GRID_ITEMS} className="w-full pb-2" />

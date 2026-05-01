@@ -24,9 +24,7 @@ export const Footer = () => {
       { name: "Market Optimization", href: "/applications/market-optimization" },
     ],
     proof: [
-      { name: "Case Studies", href: "/case-studies" },
       { name: "Deployments", href: "/proof/deployments" },
-      { name: "White Papers", href: "/white-papers" },
       { name: "News", href: "/proof/news" },
     ],
     company: [
