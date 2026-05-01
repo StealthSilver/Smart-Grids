@@ -356,3 +356,197 @@
 [03:24:56.311] Browser LOG     Updating globe material with color: #e4e5ec
 [03:27:12.675] Browser WARN    You are trying to animate opacity from "undefined" to "0". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
 [03:27:13.388] Browser LOG     Updating globe material with color: #e4e5ec
+[03:28:32.483] Browser WARN    You are trying to animate opacity from "undefined" to "0". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[03:28:33.516] Browser LOG     Updating globe material with color: #e4e5ec
+[03:28:41.450] Browser WARN    Image with src "/_next/static/media/o2_logo.2ba2561b.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:28:41.451] Browser WARN    Image with src "/_next/static/media/spring_logo.d5084f30.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:28:41.451] Browser WARN    Image with src "/_next/static/media/inox_logo.1bdafc48.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:28:41.451] Browser WARN    Image with src "/_next/static/media/abb_logo.da5fd0fe.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:28:43.414] Browser WARN    Image with src "/_next/static/media/etap_logo.c0faf6ed.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:28:48.912] Browser WARN    Image with src "/_next/static/media/blupine_logo.72905066.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:29:06.290] Browser WARN    Image with src "/_next/static/media/fimer_logo.984e7900.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:29:06.290] Browser WARN    Image with src "/_next/static/media/jsw_logo.54cdcb11.jpeg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:29:12.017] Browser WARN    Image with src "/_next/static/media/alfanar_logo.6596f5fe.avif" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:29:20.399] Browser WARN    Image with src "/_next/static/media/avaada_logo.7c87310e.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:30:31.885] Browser WARN    Image with src "/_next/static/media/refex_logo.eccf5eae.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:34:14.130] Browser WARN    Image with src "/_next/static/media/azure_logo.a484b31c.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:34:14.130] Browser WARN    Image with src "/_next/static/media/ayana_logo.2c89710d.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:34:32.104] Browser WARN    Image with src "/_next/static/media/vena_logo.27a4fa66.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:34:36.392] Browser WARN    Image with src "/_next/static/media/kec_logo.b645b9dd.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:35:15.811] Server  LOG     ✓ Compiled in 1939ms
+[03:36:04.249] Server  LOG     ✓ Compiled in 503ms
+[03:36:08.117] Browser WARN    You are trying to animate opacity from "undefined" to "0". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/spring_logo.d5084f30.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/o2_logo.2ba2561b.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/inox_logo.1bdafc48.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/abb_logo.da5fd0fe.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/etap_logo.c0faf6ed.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/blupine_logo.72905066.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/fimer_logo.984e7900.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/jsw_logo.54cdcb11.jpeg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/alfanar_logo.6596f5fe.avif" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/avaada_logo.7c87310e.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/azure_logo.a484b31c.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/ayana_logo.2c89710d.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/vena_logo.27a4fa66.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/kec_logo.b645b9dd.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.118] Browser WARN    Image with src "/_next/static/media/refex_logo.eccf5eae.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:36:08.980] Browser LOG     Updating globe material with color: #e4e5ec
+[03:36:09.752] Server  LOG     ✓ Compiled in 338ms
+[03:36:09.878] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <p> p 
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>
+        <SegmentViewNode type="page" pagePath="page.tsx">
+          <SegmentTrieNode>
+          <Home>
+            <script>
+            <script>
+            <script>
+            <Home>
+              <main>
+                <Navbar>
+                <Hero>
+                <About>
+                <Solvyn>
+                <Services>
+                <Cta>
+                <Media>
+                <Team>
+                <Why>
+                  <section id="why" data-snap-section={true} className="relative w...">
+                    <EdgeLines>
+                    <div className="max-w-7xl ...">
+                      <div>
+                      <div className="w-full fle...">
+                        <div>
+                        <div>
+                        <div>
+                        <div className="grid grid-...">
+                          <motion.div>
+                          <motion.div initial={{x:56,scale:0.97, ...}} whileInView={{x:0,scale:1, ...}} ...>
+                            <div className="order-2 md..." style={{filter:"bl...", ...}} ...>
+                              <h3>
+>                             <p className="font-sans text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl">
+                                <div className="space-y-2">
+>                                 <p>
+                                  ...
+                ...
+        ...
+      ...
+
+[03:36:09.878] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <p>
+[03:36:09.878] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <div> p 
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>
+        <SegmentViewNode type="page" pagePath="page.tsx">
+          <SegmentTrieNode>
+          <Home>
+            <script>
+            <script>
+            <script>
+            <Home>
+              <main>
+                <Navbar>
+                <Hero>
+                <About>
+                <Solvyn>
+                <Services>
+                <Cta>
+                <Media>
+                <Team>
+                <Why>
+                  <section id="why" data-snap-section={true} className="relative w...">
+                    <EdgeLines>
+                    <div className="max-w-7xl ...">
+                      <div>
+                      <div className="w-full fle...">
+                        <div>
+                        <div>
+                        <div>
+                        <div className="grid grid-...">
+                          <motion.div>
+                          <motion.div initial={{x:56,scale:0.97, ...}} whileInView={{x:0,scale:1, ...}} ...>
+                            <div className="order-2 md..." style={{filter:"bl...", ...}} ...>
+                              <h3>
+>                             <p className="font-sans text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl">
+>                               <div className="space-y-2">
+                ...
+        ...
+      ...
+
+[03:36:09.878] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <div>
+[03:36:10.415] Server  LOG     ✓ Compiled in 184ms
+[03:36:16.466] Server  LOG     ✓ Compiled in 505ms
+[03:38:02.475] Server  LOG     ✓ Compiled in 540ms
+[03:38:13.903] Server  LOG     ✓ Compiled in 120ms
+[03:38:17.884] Server  LOG     ✓ Compiled in 259ms
+[03:38:19.019] Server  LOG     ✓ Compiled in 173ms
+[03:38:45.264] Server  LOG     ✓ Compiled in 528ms
+[03:41:14.325] Server  LOG     ✓ Compiled in 2.5s
+[03:41:31.412] Server  LOG     ✓ Compiled in 206ms
+[03:43:03.943] Server  LOG     ✓ Compiled in 903ms
+[03:43:13.168] Server  LOG     ✓ Compiled in 3s
+[03:43:16.377] Server  LOG     ✓ Finished filesystem cache database compaction in 10.2s
+[03:43:21.937] Server  LOG     ✓ Compiled in 552ms
+[03:43:23.726] Server  LOG     ✓ Compiled in 251ms
+[03:43:25.004] Server  LOG     ✓ Compiled in 281ms
+[03:43:26.958] Server  LOG     ✓ Compiled in 199ms
+[03:43:32.782] Server  LOG     ✓ Compiled in 273ms
+[03:43:35.733] Server  LOG     ✓ Compiled in 816ms
+[03:43:37.596] Server  LOG     ✓ Compiled in 172ms
+[03:43:45.480] Server  LOG     ✓ Compiled in 525ms
+[03:43:46.982] Server  LOG     ✓ Compiled in 288ms
+[03:43:47.931] Server  LOG     ✓ Compiled in 330ms
+[03:43:51.738] Server  LOG     ✓ Compiled in 138ms
+[03:44:03.582] Server  LOG     ✓ Compiled in 190ms
+[03:44:52.789] Server  LOG     ✓ Compiled in 407ms
+[03:44:54.641] Server  LOG     ✓ Compiled in 190ms
+[03:48:06.366] Server  LOG     ✓ Compiled in 1152ms
+[03:48:25.567] Server  LOG     ✓ Compiled in 1386ms
+[03:48:25.946] Server  LOG     ✓ Compiled in 455ms
+[03:48:29.076] Server  LOG     ✓ Compiled in 713ms
+[03:49:46.042] Server  LOG     ✓ Compiled in 378ms
+[03:49:58.386] Server  LOG     ✓ Compiled in 277ms
+[03:50:57.820] Server  LOG     ✓ Compiled in 351ms
+[03:51:06.396] Server  LOG     ✓ Compiled in 179ms
+[03:51:53.488] Server  LOG     ✓ Compiled in 436ms
+[03:51:53.771] Browser ERROR   uncaughtError: ReferenceError: REVEAL_EASE is not defined
+[03:51:54.816] Server  LOG     ✓ Compiled in 654ms
+[03:51:54.828] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[03:51:54.831] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[03:51:55.239] Browser ERROR   uncaughtError: ReferenceError: illustrationFloatTransition is not defined
+[03:51:58.362] Server  ERROR   ⨯ ReferenceError: illustrationFloatTransition is not defined
+[03:51:59.245] Browser ERROR   uncaughtError: ReferenceError: illustrationFloatTransition is not defined
+[03:51:59.773] Server  LOG     ✓ Compiled in 539ms
+[03:51:59.795] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[03:52:02.110] Browser WARN    You are trying to animate opacity from "undefined" to "0". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/spring_logo.d5084f30.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/o2_logo.2ba2561b.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/inox_logo.1bdafc48.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/abb_logo.da5fd0fe.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/etap_logo.c0faf6ed.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/blupine_logo.72905066.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/fimer_logo.984e7900.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/jsw_logo.54cdcb11.jpeg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/alfanar_logo.6596f5fe.avif" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/avaada_logo.7c87310e.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/azure_logo.a484b31c.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/ayana_logo.2c89710d.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/vena_logo.27a4fa66.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/kec_logo.b645b9dd.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:02.277] Browser WARN    Image with src "/_next/static/media/refex_logo.eccf5eae.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[03:52:03.422] Browser LOG     Updating globe material with color: #e4e5ec
+[03:52:10.875] Server  LOG     ✓ Compiled in 2.1s
+[03:53:44.701] Server  LOG     ✓ Compiled in 369ms
+[03:53:59.278] Server  LOG     ✓ Compiled in 163ms
+[03:54:03.384] Server  LOG     ✓ Compiled in 429ms
+[03:54:05.670] Server  LOG     ✓ Compiled in 247ms
+[03:54:48.375] Server  LOG     ✓ Compiled in 587ms
