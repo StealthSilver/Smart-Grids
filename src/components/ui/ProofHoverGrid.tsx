@@ -76,13 +76,14 @@ export function ProofHoverGrid({
               {hoveredIndex === idx && (
                 <motion.span
                   layoutId="proofHoverBackground"
+                  style={{ borderRadius: 6 }}
                   transition={{
                     type: "spring",
                     stiffness: 520,
                     damping: 38,
                     mass: 0.8,
                   }}
-                  className="pointer-events-none absolute inset-0 z-10 block h-full w-full rounded-2xl bg-[#FF7F00]/12 dark:bg-orange-500/15"
+                  className="pointer-events-none absolute inset-0 z-10 block h-full w-full bg-[#FF7F00]/12 dark:bg-orange-500/15"
                 />
               )}
             </AnimatePresence>
@@ -113,8 +114,9 @@ function ProofCard({
 }) {
   return (
     <div
+      style={{ borderRadius: 6 }}
       className={cn(
-        "rounded-2xl h-full w-full overflow-hidden relative z-20",
+        "h-full w-full overflow-hidden relative z-20",
         "border border-gray-200/90 bg-white shadow-sm",
         "transition-[border-color,box-shadow] duration-300 ease-out",
         "group-hover:border-[#FF7F00]/40 group-hover:shadow-md group-hover:shadow-orange-500/5",

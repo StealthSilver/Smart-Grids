@@ -3251,7 +3251,7 @@ const About = ()=>{
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "w-full flex-1 min-h-0 flex items-center justify-center",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-full max-w-4xl h-full max-h-[340px] flex items-center justify-center",
+                            className: "w-full max-w-7xl h-full max-h-[360px] sm:max-h-[440px] md:max-h-[520px] lg:max-h-[560px] flex items-center justify-center",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$sections$2f$AboutAnimation$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AboutAnimation"], {
                                 activeId: activeOptionId
                             }, void 0, false, {
@@ -7618,13 +7618,16 @@ function ProofHoverGrid({ items, className }) {
                             initial: false,
                             children: hoveredIndex === idx && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].span, {
                                 layoutId: "proofHoverBackground",
+                                style: {
+                                    borderRadius: 6
+                                },
                                 transition: {
                                     type: "spring",
                                     stiffness: 520,
                                     damping: 38,
                                     mass: 0.8
                                 },
-                                className: "pointer-events-none absolute inset-0 z-10 block h-full w-full rounded-2xl bg-[#FF7F00]/12 dark:bg-orange-500/15"
+                                className: "pointer-events-none absolute inset-0 z-10 block h-full w-full bg-[#FF7F00]/12 dark:bg-orange-500/15"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ui/ProofHoverGrid.tsx",
                                 lineNumber: 77,
@@ -7642,7 +7645,7 @@ function ProofHoverGrid({ items, className }) {
                                     children: item.tag
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ui/ProofHoverGrid.tsx",
-                                    lineNumber: 90,
+                                    lineNumber: 91,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -7650,7 +7653,7 @@ function ProofHoverGrid({ items, className }) {
                                     children: item.title
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ui/ProofHoverGrid.tsx",
-                                    lineNumber: 93,
+                                    lineNumber: 94,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -7658,13 +7661,13 @@ function ProofHoverGrid({ items, className }) {
                                     children: item.description
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ui/ProofHoverGrid.tsx",
-                                    lineNumber: 96,
+                                    lineNumber: 97,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ui/ProofHoverGrid.tsx",
-                            lineNumber: 89,
+                            lineNumber: 90,
                             columnNumber: 13
                         }, this)
                     ]
@@ -7686,18 +7689,21 @@ function ProofHoverGrid({ items, className }) {
 }
 function ProofCard({ className, children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("rounded-2xl h-full w-full overflow-hidden relative z-20", "border border-gray-200/90 bg-white shadow-sm", "transition-[border-color,box-shadow] duration-300 ease-out", "group-hover:border-[#FF7F00]/40 group-hover:shadow-md group-hover:shadow-orange-500/5", className),
+        style: {
+            borderRadius: 6
+        },
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("h-full w-full overflow-hidden relative z-20", "border border-gray-200/90 bg-white shadow-sm", "transition-[border-color,box-shadow] duration-300 ease-out", "group-hover:border-[#FF7F00]/40 group-hover:shadow-md group-hover:shadow-orange-500/5", className),
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "relative z-50 p-5 sm:p-6",
             children: children
         }, void 0, false, {
             fileName: "[project]/src/components/ui/ProofHoverGrid.tsx",
-            lineNumber: 124,
+            lineNumber: 126,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/ui/ProofHoverGrid.tsx",
-        lineNumber: 115,
+        lineNumber: 116,
         columnNumber: 5
     }, this);
 }
@@ -7832,6 +7838,7 @@ __turbopack_context__.s([
     ()=>Team
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$proofOutlineCtaClassName$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/proofOutlineCtaClassName.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$EdgeLines$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/EdgeLines.tsx [app-ssr] (ecmascript)");
@@ -7842,69 +7849,172 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$C
 ;
 ;
 ;
+;
+const teamMembers = [
+    {
+        name: "Kumar M",
+        role: "Founder & CEO",
+        bio: "20+ years in renewable innovation and grid automation. Founded Armax in 2005, then SGA.",
+        image: "/Kumar.png"
+    },
+    {
+        name: "Venkata Krishnan",
+        role: "Co-founder & CGO",
+        bio: "Two decades in renewable energy and industrial automation. Leads global expansion and partnerships.",
+        image: "/Venkata.png"
+    },
+    {
+        name: "Tirumaleswara Reddy K",
+        role: "CTO",
+        bio: "20+ years architecting enterprise platforms. Leads technology vision across Solvyn's full stack.",
+        image: "/Tirumaleshwar.png"
+    },
+    {
+        name: "Pankaj Ghai",
+        role: "Senior Advisor",
+        bio: "Private equity and climate infrastructure leader. Guides North American growth and investor alliances.",
+        image: "/Pankaj.png"
+    }
+];
 const Team = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "team",
         "data-snap-section": true,
-        className: "relative w-full h-screen px-4 sm:px-6 py-16 sm:py-20 md:py-24 overflow-hidden",
+        className: "relative w-full min-h-screen px-4 sm:px-6 py-16 sm:py-20 md:py-24 overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$EdgeLines$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["EdgeLines"], {}, void 0, false, {
                 fileName: "[project]/src/components/sections/Team.tsx",
-                lineNumber: 16,
+                lineNumber: 44,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-7xl w-full mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-start gap-4 sm:gap-6",
+                className: "max-w-7xl w-full mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-start gap-8 sm:gap-10",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "font-mono text-xs sm:text-sm uppercase tracking-[0.16em] text-gray-600",
-                        children: "THE TEAM"
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-col items-start gap-4 sm:gap-6 max-w-4xl",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "font-mono text-xs sm:text-sm uppercase tracking-[0.16em] text-gray-600",
+                                children: "THE TEAM"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/sections/Team.tsx",
+                                lineNumber: 47,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                className: "font-sans font-semibold text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight max-w-4xl",
+                                children: "Built By Engineers. Guided By Decades Of Grid Experience."
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/sections/Team.tsx",
+                                lineNumber: 50,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0)),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex flex-wrap items-center gap-3 sm:gap-4",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                    href: "/company/leadership",
+                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$proofOutlineCtaClassName$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["proofOutlineCtaClassName"],
+                                    children: [
+                                        "Meet The Full Team",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$CtaHoverArrow$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CtaHoverArrow"], {}, void 0, false, {
+                                            fileName: "[project]/src/components/sections/Team.tsx",
+                                            lineNumber: 59,
+                                            columnNumber: 15
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/components/sections/Team.tsx",
+                                    lineNumber: 54,
+                                    columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0))
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/sections/Team.tsx",
+                                lineNumber: 53,
+                                columnNumber: 11
+                            }, ("TURBOPACK compile-time value", void 0))
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/src/components/sections/Team.tsx",
-                        lineNumber: 18,
-                        columnNumber: 9
-                    }, ("TURBOPACK compile-time value", void 0)),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "font-sans font-semibold text-gray-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight max-w-4xl",
-                        children: "Built By Engineers. Guided By Decades Of Grid Experience."
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/sections/Team.tsx",
-                        lineNumber: 21,
+                        lineNumber: 46,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-wrap items-center gap-3 sm:gap-4",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                            href: "/company/leadership",
-                            className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$proofOutlineCtaClassName$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["proofOutlineCtaClassName"],
-                            children: [
-                                "Meet The Full Team",
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$CtaHoverArrow$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CtaHoverArrow"], {}, void 0, false, {
-                                    fileName: "[project]/src/components/sections/Team.tsx",
-                                    lineNumber: 30,
-                                    columnNumber: 13
-                                }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/sections/Team.tsx",
-                            lineNumber: 25,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0))
+                        className: "w-full max-w-6xl self-center grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-7 lg:gap-8",
+                        children: teamMembers.map((member)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
+                                className: "flex flex-col overflow-hidden rounded-[6px] border border-gray-300 bg-gray-50",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "relative aspect-[5/6] w-full overflow-hidden border-b border-gray-300 bg-gray-100",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                            src: member.image,
+                                            alt: `${member.name}, ${member.role}`,
+                                            fill: true,
+                                            className: "object-cover object-top",
+                                            sizes: "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 280px"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/sections/Team.tsx",
+                                            lineNumber: 71,
+                                            columnNumber: 17
+                                        }, ("TURBOPACK compile-time value", void 0))
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/sections/Team.tsx",
+                                        lineNumber: 70,
+                                        columnNumber: 15
+                                    }, ("TURBOPACK compile-time value", void 0)),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex flex-col gap-1.5 sm:gap-2 p-4 sm:p-5 flex-1",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                className: "font-sans font-semibold text-gray-900 text-base sm:text-lg leading-snug",
+                                                children: member.name
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/sections/Team.tsx",
+                                                lineNumber: 80,
+                                                columnNumber: 17
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "font-mono text-[11px] sm:text-xs uppercase tracking-[0.12em] text-[#FF7F00]",
+                                                children: member.role
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/sections/Team.tsx",
+                                                lineNumber: 83,
+                                                columnNumber: 17
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-sm text-gray-600 leading-relaxed",
+                                                children: member.bio
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/sections/Team.tsx",
+                                                lineNumber: 86,
+                                                columnNumber: 17
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/sections/Team.tsx",
+                                        lineNumber: 79,
+                                        columnNumber: 15
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                ]
+                            }, member.name, true, {
+                                fileName: "[project]/src/components/sections/Team.tsx",
+                                lineNumber: 66,
+                                columnNumber: 13
+                            }, ("TURBOPACK compile-time value", void 0)))
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/Team.tsx",
-                        lineNumber: 24,
+                        lineNumber: 64,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/sections/Team.tsx",
-                lineNumber: 17,
+                lineNumber: 45,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sections/Team.tsx",
-        lineNumber: 11,
+        lineNumber: 39,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

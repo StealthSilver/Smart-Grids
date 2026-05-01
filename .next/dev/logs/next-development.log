@@ -46,3 +46,22 @@
 [01:35:09.339] Server  LOG     ✓ Compiled in 198ms
 [01:35:22.607] Browser DEBUG   Provider initialization - wallet not connected
 [01:35:23.173] Browser LOG     Updating globe material with color: #e4e5ec
+[01:37:42.120] Server  LOG     ✓ Compiled in 459ms
+[01:37:50.199] Server  LOG     ✓ Compiled in 358ms
+[01:45:15.895] Browser WARN    You are trying to animate opacity from "undefined" to "0". "undefined" is not an animatable value.. For more information and steps for solving, visit https://motion.dev/troubleshooting/value-not-animatable
+[01:45:16.997] Browser LOG     Updating globe material with color: #e4e5ec
+[01:50:46.451] Server  LOG     ✓ Compiled in 87ms
+[01:50:47.895] Browser LOG     Updating globe material with color: #e4e5ec
+[02:02:30.950] Server  LOG     ✓ Compiled in 957ms
+[02:02:34.015] Server  LOG     ✓ Compiled in 113ms
+[02:02:34.283] Server  LOG     ✓ Compiled in 71ms
+[02:04:28.114] Server  LOG     ✓ Compiled in 428ms
+[02:04:31.595] Server  LOG     ✓ Compiled in 95ms
+[02:05:38.788] Server  LOG     ✓ Compiled in 136ms
+[02:05:39.287] Server  LOG     ✓ Compiled in 45ms
+[02:05:47.115] Server  LOG     ✓ Compiled in 41ms
+[02:06:25.810] Server  LOG     ✓ Compiled in 244ms
+[02:06:39.237] Server  LOG     ✓ Compiled in 681ms
+[02:06:42.722] Server  LOG     ✓ Compiled in 153ms
+[02:06:48.853] Server  LOG     ✓ Compiled in 81ms
+[02:07:48.856] Server  LOG     ✓ Compiled in 227ms
