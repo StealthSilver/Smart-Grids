@@ -23,6 +23,7 @@ import { SolvynBeams } from "../ui/SolvynBeams";
 import { useSolvynAnimation } from "../../hooks/useSolvynAnimation";
 import { useDiagramAnimationReady } from "@/lib/useDiagramAnimationReady";
 import { EdgeLines } from "../ui/EdgeLines";
+import { CtaHoverArrow } from "../ui/CtaHoverArrow";
 
 const ICON_CONFIG = [
   { id: "tax" as const, label: "Merchant Services", component: TaxIcon },
@@ -325,7 +326,7 @@ export const Solvyn: React.FC = () => {
           <Link
             href="/solvyn/solvyn-x"
             className="
-              inline-flex items-center justify-center
+              group inline-flex items-center justify-center gap-0.5
               font-sans font-bold text-sm sm:text-base md:text-lg
               px-[20px] py-[10px]
               whitespace-nowrap rounded-[8px] bg-transparent
@@ -336,6 +337,7 @@ export const Solvyn: React.FC = () => {
             "
           >
             Explore Solvyn
+            <CtaHoverArrow />
           </Link>
         </div>
 

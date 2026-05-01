@@ -6264,9 +6264,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$S
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useSolvynAnimation$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/useSolvynAnimation.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$useDiagramAnimationReady$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/useDiagramAnimationReady.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$EdgeLines$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/EdgeLines.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$CtaHoverArrow$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/CtaHoverArrow.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -6743,7 +6745,7 @@ const Solvyn = ()=>{
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$EdgeLines$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["EdgeLines"], {}, void 0, false, {
                 fileName: "[project]/src/components/sections/Solvyn.tsx",
-                lineNumber: 312,
+                lineNumber: 313,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6757,7 +6759,7 @@ const Solvyn = ()=>{
                                 children: "The Solvyn architecture"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/sections/Solvyn.tsx",
-                                lineNumber: 315,
+                                lineNumber: 316,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -6765,7 +6767,7 @@ const Solvyn = ()=>{
                                 children: "From field data to actionable intelligence"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/sections/Solvyn.tsx",
-                                lineNumber: 318,
+                                lineNumber: 319,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6776,29 +6778,36 @@ const Solvyn = ()=>{
                                         children: "Solvyn"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/Solvyn.tsx",
-                                        lineNumber: 322,
+                                        lineNumber: 323,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     " unifies SCADA, EMS, PPC, EPM, and intelligent bidding into one AI-driven layer — built for solar, wind, BESS, hybrid, and green hydrogen operations."
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/sections/Solvyn.tsx",
-                                lineNumber: 321,
+                                lineNumber: 322,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/solvyn/solvyn-x",
-                                className: " inline-flex items-center justify-center font-sans font-bold text-sm sm:text-base md:text-lg px-[20px] py-[10px] whitespace-nowrap rounded-[8px] bg-transparent border border-[#FF7F00] text-[#FF7F00] cursor-pointer transition-all duration-300 ease-in-out hover:bg-[#FF7F00]/10 hover:shadow-sm active:translate-y-px ",
-                                children: "Explore Solvyn"
-                            }, void 0, false, {
+                                className: " group inline-flex items-center justify-center gap-0.5 font-sans font-bold text-sm sm:text-base md:text-lg px-[20px] py-[10px] whitespace-nowrap rounded-[8px] bg-transparent border border-[#FF7F00] text-[#FF7F00] cursor-pointer transition-all duration-300 ease-in-out hover:bg-[#FF7F00]/10 hover:shadow-sm active:translate-y-px ",
+                                children: [
+                                    "Explore Solvyn",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$CtaHoverArrow$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CtaHoverArrow"], {}, void 0, false, {
+                                        fileName: "[project]/src/components/sections/Solvyn.tsx",
+                                        lineNumber: 340,
+                                        columnNumber: 13
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/src/components/sections/Solvyn.tsx",
-                                lineNumber: 325,
+                                lineNumber: 326,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/sections/Solvyn.tsx",
-                        lineNumber: 314,
+                        lineNumber: 315,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6825,17 +6834,17 @@ const Solvyn = ()=>{
                                                     className: "w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/sections/Solvyn.tsx",
-                                                    lineNumber: 356,
+                                                    lineNumber: 358,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/sections/Solvyn.tsx",
-                                                lineNumber: 355,
+                                                lineNumber: 357,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/Solvyn.tsx",
-                                            lineNumber: 351,
+                                            lineNumber: 353,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -6845,18 +6854,18 @@ const Solvyn = ()=>{
                                                 children: "Solvyn"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/sections/Solvyn.tsx",
-                                                lineNumber: 371,
+                                                lineNumber: 373,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sections/Solvyn.tsx",
-                                            lineNumber: 366,
+                                            lineNumber: 368,
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/sections/Solvyn.tsx",
-                                    lineNumber: 350,
+                                    lineNumber: 352,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 icons.map((icon, idx)=>{
@@ -6873,7 +6882,7 @@ const Solvyn = ()=>{
                                         isTablet: isTablet
                                     }, icon.id, false, {
                                         fileName: "[project]/src/components/sections/Solvyn.tsx",
-                                        lineNumber: 380,
+                                        lineNumber: 382,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0));
                                 }),
@@ -6886,30 +6895,30 @@ const Solvyn = ()=>{
                                     isTablet: isTablet
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/Solvyn.tsx",
-                                    lineNumber: 394,
+                                    lineNumber: 396,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/sections/Solvyn.tsx",
-                            lineNumber: 345,
+                            lineNumber: 347,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/Solvyn.tsx",
-                        lineNumber: 342,
+                        lineNumber: 344,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/sections/Solvyn.tsx",
-                lineNumber: 313,
+                lineNumber: 314,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sections/Solvyn.tsx",
-        lineNumber: 307,
+        lineNumber: 308,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -7955,7 +7964,7 @@ const Cta = ()=>{
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$EdgeLines$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["EdgeLines"], {}, void 0, false, {
                 fileName: "[project]/src/components/sections/Cta.tsx",
-                lineNumber: 23,
+                lineNumber: 24,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7966,7 +7975,7 @@ const Cta = ()=>{
                         children: "PROOF"
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/Cta.tsx",
-                        lineNumber: 25,
+                        lineNumber: 26,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -7974,7 +7983,7 @@ const Cta = ()=>{
                         children: "Real Plants. Real Operations. Real Results."
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/Cta.tsx",
-                        lineNumber: 28,
+                        lineNumber: 29,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7987,13 +7996,13 @@ const Cta = ()=>{
                                     "View All Case Studies",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$CtaHoverArrow$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CtaHoverArrow"], {}, void 0, false, {
                                         fileName: "[project]/src/components/sections/Cta.tsx",
-                                        lineNumber: 34,
+                                        lineNumber: 35,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/sections/Cta.tsx",
-                                lineNumber: 32,
+                                lineNumber: 33,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -8003,31 +8012,31 @@ const Cta = ()=>{
                                     "Read White Papers",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$CtaHoverArrow$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CtaHoverArrow"], {}, void 0, false, {
                                         fileName: "[project]/src/components/sections/Cta.tsx",
-                                        lineNumber: 38,
+                                        lineNumber: 39,
                                         columnNumber: 13
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/sections/Cta.tsx",
-                                lineNumber: 36,
+                                lineNumber: 37,
                                 columnNumber: 11
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/sections/Cta.tsx",
-                        lineNumber: 31,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/sections/Cta.tsx",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sections/Cta.tsx",
-        lineNumber: 18,
+        lineNumber: 19,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
