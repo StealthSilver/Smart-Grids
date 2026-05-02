@@ -11482,25 +11482,46 @@ const Footer = ()=>{
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/",
                                         className: "cursor-pointer",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].img, {
-                                            src: "/logo_dark.svg",
-                                            alt: "Smart Grid Analytics",
-                                            className: "h-8 w-auto sm:h-10",
-                                            initial: {
-                                                opacity: 0
-                                            },
-                                            animate: {
-                                                opacity: 1
-                                            },
-                                            transition: {
-                                                duration: 0.3
-                                            }
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/sections/Footer.tsx",
-                                            lineNumber: 72,
-                                            columnNumber: 17
-                                        }, ("TURBOPACK compile-time value", void 0))
-                                    }, void 0, false, {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].img, {
+                                                src: "/logo_light.svg",
+                                                alt: "Smart Grid Analytics",
+                                                className: "h-8 w-auto sm:h-10 dark:hidden",
+                                                initial: {
+                                                    opacity: 0
+                                                },
+                                                animate: {
+                                                    opacity: 1
+                                                },
+                                                transition: {
+                                                    duration: 0.3
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/sections/Footer.tsx",
+                                                lineNumber: 72,
+                                                columnNumber: 17
+                                            }, ("TURBOPACK compile-time value", void 0)),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].img, {
+                                                src: "/logo_dark.svg",
+                                                alt: "",
+                                                "aria-hidden": true,
+                                                className: "hidden h-8 w-auto sm:h-10 dark:block",
+                                                initial: {
+                                                    opacity: 0
+                                                },
+                                                animate: {
+                                                    opacity: 1
+                                                },
+                                                transition: {
+                                                    duration: 0.3
+                                                }
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/sections/Footer.tsx",
+                                                lineNumber: 80,
+                                                columnNumber: 17
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/src/components/sections/Footer.tsx",
                                         lineNumber: 71,
                                         columnNumber: 15
@@ -11515,7 +11536,7 @@ const Footer = ()=>{
                                     children: "Engineering the operating system for the renewable century with AI-powered solutions for clean energy optimization."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/Footer.tsx",
-                                    lineNumber: 82,
+                                    lineNumber: 91,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -11531,12 +11552,12 @@ const Footer = ()=>{
                                             }) : social.icon
                                         }, social.name, false, {
                                             fileName: "[project]/src/components/sections/Footer.tsx",
-                                            lineNumber: 88,
+                                            lineNumber: 97,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/Footer.tsx",
-                                    lineNumber: 86,
+                                    lineNumber: 95,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
@@ -11552,7 +11573,7 @@ const Footer = ()=>{
                                         children: section.charAt(0).toUpperCase() + section.slice(1)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/Footer.tsx",
-                                        lineNumber: 116,
+                                        lineNumber: 125,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -11564,23 +11585,23 @@ const Footer = ()=>{
                                                     children: link.name
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/sections/Footer.tsx",
-                                                    lineNumber: 122,
+                                                    lineNumber: 131,
                                                     columnNumber: 21
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, link.name, false, {
                                                 fileName: "[project]/src/components/sections/Footer.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 130,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/Footer.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 128,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, section, true, {
                                 fileName: "[project]/src/components/sections/Footer.tsx",
-                                lineNumber: 115,
+                                lineNumber: 124,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)))
                     ]
@@ -11610,7 +11631,7 @@ const Footer = ()=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/sections/Footer.tsx",
-                                lineNumber: 139,
+                                lineNumber: 148,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -11624,29 +11645,29 @@ const Footer = ()=>{
                                         children: "Solvyn"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/sections/Footer.tsx",
-                                        lineNumber: 144,
+                                        lineNumber: 153,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/sections/Footer.tsx",
-                                lineNumber: 142,
+                                lineNumber: 151,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/sections/Footer.tsx",
-                        lineNumber: 138,
+                        lineNumber: 147,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/sections/Footer.tsx",
-                    lineNumber: 137,
+                    lineNumber: 146,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/src/components/sections/Footer.tsx",
-                lineNumber: 136,
+                lineNumber: 145,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]

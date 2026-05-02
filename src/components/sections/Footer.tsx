@@ -70,9 +70,18 @@ export const Footer = () => {
             <div className="mb-3 sm:mb-4">
               <Link href="/" className="cursor-pointer">
                 <motion.img
-                  src="/logo_dark.svg"
+                  src="/logo_light.svg"
                   alt="Smart Grid Analytics"
-                  className="h-8 w-auto sm:h-10"
+                  className="h-8 w-auto sm:h-10 dark:hidden"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+                <motion.img
+                  src="/logo_dark.svg"
+                  alt=""
+                  aria-hidden
+                  className="hidden h-8 w-auto sm:h-10 dark:block"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}

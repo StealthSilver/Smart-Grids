@@ -74,10 +74,13 @@ const SITE = {
 "use strict";
 
 /** localStorage key for site theme preference (used by inline script + ThemeProvider). */ __turbopack_context__.s([
+    "DEFAULT_THEME",
+    ()=>DEFAULT_THEME,
     "THEME_STORAGE_KEY",
     ()=>THEME_STORAGE_KEY
 ]);
 const THEME_STORAGE_KEY = "sga-theme";
+const DEFAULT_THEME = "light";
 }),
 "[project]/src/components/ui/ClientWrapper.tsx [app-rsc] (client reference proxy) <module evaluation>", ((__turbopack_context__) => {
 "use strict";
@@ -238,11 +241,11 @@ function RootLayout({ children }) {
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
                     dangerouslySetInnerHTML: {
-                        __html: `(function(){try{var k=${JSON.stringify(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$theme$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["THEME_STORAGE_KEY"])};var t=localStorage.getItem(k);if(t==="dark")document.documentElement.classList.add("dark");else document.documentElement.classList.remove("dark");}catch(e){}})();`
+                        __html: `(function(){try{var k=${JSON.stringify(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$theme$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["THEME_STORAGE_KEY"])};var t=localStorage.getItem(k);if(t==="dark")document.documentElement.classList.add("dark");else document.documentElement.classList.remove("dark");}catch(e){document.documentElement.classList.remove("dark");}})();`
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/layout.tsx",
-                    lineNumber: 67,
+                    lineNumber: 68,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$theme$2f$ThemeProvider$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ThemeProvider"], {
@@ -250,12 +253,12 @@ function RootLayout({ children }) {
                         children: children
                     }, void 0, false, {
                         fileName: "[project]/src/app/layout.tsx",
-                        lineNumber: 73,
+                        lineNumber: 74,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/layout.tsx",
-                    lineNumber: 72,
+                    lineNumber: 73,
                     columnNumber: 9
                 }, this)
             ]

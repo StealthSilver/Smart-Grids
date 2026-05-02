@@ -64,9 +64,10 @@ export default function RootLayout({
       className={`${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
     >
       <body>
+        {/* Blocking script: default is light; only `sga-theme` === "dark" opts in (see DEFAULT_THEME). */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var k=${JSON.stringify(THEME_STORAGE_KEY)};var t=localStorage.getItem(k);if(t==="dark")document.documentElement.classList.add("dark");else document.documentElement.classList.remove("dark");}catch(e){}})();`,
+            __html: `(function(){try{var k=${JSON.stringify(THEME_STORAGE_KEY)};var t=localStorage.getItem(k);if(t==="dark")document.documentElement.classList.add("dark");else document.documentElement.classList.remove("dark");}catch(e){document.documentElement.classList.remove("dark");}})();`,
           }}
         />
         <ThemeProvider>

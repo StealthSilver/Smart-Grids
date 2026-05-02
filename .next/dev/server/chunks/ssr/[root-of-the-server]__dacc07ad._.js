@@ -253,10 +253,13 @@ function ClientWrapper({ children }) {
 "use strict";
 
 /** localStorage key for site theme preference (used by inline script + ThemeProvider). */ __turbopack_context__.s([
+    "DEFAULT_THEME",
+    ()=>DEFAULT_THEME,
     "THEME_STORAGE_KEY",
     ()=>THEME_STORAGE_KEY
 ]);
 const THEME_STORAGE_KEY = "sga-theme";
+const DEFAULT_THEME = "light";
 }),
 "[project]/src/components/theme/ThemeProvider.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -279,13 +282,18 @@ function applyThemeClass(theme) {
     document.documentElement.classList.toggle("dark", theme === "dark");
 }
 function ThemeProvider({ children }) {
-    const [theme, setThemeState] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("light");
+    const [theme, setThemeState] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$theme$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DEFAULT_THEME"]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        const stored = localStorage.getItem(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$theme$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["THEME_STORAGE_KEY"]);
-        if (stored === "dark" || stored === "light") {
-            setThemeState(stored);
-            applyThemeClass(stored);
-        }
+        let resolved = __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$theme$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DEFAULT_THEME"];
+        try {
+            const stored = localStorage.getItem(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$theme$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["THEME_STORAGE_KEY"]);
+            if (stored === "dark" || stored === "light") {
+                resolved = stored;
+            }
+        } catch  {
+        /* localStorage blocked — keep DEFAULT_THEME */ }
+        setThemeState(resolved);
+        applyThemeClass(resolved);
     }, []);
     const setTheme = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((next)=>{
         setThemeState(next);
@@ -314,7 +322,7 @@ function ThemeProvider({ children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/theme/ThemeProvider.tsx",
-        lineNumber: 61,
+        lineNumber: 71,
         columnNumber: 5
     }, this);
 }

@@ -10,9 +10,13 @@ import {
   type ReactNode,
 } from "react";
 
-import { THEME_STORAGE_KEY } from "@/config/theme";
+import {
+  DEFAULT_THEME,
+  THEME_STORAGE_KEY,
+  type Theme,
+} from "@/config/theme";
 
-export type Theme = "light" | "dark";
+export type { Theme };
 
 type ThemeContextValue = {
   theme: Theme;
@@ -27,14 +31,20 @@ function applyThemeClass(theme: Theme) {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("light");
+  const [theme, setThemeState] = useState<Theme>(DEFAULT_THEME);
 
   useEffect(() => {
-    const stored = localStorage.getItem(THEME_STORAGE_KEY) as Theme | null;
-    if (stored === "dark" || stored === "light") {
-      setThemeState(stored);
-      applyThemeClass(stored);
+    let resolved: Theme = DEFAULT_THEME;
+    try {
+      const stored = localStorage.getItem(THEME_STORAGE_KEY);
+      if (stored === "dark" || stored === "light") {
+        resolved = stored;
+      }
+    } catch {
+      /* localStorage blocked — keep DEFAULT_THEME */
     }
+    setThemeState(resolved);
+    applyThemeClass(resolved);
   }, []);
 
   const setTheme = useCallback((next: Theme) => {
